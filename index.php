@@ -111,7 +111,7 @@
       </a>
     </div>
     <div class="col text-center">
-      <a href="./datatable" class="btn btn-primary rounded-pill">
+      <a href="./Cer_P_Mod40" class="btn btn-primary rounded-pill">
         <img src="img/mod 40.jpg" alt="Servicio 2" class="img-fluid rounded-circle">
         Certificación de pagos Mod 40
       </a>

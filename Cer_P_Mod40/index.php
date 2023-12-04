@@ -19,7 +19,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark ">
   <div class="container-fluid">
     <!-- Logo del IMSS -->
-    <a class="navbar-brand" href="../IMSS JAC">
+    <a class="navbar-brand" href="../">
       <img src="img/JAC_Logo3.png" alt="IMSS Logo" width="240" height="90" class="d-inline-block align-top">
     </a>
     <!-- Logo del Gobierno de México 
@@ -37,7 +37,7 @@
           <a class="nav-link active" aria-current="page" href="index.php">MODALIDAD 40</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="../IMSS JAC/index.html">HOME</a>
+          <a class="nav-link" href="../">HOME</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
