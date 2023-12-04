@@ -1,0 +1,25 @@
+.btnAdd {
+    text-align: right;
+    width: 83%;
+    margin-bottom: 20px;
+  }
+.navbar {
+  background-color: #13322b; 
+}
+
+.logomex{
+    width: 20%;
+    margin-left: -80%;
+    margin-bottom: 23px;
+}
+
+.barra-carga {
+    height: 2px; /* Ajusta la altura de la barra de carga según tus preferencias */
+    background-color: red; /* Color de la barra de carga */
+    width: 0; /* La barra de carga comenzará con ancho cero */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que la barra de carga esté en la parte superior */
+    transition: width 0.3s ease; /* Agrega una transición suave al ancho de la barra de carga */
+}
