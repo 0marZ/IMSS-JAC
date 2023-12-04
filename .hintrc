@@ -15,7 +15,8 @@
           "user-select: all",
           "-webkit-overflow-scrolling",
           "-webkit-tap-highlight-color",
-          "-ms-touch-action"
+          "-ms-touch-action",
+          "-moz-backface-visibility"
         ]
       }
     ]
