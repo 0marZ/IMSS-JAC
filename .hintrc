@@ -14,7 +14,8 @@
           "overflow-anchor",
           "user-select: all",
           "-webkit-overflow-scrolling",
-          "-webkit-tap-highlight-color"
+          "-webkit-tap-highlight-color",
+          "-ms-touch-action"
         ]
       }
     ]
