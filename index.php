@@ -29,31 +29,31 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+        <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
           <div class="owl-carousel header-carousel">
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/1.jpg" alt="" />
+              <img class="img-fluid" src="img/1.jpg" alt="Imagen 1" />
             </div>
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/2.jpg" alt="" />
+              <img class="img-fluid" src="img/2.jpg" alt="Imagen 2" />
             </div>
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/3.jpg" alt="" />
+              <img class="img-fluid" src="img/3.jpg" alt="Imagen 3" />
             </div>
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/4.jpg" alt="" />
+              <img class="img-fluid" src="img/4.jpg" alt="Imagen 4" />
             </div>
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/5.jpg" alt="" />
+              <img class="img-fluid" src="img/5.jpg" alt="Imagen 5" />
             </div>
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/6.jpg" alt="" />
+              <img class="img-fluid" src="img/6.jpg" alt="Imagen 6" />
             </div>
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/7.jpg" alt="" />
+              <img class="img-fluid" src="img/7.jpg" alt="Imagen 7" />
             </div>
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/8.jpg" alt="" />
+              <img class="img-fluid" src="img/8.jpg" alt="Imagen 8" />
             </div>
           </div>
         </div>
@@ -97,11 +97,13 @@
       </div>
     </div>
     <!-- Video Modal End -->
-
-    <!-- Después de tu carrusel -->
-    <div class="container mt-4">
+<!-- Después de tu carrusel -->
+<div id="nuestros-servicios" class="container mt-4">
+<div class="row">
+<hr class="linea-divisoria">
+</div>
   <div class="row">
-    <h1 class="text-center">Nuestros servicios</h1>
+    <h1 class="text-center">Menú</h1>
     <div class="col text-center">
       <a href="./Mod40" class="btn btn-primary rounded-pill">
         <img src="img/mod 40.jpg" alt="Servicio 1" class="img-fluid rounded-circle">
@@ -122,5 +124,6 @@
     </div>
   </div>
 </div>
+
 
 <?php require('./layout/footer.php')?>

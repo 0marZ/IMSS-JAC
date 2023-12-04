@@ -77,7 +77,7 @@
       <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
         <div class="navbar-nav ms-auto">
           <a href="index.php" class="nav-item nav-link active">Inico</a>
-          <a href="" class="nav-item nav-link">Servicios</a>
+          <a href="#nuestros-servicios" class="nav-item nav-link">Servicios</a>
           <a href="contact.php" class="nav-item nav-link">Contacto</a>
         </div>
 

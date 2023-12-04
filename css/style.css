@@ -583,3 +583,10 @@
     padding-top: 2rem !important;
     padding-bottom: 29rem !important;
 }
+
+/* Linea para Separar segmentos de pagina*/
+.linea-divisoria {
+    border: 1px solid #cccccc00; /* Establece el estilo de la línea (puedes ajustar el color y el grosor) */
+    margin: 40px 0; /* Ajusta el margen para controlar la separación entre secciones */
+  }
+  
