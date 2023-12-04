@@ -1,6 +1,5 @@
 # JAC - Jefatura de Servicios de Afiliación Cobranza
 
-## Images
 
 ![This is an alt text.](./img/JAC_Logo2.png "This is a sample image.")
 
