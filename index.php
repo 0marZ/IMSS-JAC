@@ -32,7 +32,7 @@
         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
           <div class="owl-carousel header-carousel">
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/1.jpg" alt="Imagen 1" />
+              <img class="img-fluid" src="img/8.jpg" alt="Imagen 1" />
             </div>
             <div class="owl-carousel-item">
               <img class="img-fluid" src="img/2.jpg" alt="Imagen 2" />
@@ -53,7 +53,7 @@
               <img class="img-fluid" src="img/7.jpg" alt="Imagen 7" />
             </div>
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/8.jpg" alt="Imagen 8" />
+              <img class="img-fluid" src="img/1.jpg" alt="Imagen 8" />
             </div>
           </div>
         </div>
