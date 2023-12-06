@@ -10,8 +10,8 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap5.0.1.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-    <script src="https://kit.fontawesome.com/db489652f4.js" crossorigin="anonymous"></script>
+    
+    <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="img/fevicon.png">
     <!-- Archivo CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -33,6 +33,7 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.php">MODALIDAD 40</a>
                 </li>
+                 <!--
                 <li class="nav-item">
                     <a class="nav-link" href="../">HOME</a>
                 </li>
@@ -50,6 +51,7 @@
                         <li><a class="dropdown-item" href="#">3. </a></li>
                     </ul>
                 </li>
+                -->
             </ul>
         </div>
     </div>
@@ -122,33 +124,33 @@ $(document).ready(function () {
             "bSortable": false,
             "aTargets": [5]
         }],
-        "dom": '<"top" lf>tBipr',
+        "dom": '<"top"Bf>rtlip',
         "lengthMenu": [10, 25, 50, 100],
         "buttons": [
             {
                 extend: 'copy',
                 text: '<i class="fas fa-copy"></i> Copiar',
-                className: 'btn btn-secondary'
+                className: 'btn btn-primary'
             },
             {
                 extend: 'csv',
                 text: '<i class="fas fa-file-csv"></i> CSV',
-                className: 'btn btn-secondary'
+                className: 'btn btn-warning'
             },
             {
                 extend: 'excel',
                 text: '<i class="fas fa-file-excel"></i> Excel',
-                className: 'btn btn-secondary'
+                className: 'btn btn-danger'
             },
             {
                 extend: 'pdf',
                 text: '<i class="fas fa-file-pdf"></i> PDF',
-                className: 'btn btn-secondary'
+                className: 'btn btn-info'
             },
             {
                 extend: 'print',
                 text: '<i class="fas fa-print"></i> Imprimir',
-                className: 'btn btn-secondary'
+                className: 'btn btn-success'
             }
         ]
     });
