@@ -22,7 +22,9 @@
     <div class="container-fluid">
         <!-- Logo del IMSS -->
         <a class="navbar-brand" href="../">
-            <img src="img/JAC_Logo3.png" alt="IMSS Logo" width="240" height="90" class="d-inline-block align-top">
+          <div style="max-width: 200px;">
+            <img src="img/JAC_Logo3.png" alt="JAC LOGO" class="d-inline-block align-top" style="max-width: 100%;">
+          </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +56,9 @@
                 -->
             </ul>
         </div>
+    </div>
+    <div class="imagenav d-none d-lg-block">
+                <img src="img/VERSUR.png" alt="Imagen a la derecha">
     </div>
 </nav>
 
