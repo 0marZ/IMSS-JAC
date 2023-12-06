@@ -9,13 +9,15 @@
           <div
             class="header-bg h-100 d-flex flex-column justify-content-center p-5"
           >
+          <!--
             <h1 class="display-4 text-light mb-5">
               Jefatura de Servicios de Afiliación Cobranza
             </h1>
+          -->  
             <div class="d-flex align-items-center pt-4 animated slideInDown">
-              <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5"
-                >Saber más</a
-              >
+              <a href="./Mod40" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">MOD 40</a>
+              <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">Saber más</a>
+              
               <button
                 type="button"
                 class="btn-play"

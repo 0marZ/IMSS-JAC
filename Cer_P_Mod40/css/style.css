@@ -33,7 +33,7 @@ div.dataTables_wrapper .dataTables_processing {
   margin-top: -25px;
   padding-top: 20px;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5em;
   background-color: rgb(0, 0, 0);
   color: #ffffff;
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(25%, rgba(0, 0, 0, 0.9)), color-stop(75%, rgba(255, 255, 255, 0.9)), color-stop(100%, rgba(255, 255, 255, 0)));
@@ -56,7 +56,7 @@ div.dataTables_wrapper .dataTables_processing {
   max-width: 125px; /* Ajusta el ancho máximo de la imagen según tus necesidades */
   height: auto; /* Hace que la altura se ajuste automáticamente para mantener la proporción */
   display: block; /* Asegura que la imagen sea un bloque y no afecte a otros elementos en línea */
-  border-radius: 50%; /* Da un estilo redondo a la imagen */
+  border-radius: 45%; /* Da un estilo redondo a la imagen */
 }
 
 

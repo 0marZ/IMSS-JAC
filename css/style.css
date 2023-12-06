@@ -33,6 +33,7 @@
 .btn {
     font-weight: 500;
     transition: .5s;
+    border-radius: 20px;
 }
 
 .btn.btn-primary,

@@ -64,8 +64,9 @@
       data-wow-delay="0.1s"
     >
       <a href="index.php" class="navbar-brand p-0">
-        <img class="img-fluid me-3" src="img/JAC_Logo2.png" alt="Icon" />
+        <img class="img-fluid me-3" src="img/JAC .png" alt="Icon" />
       </a>
+      <h1 class="">Jefatura de Servicios de Afiliación Cobranza</h1>
       <button
         type="button"
         class="navbar-toggler"
