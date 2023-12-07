@@ -66,7 +66,7 @@
       <a href="index.php" class="navbar-brand p-0">
         <img class="img-fluid me-3" src="img/JAC .png" alt="Icon" />
       </a>
-      <h1 class="">Jefatura de Servicios de Afiliación Cobranza</h1>
+      <h1 class="d-none d-lg-block">Jefatura de Servicios de Afiliación Cobranza</h1>
       <button
         type="button"
         class="navbar-toggler"
