@@ -8,19 +8,23 @@ $total_all_rows = mysqli_num_rows($totalQuery);
 
 $columns = array(
 	0 => 'id',
-	1 => 'username',
-	2 => 'email',
-	3 => 'mobile',
-	4 => 'city',
+	1 => 'Cve_Subdelegacion',
+	2 => 'Num_P_pago',
+	3 => 'Cve_Nss',
+	4 => 'Num_Folio_Sua',
+	5 => 'Nom_Trabajador',
+	6 => 'Fec_Pago',
 );
 
 if(isset($_POST['search']['value']))
 {
 	$search_value = $_POST['search']['value'];
-	$sql .= " WHERE username like '%".$search_value."%'";
-	$sql .= " OR email like '%".$search_value."%'";
-	$sql .= " OR mobile like '%".$search_value."%'";
-	$sql .= " OR city like '%".$search_value."%'";
+	$sql .= " WHERE Cve_Subdelegacion like '%".$search_value."%'";
+	$sql .= " OR Num_P_pago like '%".$search_value."%'";
+	$sql .= " OR Cve_Nss like '%".$search_value."%'";
+	$sql .= " OR Num_Folio_Sua like '%".$search_value."%'";
+	$sql .= " OR Nom_Trabajador like '%".$search_value."%'";
+	$sql .= " OR Fec_Pago like '%".$search_value."%'";
 }
 
 if(isset($_POST['order']))
@@ -48,10 +52,12 @@ while($row = mysqli_fetch_assoc($query))
 {
 	$sub_array = array();
 	$sub_array[] = $row['id'];
-	$sub_array[] = $row['username'];
-	$sub_array[] = $row['email'];
-	$sub_array[] = $row['mobile'];
-	$sub_array[] = $row['city'];
+	$sub_array[] = $row['Cve_Subdelegacion'];
+	$sub_array[] = $row['Cve_Nss'];
+	$sub_array[] = $row['Num_P_pago'];
+	$sub_array[] = $row['Num_Folio_Sua'];
+	$sub_array[] = $row['Nom_Trabajador'];
+	$sub_array[] = $row['Fec_Pago'];
 	$sub_array[] = '<a href="javascript:void();" data-id="'.$row['id'].'"  class="btn btn-info btn-sm editbtn" >Edit</a>  <a href="javascript:void();" data-id="'.$row['id'].'"  class="btn btn-danger btn-sm deleteBtn" >Delete</a>';
 	$data[] = $sub_array;
 }
