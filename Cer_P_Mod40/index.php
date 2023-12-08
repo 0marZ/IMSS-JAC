@@ -10,7 +10,7 @@
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap5.0.1.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.bootstrap5.min.css">
     <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="img/fevicon.png">
     <!-- Archivo CSS -->
@@ -76,8 +76,8 @@
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
-                        <table id="example" class="table">
-                            <thead>
+                        <table id="example" class="table table-striped table-bordered">
+                            <thead class="table-dark">
                                 <th>Id</th>
                                 <th>Cve Subdelegacion</th>
                                 <th>Cve NSS</th>
@@ -108,17 +108,36 @@
 $(document).ready(function () {
     $('#example').DataTable({
         "language": {
-            "processing": "Procesando información.....",
-            "lengthMenu": "Mostrar _MENU_ registros por página",
-            "zeroRecords": "No hay coincidencias",
-            "info": "Mostrando la _PAGE_ de _PAGES_",
-            "infoEmpty": "No records available",
-            "infoFiltered": "(Filtrado de _MAX_ registros totales)",
-            "search": "Buscar:",
-            "paginate": {
-                "next": "Siguiente",
-                "previous": "Anterior"
-            }
+              "processing": "Procesando información.....",
+              "lengthMenu": "Mostrar _MENU_ registros por página",
+              "zeroRecords": "No hay coincidencias",
+              "info": "Mostrando la _PAGE_ de _PAGES_",
+              "infoEmpty": "No records available",
+              "infoFiltered": "(Filtrado de _MAX_ registros totales)",
+              "search": "Buscar:",
+              "paginate": {
+                  "next": "Siguiente",
+                  "previous": "Anterior"
+              },
+          "buttons": {
+                "copy": "Copiar",
+                "colvis": "Visibilidad",
+                "collection": "Colección",
+                "colvisRestore": "Restaurar visibilidad",
+                "copyKeys": "Presione ctrl o u2318 + C para copiar los datos de la tabla al portapapeles del sistema. <br \/> <br \/> Para cancelar, haga clic en este mensaje o presione escape.",
+                "copySuccess": {
+                    "1": "Copiada 1 fila al portapapeles",
+                    "_": "Se ha copiado %d filas al portapapeles"
+                    },
+                    
+                    "copyTitle": "Copiado al portapapeles",
+                    "csv": "CSV",
+                    "excel": "Excel",
+                    "pageLength":{
+                        "-1": "Mostrar todas las filas",
+                        "_": "Mostrar %d filas"
+                    },
+            },
         },
         "fnCreatedRow": function (nRow, aData, iDataIndex) {
             $(nRow).attr('id', aData[0]);
