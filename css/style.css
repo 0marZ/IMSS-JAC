@@ -591,3 +591,12 @@
     margin: 40px 0; /* Ajusta el margen para controlar la separación entre secciones */
   }
   
+  .large-text {
+    font-size: 30px; /* Ajusta el tamaño según tus preferencias */
+  }
+  
+  .small-text {
+    font-size: 20px; /* Ajusta el tamaño según tus preferencias */
+  }
+  
+  

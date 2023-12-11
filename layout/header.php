@@ -58,30 +58,30 @@
 
 
 
-    <!-- Navbar Start -->
-    <nav
-      class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <a href="index.php" class="navbar-brand p-0">
-        <img class="img-fluid me-3" src="img/JAC .png" alt="Icon" />
-      </a>
-      <h1 class="d-none d-lg-block">Jefatura de Servicios de Afiliación Cobranza</h1>
-      <button
-        type="button"
-        class="navbar-toggler"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarCollapse"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
-        <div class="navbar-nav ms-auto">
-          <a href="index.php" class="nav-item nav-link active">Inico</a>
-          <a href="#nuestros-servicios" class="nav-item nav-link">Servicios</a>
-          <a href="contact.php" class="nav-item nav-link">Contacto</a>
-        </div>
-
-      </div>
-    </nav>
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+  <a href="index.php" class="navbar-brand p-0">
+    <img class="img-fluid me-3" src="img/JAC .png" alt="Icon" />
+  </a>
+  <h1 class="d-none d-lg-block main-title">
+    <span class="large-text">Jefatura de Servicios de Afiliación Cobranza</span> <br>
+    <span class="small-text">Veracruz Sur</span>
+  </h1>
+      <!-- Mobile-specific content -->
+      <div class="d-lg-none text-center">
+    <h1 class="mobile-title">
+      <span class="large-text">JAC - VER SUR</span> <br>
+    </h1>
+  </div>
+  <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
+    <div class="navbar-nav ms-auto">
+      <a href="index.php" class="nav-item nav-link active">Inicio</a>
+      <a href="#nuestros-servicios" class="nav-item nav-link">Servicios</a>
+      <a href="contact.php" class="nav-item nav-link">Contacto</a>
+    </div>
+  </div>
+</nav>
     <!-- Navbar End -->
