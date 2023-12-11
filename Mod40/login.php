@@ -47,6 +47,9 @@ $error = 'Invalid Username or Password';
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
+
 <style>
 .myhead{
 margin-top:0px;
@@ -72,29 +75,30 @@ background-size: cover;
                           
                             <div class="panel-body" style="background-color: #1B2D2A; margin-top:200px; border:solid 3px #0e0e0e;">
 							  <h3 class="myhead"><p style="color:#FDFFFC";>SISTEMA MOD 40</p></h3>
-                                <form role="form" action="login.php" method="post">
+                              <form role="form" action="login.php" method="post">
                                     <hr />
-									<?php
-									if($error!='')
-									{									
-									echo '<h5 class="text-danger text-center">'.$error.'</h5>';
-									}
-									?>
-									
-                                   
-                                     <div class="form-group input-group">
-                                            <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                                            <input type="text" class="form-control" placeholder="Usuario " name="username" required />
-                                        </div>
-                                        
-									<div class="form-group input-group">
-                                            <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
-                                            <input type="password" class="form-control"  placeholder="Contraseña " name="password" required />
-                                        </div>
-										
-                                     <button class="btn btn-secondary" type= "submit" name="login">Ingresar</button>
-                                   
-                                    </form>
+                                    <?php
+                                    if ($error != '') {
+                                        echo '<h5 class="text-danger text-center">' . $error . '</h5>';
+                                    }
+                                    ?>
+
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon"><i class="fa fa-tag"></i></span>
+                                        <input type="text" class="form-control" placeholder="Usuario " name="username" required />
+                                    </div>
+
+                                    <div class="form-group input-group">
+                                        <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <input type="password" class="form-control" placeholder="Contraseña " name="password" required />
+                                    </div>
+
+                                    <button class="btn btn-secondary" type="submit" name="login">Ingresar</button>
+                                    <!-- Enlace para regresar a home -->
+                                    <a href="../index.php" class="btn btn-success">
+                                        <i class="fas fa-home"></i> Regresar a Inicio
+                                    </a>
+                                </form>
                             </div>
                            
                         </div>
