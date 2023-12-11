@@ -593,10 +593,13 @@
   
   .large-text {
     font-size: 30px; /* Ajusta el tamaño según tus preferencias */
+    color: #225045;
+    
   }
   
   .small-text {
     font-size: 20px; /* Ajusta el tamaño según tus preferencias */
+    color: #b69957;
   }
   
   
