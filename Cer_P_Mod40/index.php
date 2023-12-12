@@ -79,7 +79,8 @@
                         <table id="example" class="table table-striped table-bordered">
                             <thead class="table-dark">
                                 <th>Id</th>
-                                <th>Cve Subdelegacion</th>
+                                <th>Cve Delegación</th>
+                                <th>Cve Subdelegación</th>
                                 <th>Cve NSS</th>
                                 <th>Num Periodo Pago</th>
                                 <th>Num Folio Sua</th>

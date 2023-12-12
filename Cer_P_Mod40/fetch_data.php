@@ -8,18 +8,20 @@ $total_all_rows = mysqli_num_rows($totalQuery);
 
 $columns = array(
 	0 => 'id',
-	1 => 'Cve_Subdelegacion',
-	2 => 'Num_P_pago',
-	3 => 'Cve_Nss',
-	4 => 'Num_Folio_Sua',
-	5 => 'Nom_Trabajador',
-	6 => 'Fec_Pago',
+	1 => 'Cve_Delegacion',
+	2 => 'Cve_Subdelegacion',
+	3 => 'Num_P_pago',
+	4 => 'Cve_Nss',
+	5 => 'Num_Folio_Sua',
+	6 => 'Nom_Trabajador',
+	7 => 'Fec_Pago',
 );
 
 if(isset($_POST['search']['value']))
 {
 	$search_value = $_POST['search']['value'];
-	$sql .= " WHERE Cve_Subdelegacion like '%".$search_value."%'";
+	$sql .= " WHERE Cve_Delegacion like '%".$search_value."%'";
+	$sql .= " OR Cve_Subdelegacion like '%".$search_value."%'";
 	$sql .= " OR Num_P_pago like '%".$search_value."%'";
 	$sql .= " OR Cve_Nss like '%".$search_value."%'";
 	$sql .= " OR Num_Folio_Sua like '%".$search_value."%'";
@@ -52,6 +54,7 @@ while($row = mysqli_fetch_assoc($query))
 {
 	$sub_array = array();
 	$sub_array[] = $row['id'];
+	$sub_array[] = $row['Cve_Delegacion'];
 	$sub_array[] = $row['Cve_Subdelegacion'];
 	$sub_array[] = $row['Cve_Nss'];
 	$sub_array[] = $row['Num_P_pago'];
