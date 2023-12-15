@@ -47,6 +47,8 @@ $error = 'Invalid Username or Password';
     <link href="css/font-awesome.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
 <style>
 .myhead{
 margin-top:0px;
@@ -93,7 +95,10 @@ background-size: cover;
                                         </div>
 										
                                      <button class="btn btn-secondary" type= "submit" name="login">Ingresar</button>
-                                   
+                                        <!-- Enlace para regresar a home -->
+                                        <a href="../index.php" class="btn btn-success">
+                                            <i class="fas fa-home"></i> Regresar a Inicio
+                                        </a>
                                     </form>
                             </div>
                            
