@@ -27,7 +27,7 @@ include("php/checklogin.php");
     <script src="js/jquery-1.10.2.js"></script>
 	
     <script type='text/javascript' src='js/jquery/jquery-ui-1.10.1.custom.min.js'></script>
-   
+  
 
 </head>
  <head>
@@ -69,16 +69,6 @@ include("php/header.php");
 					   <br>
 						<a href="enviar.php" class="boton-envio">Enviar correos</a>
 
-						<!--<form action="enviar.php" method="POST" enctype="multipart/form-data" autocomplete="off">
-						
-						<div id="txt"></div>
-						</div>
-						<br><br>
-						<p class= "text-center" align="text-center">
-						<button type="submit" class="btn btn-success btn-raised btn-sm"><i
-						class="zmdi-refresh"></i>Enviar</button>
-						</p>
-						</form>-->
 						</div>
 						</div>
 						</div>
@@ -93,6 +83,33 @@ include("php/header.php");
 					
 <br>
 <br>
-    
+     </div>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
+
+            
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+
+      
+
+ 
+     <div id="footer-sec">
+	
+  <img src="img/logoheader.png" width="256" height="76" align="left"/>
+  <center>
+  <img src="img/LOGOCom.png" width="108" height="100">
+  <img src="img/JAC_logo2.png" width="153" height="87" align="right"/></center>
+  <br>
+    <center><p>&copy; 2023 IMSS. Todos los derechos reservados.</p></center>
+	</div>
+	 <img class="iconos" src="img/Inferior.png" style= "height: auto; width:100%">
+   
+   
 </body>
 </html>

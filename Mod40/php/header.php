@@ -1,9 +1,35 @@
+<style>
+ .navbar-side{
+	background-color: #13322b;
+}
+.sidebar-collapse{
+	background-color:#13322b;
+}
+.navbar-header{
+	background-color:#13322b;
+}
+.navbar-header{
+	background-color:#13322b;
+}
+.navbar-toggle{
+	background-color:#13322b;
+}
+.navbar-default{
+	background-color:#13322b;
+}
+.navbar-brand{
+	background-color:#13322b;
+	
+}
+
+
+</style>
 
 <body>
 
     <div id="wrapper">
-        <nav class="navbar navbar-default navbar-cls-black " role="navigation" style="margin-bottom: 0">
-            	
+        <nav class="navbar navbar-default navbar-cls" role="navigation" style="margin-bottom: 0">
+             
 			<div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -13,12 +39,13 @@
                 </button>
 				
                 <a class="navbar-brand" href="index.php">MODALIDAD 40 IMSS</a>
-				<img src="img/SEMOD2.png" width="51" height="45"/>
+				<img src="img/SEMOD40.png" width="70" height="68"/>
             </div>
 
         </nav>
         <!-- /. NAV TOP  -->
-        <nav class="navbar-default navbar-side" role="navigation">
+        <nav class="navbar-default  navbar-side" role="navigation">
+	
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
                     <li>
@@ -34,9 +61,8 @@
 
                     </li>
 
-
                     <li>
-                        <a class="active-menu" href="index.php"><i class="fa fa-dashboard "></i>Panel de Control</a>
+                        <a href="index.php"><i class="fa fa-dashboard "></i>Panel de Control</a>
                     </li>
 					
 					
@@ -45,6 +71,7 @@
             <i class="fa fa-users"></i>
             <span>Meses</span>
             <span class="pull-right-container">
+			
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>

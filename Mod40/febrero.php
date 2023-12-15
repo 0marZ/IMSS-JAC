@@ -39,7 +39,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #154F3A;
 }
 
 li {
@@ -91,7 +91,7 @@ li.dropdown {
  
   <li><a href="febrero 02.php">Orizaba</a></li>
   <li><a href="febrero 03.php">Cordoba</a></li>
-    <li><a href="febrero 38.php">Cosamalopan</a></li>
+    <li><a href="febrero 38.php">Cosamaloapan</a></li>
 	  <li><a href="febrero 45.php">Coatzacoalcos</a></li>
 		  <li><a href="adeudomesfebrero.php">Adeudo 1 mes</a></li>
 		  <li><a href="adeudo2mesfebrero.php">Adeudo 2 mes</a></li>
@@ -131,7 +131,9 @@ $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el camp
 
 ?>
 
-<table class="table table-striped">
+<div class="panel-body">
+					<div class="table-sorting table-responsive">
+						<table class="table table-striped table-bordered table-hover" id="tSortable22">
   	
 		<thead>
 		<tr>
@@ -158,6 +160,8 @@ $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el camp
                                         
                                     </tbody>
                                 </table>
+								 </div>
+                        </div>
                             </div>
                         </div>
                     </div>
@@ -191,8 +195,14 @@ $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el camp
 
     <div id="footer-sec">
 	
+  <img src="img/logoheader.png" width="256" height="76" align="left"/>
+  <center>
+  <img src="img/LOGOCom.png" width="108" height="100">
+  <img src="img/JAC_logo2.png" width="153" height="87" align="right"/></center>
+  <br>
+    <center><p>&copy; 2023 IMSS. Todos los derechos reservados.</p></center>
 	</div>
-   
+	 <img class="iconos" src="img/Inferior.png" style= "height: auto; width:100%">
   
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="js/bootstrap.js"></script>

@@ -32,7 +32,72 @@ include("php/checklogin.php");
    
 	
 </head>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #154F3A;
+}
 
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #0EAD69;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+</head>
+<body>
+
+	
+</head>
+
+ <ul>
+ 
+  <li><a href="adeudomesmarzo-02.php">Orizaba</a></li>
+  <li><a href="adeudomesmarzo-03.php">Cordoba</a></li>
+    <li><a href="adeudomesmarzo-38.php">Cosamaloapan</a></li>
+	  <li><a href="adeudomesmarzo-45.php">Coatzacoalcos</a></li>
+
+    </div>
+  </li>
+</ul>
 <?php
 include("php/header.php");
 ?>
@@ -62,8 +127,10 @@ $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el camp
 
 ?>
 
-<table class="table table-striped">
-  	
+
+  	<div class="panel-body">
+					<div class="table-sorting table-responsive">
+						<table class="table table-striped table-bordered table-hover" id="tSortable22">
 		<thead>
 		<tr>
 			<th>Subdelegacion</th>
@@ -90,10 +157,12 @@ $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el camp
                                         
                                     </tbody>
                                 </table>
+								  </div>
+                        </div>
                             </div>
                         </div>
                     </div>
-                     
+                 <a class="btn btn-success" href="marzo.php" role="button">Regresar</a>       
 	<script src="js/dataTable/jquery.dataTables.min.js"></script>
     
      <script>
@@ -121,9 +190,17 @@ $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el camp
     </div>
     <!-- /. WRAPPER  -->
 
-    <div id="footer-sec">
+ 
+     <div id="footer-sec">
 	
+  <img src="img/logoheader.png" width="256" height="76" align="left"/>
+  <center>
+  <img src="img/LOGOCom.png" width="108" height="100">
+  <img src="img/JAC_logo2.png" width="153" height="87" align="right"/></center>
+  <br>
+    <center><p>&copy; 2023 IMSS. Todos los derechos reservados.</p></center>
 	</div>
+	 <img class="iconos" src="img/Inferior.png" style= "height: auto; width:100%">
    
   
     <!-- BOOTSTRAP SCRIPTS -->

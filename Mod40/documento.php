@@ -98,7 +98,34 @@ include("php/header.php");
 <br>
 <br>
 <br>
+ </div>
+                    </div>
+                </div>
+                <!-- /. ROW  -->
 
+            
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+
+      
+
+ 
+     <div id="footer-sec">
+	
+  <img src="img/logoheader.png" width="256" height="76" align="left"/>
+  <center>
+  <img src="img/LOGOCom.png" width="108" height="100">
+  <img src="img/JAC_logo2.png" width="153" height="87" align="right"/></center>
+  <br>
+    <center><p>&copy; 2023 IMSS. Todos los derechos reservados.</p></center>
+	</div>
+	 <img class="iconos" src="img/Inferior.png" style= "height: auto; width:100%">
+   
+   
     
 </body>
 </html>

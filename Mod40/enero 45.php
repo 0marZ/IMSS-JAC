@@ -59,8 +59,9 @@ include("php/header.php");
 $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el campo vaciío es para la password. 
 
 ?>
-
-<table class="table table-striped">
+<div class="panel-body">
+	<div class="table-sorting table-responsive">
+	<table class="table table-striped table-bordered table-hover" id="tSortable22">
   	
 		<thead>
 		<tr>
@@ -82,15 +83,17 @@ $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el camp
 </table>
 </body>
 </html>
-									
+					
                                         
                                         
                                     </tbody>
                                 </table>
+								 </div>
+                        </div>
                             </div>
                         </div>
                     </div>
-                     
+                     <a class="btn btn-success" href="enero.php" role="button">Regresar</a>	
 	<script src="js/dataTable/jquery.dataTables.min.js"></script>
     
      <script>
@@ -118,9 +121,16 @@ $link = new PDO('mysql:host=localhost;dbname=paysystem', 'root', ''); // el camp
     </div>
     <!-- /. WRAPPER  -->
 
-    <div id="footer-sec">
+     <div id="footer-sec">
 	
+  <img src="img/logoheader.png" width="256" height="76" align="left"/>
+  <center>
+  <img src="img/LOGOCom.png" width="108" height="100">
+  <img src="img/JAC_logo2.png" width="153" height="87" align="right"/></center>
+  <br>
+    <center><p>&copy; 2023 IMSS. Todos los derechos reservados.</p></center>
 	</div>
+	 <img class="iconos" src="img/Inferior.png" style= "height: auto; width:100%">
    
   
     <!-- BOOTSTRAP SCRIPTS -->

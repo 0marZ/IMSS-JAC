@@ -25,9 +25,11 @@ include("php/checklogin.php");
 
 
 </head>
+
 <script> window.alert("RECUERDA REVISAR LOS ADEUDOS MENSUALES");
 
 </script>
+
 <?php
 include("php/header.php");
 ?>
@@ -52,10 +54,7 @@ include("php/header.php");
                             </a>
                         </div>
                     </div>
-				
-				
-                   
-					
+			
                     <div class="col-md-4">
                         <div class="main-box mb-dull">
                             <a href="correos.php">
@@ -66,7 +65,6 @@ include("php/header.php");
                         </div>
                     </div>
 					
-					
 					 <div class="col-md-4">
                         <div class="main-box mb-red">
                             <a href="documento.php">
@@ -75,8 +73,6 @@ include("php/header.php");
                             </a>
                         </div>
                     </div>
-                  
-
                 </div>
                 <!-- /. ROW  -->
 
@@ -88,9 +84,20 @@ include("php/header.php");
     </div>
     <!-- /. WRAPPER  -->
 
-    <div id="footer-sec">
+      
+
+ 
+     <div id="footer-sec">
+	
+  <img src="img/logoheader.png" width="256" height="76" align="left"/>
+  <center>
+  <img src="img/LOGOCom.png" width="108" height="100">
+  <img src="img/JAC_logo2.png" width="153" height="87" align="right"/></center>
+  <br>
+    <center><p>&copy; 2023 IMSS. Todos los derechos reservados.</p></center>
+	</div>
+	 <img class="iconos" src="img/Inferior.png" style= "height: auto; width:100%">
    
-    </div>
    
    <script src="js/jquery-1.10.2.js"></script>	
     <!-- BOOTSTRAP SCRIPTS -->
