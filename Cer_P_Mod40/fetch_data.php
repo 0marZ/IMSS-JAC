@@ -53,7 +53,7 @@ $data = array();
 while($row = mysqli_fetch_assoc($query))
 {
 	$sub_array = array();
-	$sub_array[] = $row['id'];
+	/* $sub_array[] = $row['id']; */
 	$sub_array[] = $row['Cve_Delegacion'];
 	$sub_array[] = $row['Cve_Subdelegacion'];
 	$sub_array[] = $row['Cve_Nss'];
@@ -61,7 +61,7 @@ while($row = mysqli_fetch_assoc($query))
 	$sub_array[] = $row['Num_Folio_Sua'];
 	$sub_array[] = $row['Nom_Trabajador'];
 	$sub_array[] = $row['Fec_Pago'];
-	$sub_array[] = '<a href="javascript:void();" data-id="'.$row['id'].'"  class="btn btn-info btn-sm editbtn" >Edit</a>  <a href="javascript:void();" data-id="'.$row['id'].'"  class="btn btn-danger btn-sm deleteBtn" >Delete</a>';
+	/* $sub_array[] = '<a href="javascript:void();" data-id="'.$row['id'].'"  class="btn btn-info btn-sm editbtn" >Edit</a>  <a href="javascript:void();" data-id="'.$row['id'].'"  class="btn btn-danger btn-sm deleteBtn" >Delete</a>'; */
 	$data[] = $sub_array;
 }
 

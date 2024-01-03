@@ -59,4 +59,12 @@ div.dataTables_wrapper .dataTables_processing {
   border-radius: 45%; /* Da un estilo redondo a la imagen */
 }
 
-
+/* Barra de busqueda de tabla de Cer Pagos Mod 40  */
+.dataTables_wrapper .dataTables_filter input {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 5px;
+  background-color: transparent;
+  margin-left: 6px;
+  margin-bottom: 10px;
+}

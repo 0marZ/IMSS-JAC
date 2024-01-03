@@ -70,7 +70,7 @@
         <div class="copyright">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a class="border-bottom" href="#">IMSS 2023</a>, Todos los Derechos Reservados.
+              &copy; <a class="border-bottom" href="#">IMSS 2024</a>, Todos los Derechos Reservados.
             </div>
 
           </div>

@@ -24,7 +24,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
         <!-- Logo del IMSS -->
-        <a class="navbar-brand" href="../">
+        <a class="navbar-brand" href="">
           <div style="max-width: 200px;">
             <img src="img/JAC_Logo3.png" alt="JAC LOGO" class="d-inline-block align-top" style="max-width: 100%;">
           </div>
@@ -36,7 +36,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">MODALIDAD 40</a>
+                    <a class="nav-link active" aria-current="page" href="../">HOME</a>
                 </li>
                  <!--
                 <li class="nav-item">
@@ -78,7 +78,7 @@
                     <div class="col-md-10">
                         <table id="example" class="table table-striped table-bordered">
                             <thead class="table-dark">
-                                <th>Id</th>
+                                <!-- <th>Id</th> -->
                                 <th>Cve Delegación</th>
                                 <th>Cve Subdelegación</th>
                                 <th>Cve NSS</th>
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Simula el progreso (puedes ajustar la velocidad cambiando el valor de intervalo)
     var progreso = 0;
     var intervalo = setInterval(function () {
-        progreso += 3; // Ajusta el valor del incremento según tus necesidades
+        progreso += 2; // Ajusta el valor del incremento según tus necesidades
         barraCarga.style.width = progreso + '%';
 
         if (progreso >= 100) {
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
 <footer class="text-center bg-dark text-white py-3 mt-4">
   <div class="container">
   <img class="logomex" src="img/logoheader.svg" alt="Descripción de la imagen SVG">
-    <p>&copy; 2023 IMSS. Todos los derechos reservados.</p>
+    <p>&copy; 2024 IMSS. Todos los derechos reservados.</p>
   </div>
   <img class="iconosS" src="img/Inferior.png" style= "height: auto; width: 100%">
 </footer>
