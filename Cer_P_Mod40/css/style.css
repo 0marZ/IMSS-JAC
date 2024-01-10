@@ -68,3 +68,13 @@ div.dataTables_wrapper .dataTables_processing {
   margin-left: 6px;
   margin-bottom: 10px;
 }
+
+#map-container {
+  text-align: center;
+}
+
+#map {
+  height: 500px;
+  width: 800px;
+  margin: 200px auto; /* Ajusta el margen para centrar verticalmente */
+}

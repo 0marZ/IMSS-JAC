@@ -13,6 +13,13 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.bootstrap5.min.css">
     <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="img/fevicon.png">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
     <!-- Archivo CSS -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>CERTIFICACIÓN DE DATOS DE PAGO IMSS</title>
@@ -97,6 +104,74 @@
         </div>
     </div>
 
+    <div class="container" id="map" style="height: 500px; width: 700px;"></div>
+
+<!-- Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+
+<script>
+
+var mymap = L.map('map').setView([19.1738, -96.1342], 8);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(mymap);
+
+// Capa de grupo para los marcadores
+var markersLayer = L.layerGroup().addTo(mymap);
+
+async function fetchData() {
+    try {
+        const response = await fetch('fetch_data_map.php');
+        const contentType = response.headers.get('content-type');
+        const responseData = await response.text();
+
+        if (contentType && contentType.includes('application/json')) {
+            const data = JSON.parse(responseData);
+
+            if (data.error) {
+                console.error('Error en la respuesta del servidor:', data.error);
+                return;
+            }
+
+            data.forEach(function (point) {
+                var marker = L.marker([point.latitud, point.longitud]).addTo(markersLayer);
+                marker.bindPopup(`<b>${point.Ciudad}</b><br>Registros en Mod 40: ${point.otraInformacion}`).openPopup();
+            });
+
+            // Ajustar el mapa para abarcar todos los marcadores
+            var bounds = markersLayer.getBounds();
+            mymap.fitBounds(bounds);
+        } else {
+            console.error('La respuesta del servidor no es JSON:', contentType);
+        }
+    } catch (error) {
+        console.error('Error al cargar datos:', error);
+    }
+}
+
+fetchData();
+
+
+</script>
+
+
+
+
+
+
+<div class="container mt-4">
+    <h2 class="text-center">Gráfico de Ciudades</h2>
+    <canvas id="columnChart" width="200" height="100"></canvas>
+</div>
+
+
+
+
+
     <script src="js/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
     <script src="js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
@@ -104,6 +179,12 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
     <script type="text/javascript">
 $(document).ready(function () {
@@ -231,4 +312,55 @@ document.addEventListener('DOMContentLoaded', function () {
 </html>
 <script type="text/javascript">
   //var table = $('#example').DataTable();
+
+
+// ...
+
+// Realiza una solicitud AJAX para obtener los datos de la gráfica
+$.ajax({
+    url: 'fetch_data_grafica.php',
+    type: 'GET',
+    dataType: 'json',
+    success: function (data) {
+        // Procesa los datos y actualiza la gráfica
+        updateChart(data);
+    },
+    error: function (xhr, status, error) {
+        console.error('Error al cargar datos de la gráfica:', xhr, status, error);
+    }
+});
+
+function updateChart(data) {
+    // Datos para el gráfico de columnas
+    var columnChartData = {
+        labels: data.map(item => item.ciudad),
+        datasets: [{
+            label: 'Datos de la Ciudad',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1,
+            data: data.map(item => item.datos)
+        }]
+    };
+
+    // Configuración del gráfico
+    var columnChartOptions = {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    };
+
+    // Obtén el contexto del lienzo del gráfico
+    var columnChartContext = document.getElementById('columnChart').getContext('2d');
+
+    // Crea el gráfico de columnas
+    var columnChart = new Chart(columnChartContext, {
+        type: 'bar',
+        data: columnChartData,
+        options: columnChartOptions
+    });
+}
+
 </script>

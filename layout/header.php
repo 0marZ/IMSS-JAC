@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     
@@ -79,7 +79,20 @@
   <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
     <div class="navbar-nav ms-auto">
       <a href="index.php" class="nav-item nav-link active">Inicio</a>
-      <a href="#nuestros-servicios" class="nav-item nav-link">Servicios</a>
+<!--       <a href="#nuestros-servicios" class="nav-item nav-link">Servicios</a> -->
+      <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Servicios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="./Mod40">Modalidad 40</a></li>
+                        <li><a class="dropdown-item" href="./Cer_P_Mod40">Certificación de pagos Mod 40</a></li>
+<!--                         <li>
+                            <hr class="dropdown-divider">
+                        </li> -->
+                    </ul>
+                </li>
       <a href="contact.php" class="nav-item nav-link">Contacto</a>
     </div>
   </div>

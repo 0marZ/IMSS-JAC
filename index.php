@@ -15,7 +15,7 @@
             </h1>
           -->  
             <div class="d-flex align-items-center pt-4 animated slideInDown">
-              <a href="./Mod40" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">MOD 40</a>
+<!--               <a href="./Mod40" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">MOD 40</a> -->
               <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">Saber más</a>
               
               <button
@@ -100,7 +100,7 @@
     </div>
     <!-- Video Modal End -->
 <!-- Después de tu carrusel -->
-<div id="nuestros-servicios" class="container mt-4">
+<!-- <div id="nuestros-servicios" class="container mt-4">
 <div class="row">
 <hr class="linea-divisoria">
 </div>
@@ -125,7 +125,7 @@
       </a>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <?php require('./layout/footer.php')?>
