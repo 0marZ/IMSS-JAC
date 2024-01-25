@@ -56,7 +56,7 @@ div.dataTables_wrapper .dataTables_processing {
   max-width: 125px; /* Ajusta el ancho máximo de la imagen según tus necesidades */
   height: auto; /* Hace que la altura se ajuste automáticamente para mantener la proporción */
   display: block; /* Asegura que la imagen sea un bloque y no afecte a otros elementos en línea */
-  border-radius: 45%; /* Da un estilo redondo a la imagen */
+  border-radius: 25%; /* Da un estilo redondo a la imagen */
 }
 
 /* Barra de busqueda de tabla de Cer Pagos Mod 40  */
@@ -77,4 +77,9 @@ div.dataTables_wrapper .dataTables_processing {
   height: 500px;
   width: 800px;
   margin: 200px auto; /* Ajusta el margen para centrar verticalmente */
+}
+
+.icono-casa {
+  font-size: 25px; /* Tamaño del icono */
+  margin-right: 5px; /* Espaciado a la derecha del icono */
 }

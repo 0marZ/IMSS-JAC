@@ -42,9 +42,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../">HOME</a>
-                </li>
+            <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="../">
+        <i class="fas fa-home icono-casa"></i>
+      </a>
+    </li>
                  <!--
                 <li class="nav-item">
                     <a class="nav-link" href="../">HOME</a>
@@ -159,16 +161,11 @@ fetchData();
 </script>
 
 
-
-
-
-
-<div class="container mt-4">
-    <h2 class="text-center">Gráfico de Ciudades</h2>
-    <canvas id="columnChart" width="200" height="100"></canvas>
+<div class="container mt-4" style="max-width: 900px; max-height: 600px; margin-bottom: 55px;">
+    <h2 class="text-center">Gráfico por Ciudades</h2>
+    <!-- Ajusta el ancho y el alto según tus necesidades -->
+    <canvas id="columnChart" style="width: 100%; height: 400px;"></canvas>
 </div>
-
-
 
 
 
@@ -336,8 +333,8 @@ function updateChart(data) {
         labels: data.map(item => item.ciudad),
         datasets: [{
             label: 'Datos de la Ciudad',
-            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-            borderColor: 'rgba(75, 192, 192, 1)',
+            backgroundColor: 'rgba(38, 102, 87, 0.5)',
+            borderColor: 'rgba(19, 50, 43, 1)',
             borderWidth: 1,
             data: data.map(item => item.datos)
         }]
@@ -345,6 +342,8 @@ function updateChart(data) {
 
     // Configuración del gráfico
     var columnChartOptions = {
+        responsive: true, // Esta opción permite que el gráfico se ajuste al tamaño del contenedor
+        maintainAspectRatio: false, // Esta opción evita que el gráfico mantenga un aspecto cuadrado
         scales: {
             y: {
                 beginAtZero: true
@@ -362,5 +361,6 @@ function updateChart(data) {
         options: columnChartOptions
     });
 }
+
 
 </script>
