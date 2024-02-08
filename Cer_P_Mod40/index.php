@@ -294,7 +294,22 @@ document.addEventListener('DOMContentLoaded', function () {
   <!-- BARRA DE CARGA SUPERIOR-->
 <div class="barra-carga" id="barraCarga"></div>
 
+<div class="container">
+            <div class="row">
 
+            <div class="col-md-6">
+                  <div class="titlepage text_align_left">
+                     <h2>PLIEGO DE COMISION</h2>
+                     <p>
+                     </p>
+                  </div>
+               </div>
+               <div class="col-md-12">
+               <iframe src="https://onedrive.live.com/embed?resid=10E6A6F40F317F2B%21163191&authkey=!AGOKj4qxRnNVfGw&em=2" width="1110" height="600" frameborder="0" scrolling="no"></iframe>
+               </div>
+
+            </div>
+         </div>
 
 </body>
 <!-- Pie de página -->
