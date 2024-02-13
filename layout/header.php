@@ -88,6 +88,8 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="./Mod40">SEMOD 40</a></li>
                         <li><a class="dropdown-item" href="./Cer_P_Mod40">Certificación de pagos Mod 40</a></li>
+                        <li><a class="dropdown-item" href="./PTD">PTD</a></li>
+                        
 <!--                         <li>
                             <hr class="dropdown-divider">
                         </li> -->

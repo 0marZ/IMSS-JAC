@@ -84,8 +84,20 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-1"></div>
+                    
                     <div class="col-md-10">
+                        
+                    <div class="input-group mb-3">
+                    <input type="search" id="searchInput" class="form-control" placeholder="INGRESA LOS DATOS QUE NECESITES BUSCAR" aria-controls="example">
+                    <button class="btn btn-primary rounded-3" type="button" id="searchButton">BUSCAR</button>
+
+                    <div style="margin-bottom: 70px;"></div>
+                    </div>
+
+                    <div id="dataTableButtons" class="mb-3"></div>
+
                         <table id="example" class="table table-striped table-bordered">
+                            
                             <thead class="table-dark">
                                 <!-- <th>Id</th> -->
                                 <th>Cve Delegación</th>
@@ -106,12 +118,14 @@
         </div>
     </div>
 
+
+<!--
     <div class="container" id="map" style="height: 500px; width: 700px;"></div>
 
-<!-- Leaflet JavaScript -->
+
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-<!-- jQuery -->
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
 
 <script>
@@ -164,10 +178,10 @@ fetchData();
 
 <div class="container mt-4" style="max-width: 900px; max-height: 600px; margin-bottom: 55px;">
     <h2 class="text-center">Gráfico por Ciudades</h2>
-    <!-- Ajusta el ancho y el alto según tus necesidades -->
+    Ajusta el ancho y el alto según tus necesidades 
     <canvas id="columnChart" style="width: 100%; height: 400px;"></canvas>
 </div>
-
+-->
 
 
     <script src="js/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
@@ -186,7 +200,9 @@ fetchData();
 
     <script type="text/javascript">
 $(document).ready(function () {
-    $('#example').DataTable({
+    var table = $('#example').DataTable({
+        "responsive": true,
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
         "language": {
               "processing": "Procesando información.....",
               "lengthMenu": "Mostrar _MENU_ registros por página",
@@ -194,7 +210,7 @@ $(document).ready(function () {
               "info": "Mostrando la _PAGE_ de _PAGES_",
               "infoEmpty": "No records available",
               "infoFiltered": "(Filtrado de _MAX_ registros totales)",
-              "search": "Buscar:",
+              "search": "Buscado:",
               "paginate": {
                   "next": "Siguiente",
                   "previous": "Anterior"
@@ -224,6 +240,7 @@ $(document).ready(function () {
         },
         'serverSide': 'true',
         'processing': 'true',
+        'searching': true,
         'paging': 'true',
         'order': [],
         'ajax': {
@@ -263,6 +280,14 @@ $(document).ready(function () {
             }
         ]
     });
+    $('#searchButton').on('click', function () {
+        var searchTerm = $('#searchInput').val();
+        table.search(searchTerm).draw();
+    });
+
+    $('#dataTableButtons').append($('.dt-buttons'));
+
+    
 });
 
 
@@ -294,23 +319,6 @@ document.addEventListener('DOMContentLoaded', function () {
   <!-- BARRA DE CARGA SUPERIOR-->
 <div class="barra-carga" id="barraCarga"></div>
 
-<div class="container">
-            <div class="row">
-
-            <div class="col-md-6">
-                  <div class="titlepage text_align_left">
-                     <h2>PLIEGO DE COMISION</h2>
-                     <p>
-                     </p>
-                  </div>
-               </div>
-               <div class="col-md-12">
-               <iframe src="https://onedrive.live.com/embed?resid=10E6A6F40F317F2B%21163191&authkey=!AGOKj4qxRnNVfGw&em=2" width="1110" height="600" frameborder="0" scrolling="no"></iframe>
-               </div>
-
-            </div>
-         </div>
-
 </body>
 <!-- Pie de página -->
 <footer class="text-center bg-dark text-white py-3 mt-4">
@@ -328,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // ...
-
+/*
 // Realiza una solicitud AJAX para obtener los datos de la gráfica
 $.ajax({
     url: 'fetch_data_grafica.php',
@@ -377,6 +385,6 @@ function updateChart(data) {
         options: columnChartOptions
     });
 }
-
+*/
 
 </script>
