@@ -1,102 +1,145 @@
+<?php
+  // Lógica de generación de viáticos
+
+  // Incluir el archivo de conexión si es necesario
+  require_once("../../../config/conexion.php");
+  // Verificar si el usuario ha iniciado sesión
+  if(isset($_SESSION["usu_id"])){
+?>
+<?php
+$message = isset($_GET['message']) ? $_GET['message'] : '';
+if ($message == 'success') {
+    echo '<script>alert("La información se ha guardado correctamente.");</script>';
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>GENERADOR DE PLIEGO DE COMISION</title>
-<script src="jquery.min.js"></script>
-<script src="signature_pad.js"></script>
 
-<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+    <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
 
-<h1>GENERADOR DE PLIEGO DE COMISION</h1>
-<div><a href="./">Regresar</a></div>
-<h3>Nueva Firma</h3>
+    <script src="jquery.min.js"></script>
+    <script src="signature_pad.js"></script>
 
-<!-- Formulario que recoge los datos y los enviara al servidor -->
- <form id="form" action="./savedraw.php" method="post">
+    <!-- Archivo CSS -->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+  </head>
+  <body>
 
- <h3>Ingresa los siguientes datos: </h3>
-
-<!--Empleado comisionado:-->
-<div>Nombre completo: <input type="text" name="name" placeholder="Nombre Completo"></div>
-
-<!--Matricula:-->
-<div>Matricula: <input type="text" name="Matricula" placeholder="Matricula"></div>
-
-<!--Grupo Jerarquico:-->
-<div>Grupo Jerarquico: <input type="text" name="GrupoJ" placeholder="Grupo Jerarquico"></div>
-
-<!--Tipo de contratacion:-->
-<div>Tipo de contratacion: <input type="text" name="Tipo_Contratacion" placeholder="Contratacion"></div>
-
-<!--Telefono de oficina:-->
-<div>Telefono de oficina: <input type="text" name="phone" placeholder="Telefono"></div>
-
-<!--Lugar de comision:-->
-<div>Lugar de comision: <input type="text" name="Lugar_Comision" placeholder="Lugar de Comision"></div>
-
-<!--Periodo:-->
-<div>Periodo: <input type="text" name="Periodo" placeholder="Periodo"></div>
-
-<!--Total de dias:-->
-<div>Total de dias: <input type="text" name="Total_dias" placeholder="Total de dias"></div>
-
-<!--Medio de transporte:-->
-<div>Medio de transporte: <input type="text" name="Transporte" placeholder="Medio de transporte"></div>
-
-<!--MOTIVO DE LA COMISION:-->
-<div>Motivo de la comision: <input type="text" name="Motivo" placeholder="Motivo Comision"></div>
-
-<input type="hidden" name="pacient_id" value="0">
-<input type="hidden" name="base64" value="" id="base64">
-
-<!-- Contenedor y Elemento Canvas -->
-<div id="signature-pad" class="signature-pad">
-    <div class="description">Firmar aquí</div>
-    <div class="signature-pad--body" style="background-color: rgba(255, 255, 255, 0);">
-        <canvas style="width: 640px; height: 420px; border: 1px black solid;" id="canvas"></canvas>
+    <h1>GENERADOR DE PLIEGO DE COMISION</h1>
+    <div class="button-container">
+      <a href="../" class="back-button"><i class="fas fa-arrow-left"></i>Regresar</a>
     </div>
-</div>
-    <button id="saveandfinish" class="btn btn-success">Guardar y Finalizar</button>
-</form>
+    <h3>Nueva Firma</h3>
 
+    <!-- Formulario que recoge los datos y los enviará al servidor -->
+    <form id="form" action="./savedraw.php" method="post">
 
-<script type="text/javascript">
+      <h3>Ingresa los siguientes datos: </h3>
 
-var wrapper = document.getElementById("signature-pad");
+      <!-- Empleado comisionado: -->
+      <div>Nombre completo: <input type="text" name="name" placeholder="Nombre Completo" required></div>
 
-var canvas = wrapper.querySelector("canvas");
+      <!-- Matricula: -->
+      <div>Matricula: <input type="text" name="Matricula" placeholder="Matricula" required></div>
 
-    var signaturePad = new SignaturePad(canvas, {
+      <!-- Grupo Jerarquico: -->
+      <div>Grupo Jerarquico: <input type="text" name="GrupoJ" placeholder="Grupo Jerarquico" required></div>
+
+      <!-- Tipo de contratacion: -->
+      <div>Tipo de contratacion: <input type="text" name="Tipo_Contratacion" placeholder="Contratacion" required></div>
+
+      <!-- Telefono de oficina: -->
+      <div>Telefono de oficina: <input type="text" name="phone" placeholder="Telefono" required></div>
+
+      <!-- Lugar de comision: -->
+      <div>Lugar de comision: <input type="text" name="Lugar_Comision" placeholder="Lugar de Comision" required></div>
+
+      <!-- Periodo: -->
+      <div>Periodo: <input type="text" name="Periodo" placeholder="Periodo" required></div>
+
+      <!-- Total de dias: -->
+      <div>Total de dias: <input type="text" name="Total_dias" placeholder="Total de dias" required></div>
+
+      <!-- Medio de transporte: -->
+      <div>Medio de transporte:
+        <select name="Transporte" required>
+          <option value="autobus">AUTOBÚS</option>
+          <option value="vehiculo_particular">VEHICULO PARTICULAR</option>
+          <option value="vehiculo_oficial">VEHICULO OFICIAL</option>
+          <option value="avion">AVIÓN</option>
+        </select>
+      </div>
+
+      <!-- MOTIVO DE LA COMISION: -->
+      <div>Motivo de la comision: <input type="text" name="Motivo" placeholder="Motivo Comision" required></div>
+
+      <input type="hidden" name="pacient_id" value="0">
+      <input type="hidden" name="base64" value="" id="base64">
+
+      <!-- Contenedor y Elemento Canvas -->
+      <div id="signature-pad" class="signature-pad">
+        <div class="description">Firmar aquí</div>
+        <div class="signature-pad--body" style="background-color: rgba(255, 255, 255, 0);">
+          <canvas style="width: 558px; height: 420px; border: 1px black solid;" id="canvas"></canvas>
+          <button id="clear-signature" class="btn btn-danger">Borrar firma</button>
+        </div>
+      </div>
+      <button id="saveandfinish" class="btn btn-success">Guardar y Finalizar</button>
+    </form>
+
+    <script type="text/javascript">
+      var wrapper = document.getElementById("signature-pad");
+      var canvas = wrapper.querySelector("canvas");
+      var signaturePad = new SignaturePad(canvas, {
         backgroundColor: 'rgb(255, 255, 255, 0)',
         penColor: 'blue' // Establece el color del lápiz a azul
-    });
+      });
 
-function resizeCanvas() {
+      function resizeCanvas() {
+        var ratio = Math.max(window.devicePixelRatio || 1, 1);
+        canvas.width = canvas.offsetWidth * ratio;
+        canvas.height = canvas.offsetHeight * ratio;
+        canvas.getContext("2d").scale(ratio, ratio);
+        signaturePad.clear();
+      }
 
-  var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+      window.onresize = resizeCanvas;
+      resizeCanvas();
 
-  canvas.width = canvas.offsetWidth * ratio;
-  canvas.height = canvas.offsetHeight * ratio;
-  canvas.getContext("2d").scale(ratio, ratio);
+      document.getElementById('form').addEventListener("submit", function(e) {
+        if (!signaturePad.isEmpty()) {
+          var ctx = document.getElementById("canvas");
+          var image = ctx.toDataURL(); // data:image/png....
+          document.getElementById('base64').value = image;
+        } else {
+          e.preventDefault();
+          alert("Firme antes de enviar el formulario.");
+        }
+      }, false);
+    </script>
 
-  signaturePad.clear();
-}
+    <script type="text/javascript">
+      // Encuentra el botón y agrega un evento de clic
+      document.getElementById('clear-signature').addEventListener("click", function(e) {
+        e.preventDefault();
+        signaturePad.clear();
+      }, false);
+    </script>
 
-window.onresize = resizeCanvas;
-resizeCanvas();
-
-</script>
-<script>
-
-   document.getElementById('form').addEventListener("submit",function(e){
-
-    var ctx = document.getElementById("canvas");
-      var image = ctx.toDataURL(); // data:image/png....
-      document.getElementById('base64').value = image;
-   },false);
-
-</script>
   </body>
 </html>
-
+<?php
+  } else {
+    // Si no ha iniciado sesión, redireccionar a la página de error 404 o a la de inicio de sesión
+    header("Location:".Conectar::ruta()."404.html");
+  }
+?>

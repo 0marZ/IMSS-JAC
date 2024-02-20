@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+h1, h3 {
+    text-align: center;
+}
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+form div {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.signature-pad {
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.signature-pad .description {
+    margin-bottom: 10px;
+}
+.signature-pad--body canvas {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+
+.back-button {
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid #009900; /* Color de borde verde */
+    border-radius: 4px;
+    background-color: #00cc00; /* Color de fondo verde */
+    color: #fff; /* Color de texto blanco */
+    transition: background-color 0.3s ease;
+}
+.back-button:hover {
+    background-color: #009900; /* Cambio de color de fondo al pasar el ratón */
+}
+.back-button i {
+    margin-right: 4px;
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+}
+.button-container {
+    margin-top: 20px; /* Separación superior del botón */
+    margin-left: 20px; /* Margen izquierdo para mover el botón hacia la izquierda */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+.table-container {
+    margin: 10px auto; /* Centro la tabla horizontalmente */
+    width: 90%; /* Ancho máximo de la tabla */
+    overflow-x: auto; /* Agregado para permitir desplazamiento horizontal en caso de contenido ancho */
+}
+table {
+    width: 60%;
+    border-collapse: collapse;
+    font-size: 12px; /* Reducir el tamaño del texto en la tabla */
+}
+th, td {
+    border: 1px solid #dddddd;
+    padding: 4px; /* Reducir el espacio dentro de las celdas */
+    text-align: left;
+    max-width: 100px; /* Limitar el ancho máximo de las celdas */
+    white-space: nowrap; /* Evitar que el texto se ajuste automáticamente */
+    overflow: hidden; /* Ocultar el texto que exceda el ancho máximo */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos (...) para indicar texto truncado */
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.action-buttons a {
+    text-decoration: none;
+    padding: 4px 8px; /* Reducir el espacio alrededor de los botones */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+.action-buttons a:hover {
+    background-color: #ddd;
+}
+.back-button {
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid #009900; /* Color de borde verde */
+    border-radius: 4px;
+    background-color: #00cc00; /* Color de fondo verde */
+    color: #fff; /* Color de texto blanco */
+    transition: background-color 0.3s ease;
+}
+.back-button:hover {
+    background-color: #009900; /* Cambio de color de fondo al pasar el ratón */
+}
+.back-button i {
+    margin-right: 4px;
+}

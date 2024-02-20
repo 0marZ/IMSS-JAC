@@ -1,5 +1,5 @@
 <div class="br-logo">
-    <a href="../UsuHome/"><img src="../../JAC_Logo2.png" class="wd-100" alt="Logotipo"></a>
+    <a href="../UsuHome/"><img src="../../JAC_Logo3.png" class="wd-100" alt="Logotipo"></a>
 </div>
 
 
@@ -23,13 +23,22 @@
               <span class="menu-item-label">Mis Cursos</span>
             </div>
           </a>
+
+
+          
+          <a href="../GeneradorDocumentos/" class="br-menu-link">
+            <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+              <span class="menu-item-label">Generador de documentos</span>
+            </div>
+          </a>
         <?php
       }else{
         ?>
           <a href="../AdminMntUsuario/" class="br-menu-link">
             <div class="br-menu-item">
               <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
-              <span class="menu-item-label">Mnt. Usuario</span>
+              <span class="menu-item-label">Admin. Usuarios</span>
             </div>
           </a>
  <!-- Para futuras implementaciones 
@@ -39,7 +48,7 @@
               <span class="menu-item-label">TEXTO</span>
             </div>
           </a>
--->
+
           <a href="../AdminMntInstructor/" class="br-menu-link">
             <div class="br-menu-item">
               <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
@@ -58,6 +67,13 @@
             <div class="br-menu-item">
               <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
               <span class="menu-item-label">Detalle Certificado</span>
+            </div>
+          </a>
+-->
+          <a href="../VerDocGenerados/" class="br-menu-link">
+            <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+              <span class="menu-item-label">Documentos generados</span>
             </div>
           </a>
           <a href="../GeneradorDocumentos/" class="br-menu-link">
@@ -84,6 +100,39 @@
         <span class="menu-item-label">Cerrar Sesion</span>
       </div>
     </a>
+      
+    <style>
+    .center-img {
+    text-align: center;
+    }
+    .hidden {
+        display: none;
+    }
+
+    </style>
+    <div id="logo-container" class="center-img" style="margin-top: 100px;">
+        <img src="../../VERSUR.png" class="wd-90 rounded-circle" alt="Logo IMSS">
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Obtiene el contenedor de la imagen
+        var logoContainer = document.getElementById('logo-container');
+
+        // Agrega un event listener para detectar el clic en el menú desplegable
+        document.querySelector('.br-sideleft').addEventListener('transitionend', function (event) {
+            // Verifica si la barra lateral se ha cerrado completamente
+            if (event.propertyName === 'width' && window.getComputedStyle(event.target).width === '60px') {
+                // Oculta la imagen si la barra lateral está cerrada
+                logoContainer.classList.add('hidden');
+            } else {
+                // Muestra la imagen si la barra lateral está abierta
+                logoContainer.classList.remove('hidden');
+            }
+        });
+    });
+</script>
+
 
   </div>
 </div>
+

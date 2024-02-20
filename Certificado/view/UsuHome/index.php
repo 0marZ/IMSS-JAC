@@ -27,20 +27,48 @@
       <!-- Contenido del proyecto -->
       <div class="br-pagebody mg-t-5 pd-x-30">
 
-        <!-- Resumen de total de cursos -->
-        <div class="row row-sm">
-          <div class="col-sm-6 col-xl-3">
-            <div class="bg-teal rounded overflow-hidden">
-              <div class="pd-25 d-flex align-items-center">
-                <i class="ion ion-earth tx-60 lh-0 tx-white op-7"></i>
-                <div class="mg-l-20">
-                  <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Total de Cursos</p>
-                  <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1" id="lbltotal"></p>
-                </div>
-              </div>
-            </div>
-          </div>
+<!-- Resumen de total de cursos -->
+<div class="row row-sm">
+  <div class="col-sm-6 col-xl-3">
+    <div class="bg-success rounded overflow-hidden">
+      <div class="pd-25 d-flex align-items-center">
+        <i class="ion-clipboard tx-60 lh-0 tx-white op-7"></i>
+        <div class="mg-l-20">
+          <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Inicidencias</p>
+          <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1" id="lbltotal"></p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nuevo cuadro de información -->
+  <div class="col-sm-6 col-xl-3">
+    <div class="bg-info rounded overflow-hidden">
+      <div class="pd-25 d-flex align-items-center">
+        <i class="ion-briefcase tx-60 lh-0 tx-white op-7"></i>
+        <div class="mg-l-20">
+          <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Trabajando</p>
+          <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Otro nuevo cuadro de información -->
+  <div class="col-sm-6 col-xl-3">
+    <div class="bg-warning rounded overflow-hidden">
+      <div class="pd-25 d-flex align-items-center">
+        <i class="ion-android-laptop tx-60 lh-0 tx-white op-7"></i>
+        <div class="mg-l-20">
+          <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Total de trabajadores PTD</p>
+          <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1" id="lblotrainfo"></p> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+        
 
         <!-- Resumen top 10 cursos -->
         <div class="row row-sm mg-t-20">

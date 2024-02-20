@@ -7,6 +7,17 @@ $(document).ready(function(){
         $('#lbltotal').html(data.total);
     });
 
+    $.post("../../controller/usuario.php?op=total", { usu_id : usu_id }, function (data) {
+        data = JSON.parse(data);
+        $('#lblnuevainfo').html(data.total);
+    });
+
+    $.post("../../controller/usuario.php?op=total_usuarios", function (data) {
+        data = JSON.parse(data);
+        $('#lblotrainfo').html(data.total);
+    });
+
+
     $('#cursos_data').DataTable({
         "aProcessing": true,
         "aServerSide": true,

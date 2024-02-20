@@ -314,5 +314,33 @@
             return $resultado=$sql->fetchAll();
         }
 
+        // Dentro de la clase Usuario en models/Usuario.php
+
+        public function get_total_usuarios() {
+            try {
+                // Establecer conexión a la base de datos
+                $conectar = parent::conexion();
+                
+                // Consulta SQL para obtener el total de usuarios
+                $sql = "SELECT COUNT(*) as total FROM tm_usuario";
+                
+                // Preparar y ejecutar la consulta SQL
+                $query = $conectar->prepare($sql);
+                $query->execute();
+                
+                // Obtener el resultado de la consulta
+                $total_usuarios = $query->fetch(PDO::FETCH_ASSOC);
+                
+                // Devolver el resultado
+                return $total_usuarios;
+            } catch(PDOException $e) {
+                // Manejar cualquier excepción que ocurra durante la ejecución de la consulta SQL
+                // Aquí puedes imprimir o registrar el error para su posterior análisis
+                echo "Error: " . $e->getMessage();
+                return false;
+            }
+        }
+        
+        
     }
 ?>

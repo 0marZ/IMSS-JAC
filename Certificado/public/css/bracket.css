@@ -2497,7 +2497,7 @@ tbody.collapse.show {
   color: #868ba1;
   text-align: left;
   list-style: none;
-  background-color: #fff;
+  background-color: #1E1E1E;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 3px;
@@ -13141,7 +13141,7 @@ textarea.parsley-success:focus {
   right: 0;
   left: 0;
   z-index: 1030;
-  background-color: #fff;
+  background-color: #1E1E1E;
   box-shadow: 0 1px 4px 0px rgba(0, 0, 0, 0.16);
   display: flex;
   align-items: center;
@@ -13155,7 +13155,7 @@ textarea.parsley-success:focus {
   bottom: 0;
   left: -4px;
   width: 3px;
-  background-color: #fff;
+  background-color: #1E1E1E;
   z-index: 1040;
 }
 @media (min-width: 992px) {
@@ -13193,7 +13193,7 @@ textarea.parsley-success:focus {
   align-items: center;
 }
 .br-header-right a {
-  color: #868e96;
+  color: #ffffff;
 }
 .br-header-right a:hover, .br-header-right a:focus {
   color: #343a40;
@@ -13263,7 +13263,7 @@ textarea.parsley-success:focus {
   left: -2px;
   right: 0;
   height: 4px;
-  background-color: #fff;
+  background-color: #1E1E1E;
   z-index: 1040;
 }
 
@@ -13322,7 +13322,7 @@ textarea.parsley-success:focus {
   justify-content: center;
 }
 .navicon-left a {
-  color: #868e96;
+  color: #ffffff;
   font-size: 20px;
   transition: all 0.2s ease-in-out;
 }
@@ -13353,7 +13353,7 @@ textarea.parsley-success:focus {
   bottom: 0;
   z-index: 100;
   width: 230px;
-  background-color: #1D2939;
+  background-color: #0A3B37;
   padding-left: 10px;
   padding-right: 10px;
   transition: all 0.2s ease-in-out;
@@ -13373,7 +13373,7 @@ textarea.parsley-success:focus {
   left: -230px;
   width: 230px;
   height: 120px;
-  background-color: #fff;
+  background-color: #1E1E1E;
   border-right: 1px solid rgba(0, 0, 0, 0.15);
   font-size: 24px;
   font-weight: 700;
@@ -13441,7 +13441,7 @@ textarea.parsley-success:focus {
 }
 
 .br-menu-link {
-  color: #adb5bd;
+  color: #e2e2e2;
   display: block;
   font-size: 14px;
   border-radius: 2px;
@@ -13449,7 +13449,7 @@ textarea.parsley-success:focus {
 }
 .br-menu-link:hover, .br-menu-link:focus {
   color: #fff;
-  background-color: #18222f;
+  background-color: #050505;
 }
 .br-menu-link:focus, .br-menu-link:active {
   outline: none;
@@ -13819,7 +13819,7 @@ textarea.parsley-success:focus {
 .br-pageheader {
   display: flex;
   align-items: center;
-  background-color: #dee2e6;
+  background-color: #E9ECEF;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -47997,7 +47997,7 @@ a.hover-white-8:hover, a.hover-white-8:focus {
 }
 
 .tx-60 {
-  font-size: 60px;
+  font-size: 50px;
 }
 
 .tx-60-force {

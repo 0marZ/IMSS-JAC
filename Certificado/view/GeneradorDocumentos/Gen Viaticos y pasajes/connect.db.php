@@ -1,7 +1,5 @@
 <?php
 
-
-
 function connect_db(){
 	$host = "localhost";
 	$user = "root"; // CAMBIAR
@@ -11,6 +9,5 @@ function connect_db(){
 //	$con->query("set sql_mode=''");
 	return $con;
 }
-
 
 ?>

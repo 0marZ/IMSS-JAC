@@ -36,7 +36,7 @@
             margin: 0;
             padding: 0;
         }
-        h1 {
+        h2 {
             text-align: center;
         }
         .button-container {
@@ -104,7 +104,7 @@
     </style>
 </head>
 <body>
-    <h1>VIATIVOS Y PASAJES GENERADOS</h1>
+    <h2>VIATIVOS Y PASAJES GENERADOS</h2>
 
     <!-- Contenedor del botón con margen superior y margen izquierdo -->
     <div class="button-container">

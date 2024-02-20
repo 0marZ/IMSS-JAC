@@ -34,7 +34,8 @@
     <link href="public/lib/Ionicons/css/ionicons.css" rel="stylesheet">
     <link rel="stylesheet" href="public/css/bracket.css">
     <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
-    <title>ACCESO ::  PTD</title>
+    <title>ACCESO JAC ::  PTD</title>
+    <link rel="icon" type="image/png" href="./JAC .png">
   </head>
 
   <body>

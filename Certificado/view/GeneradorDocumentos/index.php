@@ -12,7 +12,9 @@
 <html lang="es">
 <head>
   <?php require_once("../html/MainHead.php"); ?>
-  <title>Generador de Viáticos</title>
+  <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
+  <title>Generador de Documentos</title>
+  <link rel="icon" type="image/png" href="../../JAC .png">
 </head>
 <body>
 
@@ -21,14 +23,20 @@
 <?php require_once("../html/MainHeader.php"); ?>
 
 <div class="br-mainpanel">
-  <div class="br-pageheader pd-y-15 pd-l-20">
-    <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Generador de Viáticos</h6>
+  <div class="br-pageheader pd-y-80 pd-l-20" style="margin-bottom: -70px;">
+    <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14">GENERADOR DE DOCUMENTOS</h6>
+  </div>
+  <div class="br-pageheader pd-y-0 pd-l-20" style="margin-bottom: -15px;">
+    <h6 class="tx-gray-600 tx-uppercase tx-bold tx-10">DOCUMENTOS</h6>
   </div>
   <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-    <h1 class="tx-gray-800 mg-b-5">GENERADOR DE PLIEGO DE COMISION</h1>
+    
     <div class="button-container bg-white p-3 rounded">
-      <a href="./Gen Viaticos y pasajes/newsign.php" class="btn btn-outline-primary mr-2">Nueva Firma</a>
-      <a href="./Gen Viaticos y pasajes/ver-documentos.php" class="btn btn-outline-primary">Ver Documentos Firmados</a>
+    <h1 class="tx-gray-800 mg-b-20 tx-30">SELECCIONA EL DOCUMENTO A GENERAR</h1>
+      <a href="./Gen Viaticos y pasajes/newsign.php" class="btn btn-outline-primary mr-2"> <i class="fa-solid fa-file"></i>  Nuevo VIATICOS Y PASAJES</a>
+    </div>
+    <div class="button-container bg-white p-3 rounded">
+      <a href="./Gen Pliego Comision/newsign.php" class="btn btn-outline-primary mr-2"> <i class="fa-solid fa-file"></i>  Nueva PLIEGO DE COMISION</a>
     </div>
   </div>
 </div>

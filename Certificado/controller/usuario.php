@@ -110,6 +110,11 @@
                 echo json_encode($output);
             }
             break;
+        /*TODO: TOTAL DE USUARIOS */  
+        case "total_usuarios":
+                $total_usuarios = $usuario->get_total_usuarios();
+                echo json_encode($total_usuarios);
+                break;
         /*TODO: Mostrar informacion segun DNI del usuario registrado */
         case "consulta_dni":
             $datos = $usuario->get_usuario_x_dni($_POST["usu_dni"]);

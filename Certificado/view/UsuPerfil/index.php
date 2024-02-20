@@ -8,7 +8,8 @@
   <head>
     <?php require_once("../html/MainHead.php"); ?>
 
-    <title>Empresa::Perfil</title>
+    <title>JAC :: Perfil</title>
+    <link rel="icon" type="image/png" href="../../JAC .png">
   </head>
 
   <body>
