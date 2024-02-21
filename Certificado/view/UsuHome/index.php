@@ -151,7 +151,7 @@
             labels: ['Orizaba', 'Cordoba', 'Cozamaloapan', 'Coatzacoalcos'],
             datasets: [{
                 label: 'Datos por ciudad',
-                data: [12, 19, 3, 5],
+                data: [31, 39, 17, 54],
                 backgroundColor: 'rgba(38, 102, 87, 0.5)',
                 borderColor: 'rgba(19, 50, 43, 1)',
                 borderWidth: 1
@@ -194,19 +194,21 @@
 
           var data = google.visualization.arrayToDataTable([
           ['Label', 'Value'],
-          ['Incidencias', 80],
-          ['Asistencias', 55],
+          ['Incidencias', 20],
+          ['Asistencias', 45],
         ]);
 
-            var options = {
-                width: 260,
-                height: 260,
-                redFrom: 90,
-                redTo: 100,
-                yellowFrom: 75,
-                yellowTo: 90,
-                minorTicks: 5
-            };
+          var options = {
+              width: 260,
+              height: 260,
+              redFrom: 90,
+              redTo: 100, // Rango rojo (90-100)
+              yellowFrom: 75,
+              yellowTo: 90, // Rango amarillo (75-90)
+              greenFrom: 0, // Rango verde (0-75)
+              greenTo: 75,
+              minorTicks: 8,
+          };
 
             var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
@@ -216,14 +218,6 @@
                 data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
                 chart.draw(data, options);
             }, 13000);
-            setInterval(function() {
-                data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
-                chart.draw(data, options);
-            }, 5000);
-            setInterval(function() {
-                data.setValue(2, 1, 60 + Math.round(20 * Math.random()));
-                chart.draw(data, options);
-            }, 26000);
         }
     </script>
 

@@ -2,14 +2,13 @@
 
 
 include "connect.db.php";
-$sql = "delete from person where id=".$_GET['id'];
+$sql = "delete from pliegos where id=".$_GET['id'];
 $con = connect_db();
 $query = $con->query($sql);
 
 
 
 
-header("Location: ./index.php");
-
+header("Location: ./ver-documentos.php");
 
 ?>

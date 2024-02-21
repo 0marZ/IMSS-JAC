@@ -262,7 +262,7 @@ $(document).ready(function() {
         });
 
         // Manejar clics en los botones de eliminación
-        $('#viaticos').on('click', '.delete-button', function(e) {
+        $('#pliegos').on('click', '.delete-button', function(e) {
             e.preventDefault();
             var id = $(this).data('id');
             if (confirm('¿Estás seguro de que quieres eliminar este registro?')) {
