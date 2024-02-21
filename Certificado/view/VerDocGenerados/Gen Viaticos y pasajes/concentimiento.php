@@ -17,7 +17,7 @@ include "fpdf/fpdf.php";
 $pdf = new FPDF($orientation='P');
 
 include "connect.db.php";
-$sql = "select * from person where id=".$_GET['id'];
+$sql = "select * from viaticos where id=".$_GET['id'];
 $con = connect_db();
 $query = $con->query($sql);
 $data = null;
@@ -120,7 +120,7 @@ $pdf->SetFont('Arial', '', 8); // Aquí estableces el tamaño de fuente deseado,
 $pdf->Cell(5, 0, 'FIRMADO EL DIA: '.$data->created_at);
 
 if($data->firma!=""){
-$pdf->Image('firmas/'.$data->firma, 140, 243,  60, 50);
+$pdf->Image('C:\xampp\htdocs\IMSS JAC\Certificado\view\GeneradorDocumentos\Gen Viaticos y pasajes\firmas\\'.$data->firma, 140, 243,  60, 50);
 }
 
 

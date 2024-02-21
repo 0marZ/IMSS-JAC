@@ -23,7 +23,7 @@ $Motivo = $_POST["Motivo"];
 include "connect.db.php";
 $con = connect_db();
 
-$sql = "insert into person(name, Matricula, GrupoJ, Tipo_Contratacion, phone, Lugar_Comision, Periodo, Transporte, Total_dias, Motivo, firma, created_at) value ";
+$sql = "insert into viaticos(name, Matricula, GrupoJ, Tipo_Contratacion, phone, Lugar_Comision, Periodo, Transporte, Total_dias, Motivo, firma, created_at) value ";
 $sql.= " ( \"$name\", \"$Matricula\", \"$GrupoJ\", \"$Tipo_Contratacion\", \"$phone\", \"$Lugar_Comision\", \"$Periodo\", \"$Transporte\", \"$Total_dias\", \"$Motivo\", \"$fileName\", NOW())";
 
 //print_r($con);

@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Viaticos y pasajes generados</title>
+    <title>Pliegos de comision</title>
         <!-- Bootstrap CSS -->
     <link href="css/bootstrap5.0.1.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
@@ -29,7 +29,7 @@
     <!-- Archivo CSS -->
     <link rel="stylesheet" type="text/css" href="./css/">
 
-    <title>Viaticos y pasajes generados</title>
+    <title>Pliegos de comision generados</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -104,7 +104,7 @@
     </style>
 </head>
 <body>
-    <h2>VIATIVOS Y PASAJES GENERADOS</h2>
+    <h2>PLIEGOS DE COMISION GENERADOS</h2>
 
     <!-- Contenedor del botón con margen superior y margen izquierdo -->
     <div class="button-container">
@@ -113,7 +113,7 @@
 
     <?php
     include "connect.db.php";
-    $sql = "select * from viaticos order by created_at desc";
+    $sql = "select * from pliegos order by created_at desc";
     $con = connect_db();
     $query = $con->query($sql);
     $data = array();
@@ -122,7 +122,7 @@
 
     <?php if(count($data)):?>
     <div class="table-container">  
-        <table id="viaticos">
+        <table id="pliegos">
             <thead>
                 <tr>
                     <th>#</th>
@@ -178,11 +178,11 @@
     <script>
 $(document).ready(function() {
     // Verificar si la tabla ya ha sido inicializada antes de intentar inicializarla nuevamente
-    if (!$.fn.DataTable.isDataTable('#viaticos')) {
+    if (!$.fn.DataTable.isDataTable('#pliegos')) {
         // Inicializar DataTable solo si aún no ha sido inicializado
 
     // Inicializar DataTable
-    var table = $('#viaticos').DataTable({
+    var table = $('#pliegos').DataTable({
             "responsive": true,
             "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
             "language": {

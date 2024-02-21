@@ -113,7 +113,7 @@
 
     <?php
     include "connect.db.php";
-    $sql = "select * from person order by created_at desc";
+    $sql = "select * from viaticos order by created_at desc";
     $con = connect_db();
     $query = $con->query($sql);
     $data = array();

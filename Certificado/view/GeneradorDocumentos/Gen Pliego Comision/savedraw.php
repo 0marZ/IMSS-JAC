@@ -23,13 +23,15 @@ $Motivo = $_POST["Motivo"];
 include "connect.db.php";
 $con = connect_db();
 
-$sql = "insert into person(name, Matricula, GrupoJ, Tipo_Contratacion, phone, Lugar_Comision, Periodo, Transporte, Total_dias, Motivo, firma, created_at) value ";
+$sql = "insert into pliegos (name, Matricula, GrupoJ, Tipo_Contratacion, phone, Lugar_Comision, Periodo, Transporte, Total_dias, Motivo, firma, created_at) value ";
 $sql.= " ( \"$name\", \"$Matricula\", \"$GrupoJ\", \"$Tipo_Contratacion\", \"$phone\", \"$Lugar_Comision\", \"$Periodo\", \"$Transporte\", \"$Total_dias\", \"$Motivo\", \"$fileName\", NOW())";
 
 //print_r($con);
 
 $con->query($sql);
 
-header("Location: ./index.php");
+//cambiar por ruta del servidor
+header("Location: http://localhost:90/IMSS%20JAC/Certificado/view/GeneradorDocumentos/Gen%20Viaticos%20y%20pasajes/newsign.php?message=success");
+
 
 ?>

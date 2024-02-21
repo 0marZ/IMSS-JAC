@@ -9,7 +9,7 @@ session_start();
 $pdf = new FPDF($orientation='P');
 
 include "connect.db.php";
-$sql = "select * from person where id=".$_GET['id'];
+$sql = "select * from pliegos where id=".$_GET['id'];
 $con = connect_db();
 $query = $con->query($sql);
 $data = null;

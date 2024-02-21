@@ -341,6 +341,32 @@
             }
         }
         
+        public function get_total_usuarios_con_rol($rol_id) {
+            try {
+                $conectar = parent::conexion();
+                
+                // Consulta SQL para obtener el total de usuarios con un rol específico
+                $sql = "SELECT COUNT(*) as total FROM tm_usuario WHERE rol_id = ?";
+                
+                // Preparar y ejecutar la consulta SQL
+                $query = $conectar->prepare($sql);
+                $query->bindValue(1, $rol_id, PDO::PARAM_INT);
+                $query->execute();
+                
+                // Obtener el resultado de la consulta
+                $total_usuarios_con_rol = $query->fetch(PDO::FETCH_ASSOC);
+                
+                // Devolver el resultado
+                return $total_usuarios_con_rol;
+            } catch(PDOException $e) {
+                // Manejar cualquier excepción que ocurra durante la ejecución de la consulta SQL
+                // Aquí puedes imprimir o registrar el error para su posterior análisis
+                echo "Error: " . $e->getMessage();
+                return false;
+            }
+        }
+        
+        
         
     }
 ?>

@@ -32,11 +32,11 @@
   <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
     
     <div class="button-container bg-white p-3 rounded">
-    <h1 class="tx-gray-800 mg-b-20 tx-30">SELECCIONA EL DOCUMENTO A GENERAR</h1>
+    <h1 class="tx-gray-800 mg-b-20 tx-30">SELECCIONA EL TIPO DE DOCUMENTO</h1>
       <a href="./Gen Viaticos y pasajes/ver-documentos.php" class="btn btn-outline-primary"><i class="fa-solid fa-folder-open"></i> Ver Solicitud de Viaticos y pasajes</a>
     </div>
     <div class="button-container bg-white p-3 rounded">
-      <a href="./Gen Pliego Comision/index.php" class="btn btn-outline-primary"><i class="fa-solid fa-folder-open"></i> Ver Pliegos de comision</a>
+      <a href="./Gen Pliego Comision/ver-documentos.php" class="btn btn-outline-primary"><i class="fa-solid fa-folder-open"></i> Ver Pliegos de comision</a>
     </div>
   </div>
 </div>

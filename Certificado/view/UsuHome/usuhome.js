@@ -12,7 +12,7 @@ $(document).ready(function(){
         $('#lblnuevainfo').html(data.total);
     });
 
-    $.post("../../controller/usuario.php?op=total_usuarios", function (data) {
+    $.post("../../controller/usuario.php?op=total_usuarios_ptd", function (data) {
         data = JSON.parse(data);
         $('#lblotrainfo').html(data.total);
     });

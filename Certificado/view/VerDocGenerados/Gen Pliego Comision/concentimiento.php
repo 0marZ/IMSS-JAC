@@ -1,6 +1,8 @@
 <?php
 setlocale(LC_CTYPE, 'es_MX');
 setlocale(LC_TIME, 'spanish'); // Español para el mes
+date_default_timezone_set('America/Mexico_City'); // Establecer la zona horaria a la de México si no la fecha sale mal.
+
 include "fpdf/fpdf.php";
 
 session_start();
@@ -9,7 +11,7 @@ session_start();
 $pdf = new FPDF($orientation='P');
 
 include "connect.db.php";
-$sql = "select * from person where id=".$_GET['id'];
+$sql = "select * from pliegos where id=".$_GET['id'];
 $con = connect_db();
 $query = $con->query($sql);
 $data = null;
@@ -102,7 +104,8 @@ $pdf->SetFont('Arial', '', 8); // Aquí estableces el tamaño de fuente deseado,
 $pdf->Cell(5, 0, 'FIRMADO EL DIA: '.$data->created_at);
 
 if($data->firma!=""){
-$pdf->Image('firmas/'.$data->firma, 140, 230,  60, 50);
+$pdf->Image('C:\xampp\htdocs\IMSS JAC\Certificado\view\GeneradorDocumentos\Gen Pliego Comision\firmas\\'.$data->firma, 140, 230, 60, 50);
+
 }
 
 

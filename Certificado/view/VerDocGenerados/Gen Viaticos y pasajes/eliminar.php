@@ -2,7 +2,7 @@
 
 
 include "connect.db.php";
-$sql = "delete from person where id=".$_GET['id'];
+$sql = "delete from viaticos where id=".$_GET['id'];
 $con = connect_db();
 $query = $con->query($sql);
 
