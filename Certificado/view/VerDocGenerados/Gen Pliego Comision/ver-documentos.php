@@ -18,7 +18,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.bootstrap5.min.css">
     <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="img/fevicon.png">
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
@@ -30,6 +29,7 @@
     <link rel="stylesheet" type="text/css" href="./css/">
 
     <title>Pliegos de comision generados</title>
+    <link rel="icon" type="image/png" href="../../../JAC .png">
     <style>
         body {
             font-family: Arial, sans-serif;

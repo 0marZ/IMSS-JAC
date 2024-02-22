@@ -9,7 +9,7 @@
 
     <a href="../UsuHome/" class="br-menu-link">
       <div class="br-menu-item">
-        <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+        <i class="menu-item-icon ion-ios-home tx-22"></i>
         <span class="menu-item-label">Inicio</span>
       </div>
     </a>
@@ -17,18 +17,9 @@
     <?php
       if($_SESSION["rol_id"]==1){
         ?>
-          <a href="../UsuCurso/" class="br-menu-link">
-            <div class="br-menu-item">
-              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
-              <span class="menu-item-label">Mis Cursos</span>
-            </div>
-          </a>
-
-
-          
           <a href="../GeneradorDocumentos/" class="br-menu-link">
             <div class="br-menu-item">
-              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+              <i class="menu-item-icon icon ion-android-document tx-24"></i>
               <span class="menu-item-label">Generador de documentos</span>
             </div>
           </a>
@@ -37,7 +28,7 @@
         ?>
           <a href="../AdminMntUsuario/" class="br-menu-link">
             <div class="br-menu-item">
-              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+              <i class="menu-item-icon icon ion-android-contacts tx-24"></i>
               <span class="menu-item-label">Admin. Usuarios</span>
             </div>
           </a>
@@ -46,6 +37,13 @@
             <div class="br-menu-item">
               <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
               <span class="menu-item-label">TEXTO</span>
+            </div>
+          </a>
+          
+          <a href="../UsuCurso/" class="br-menu-link">
+            <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+              <span class="menu-item-label">Mis Cursos</span>
             </div>
           </a>
 
@@ -72,13 +70,13 @@
 -->
           <a href="../VerDocGenerados/" class="br-menu-link">
             <div class="br-menu-item">
-              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+              <i class="menu-item-icon icon ion-android-folder-open tx-24"></i>
               <span class="menu-item-label">Documentos generados</span>
             </div>
           </a>
           <a href="../GeneradorDocumentos/" class="br-menu-link">
             <div class="br-menu-item">
-              <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-24"></i>
+              <i class="menu-item-icon icon ion-android-document tx-24"></i>
               <span class="menu-item-label">Generador de documentos</span>
             </div>
           </a>

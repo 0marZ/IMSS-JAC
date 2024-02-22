@@ -30,6 +30,7 @@
     <link rel="stylesheet" type="text/css" href="./css/">
 
     <title>Viaticos y pasajes generados</title>
+    <link rel="icon" type="image/png" href="../../../JAC .png">
     <style>
         body {
             font-family: Arial, sans-serif;

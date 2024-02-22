@@ -18,6 +18,7 @@ if ($message == 'success') {
   <head>
     <meta charset="UTF-8">
     <title>GENERADOR DE PLIEGO DE COMISION</title>
+    <link rel="icon" type="image/png" href="../../../JAC .png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
