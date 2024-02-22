@@ -75,7 +75,7 @@
 
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">DNI: <span class="tx-danger">*</span></label>
+                            <label class="form-control-label">Matricula: <span class="tx-danger">*</span></label>
                             <input class="form-control tx-uppercase" id="usu_dni" type="text" name="usu_dni" required/>
                         </div>
                     </div>

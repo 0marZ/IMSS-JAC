@@ -20,7 +20,12 @@
     <?php require_once("../html/MainMenu.php"); ?>
     <?php require_once("../html/MainHeader.php"); ?>
 
-    <div class="br-mainpanel">
+
+  <?php
+    if($_SESSION["rol_id"]==2){
+    ?>
+
+  <div class="br-mainpanel">
       <div class="br-pageheader pd-y-15 pd-l-20">
         <nav class="breadcrumb pd-0 mg-0 tx-12">
           <a class="breadcrumb-item" href="#">Inicio</a>
@@ -78,14 +83,14 @@
             </div>
           </div>
           <div class="col-sm-6 col-xl-3">
-    <div class="card">
-        <div class="bg-white rounded overflow-hidden pd-25">
-            <!-- Aquí va el código del Gauge de Google -->
-            <div id="chart_div" style="width: 100px; height: 120px;"></div>
-        </div>
-    </div>
-</div>
-        </div>
+          <div class="card">
+              <div class="bg-white rounded overflow-hidden pd-25">
+                  <!-- Aquí va el código del Gauge de Google -->
+                  <div id="chart_div" style="width: 100px; height: 120px;"></div>
+              </div>
+          </div>
+          </div>
+      </div>
         <!-- Tabla de resumen de cursos 
         Resumen top 10 cursos
                 <div class="row row-sm mg-t-20">
@@ -131,8 +136,8 @@
               </div>
             </div>
           </div>
-          <!-- Mapa -->
-          <div class="col-md-6">
+                    <!-- Mapa -->
+                    <div class="col-md-6">
             <div class="card">
               <div class="card-body">
                 <div id="mapid" style="height: 300px;"></div>
@@ -142,8 +147,75 @@
         </div>
       </div>
 
-    </div>
+  </div>
+  <?php
+    }else{
+          ?>
 
+<div class="br-mainpanel">
+      <div class="br-pageheader pd-y-15 pd-l-20">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
+          <a class="breadcrumb-item" href="#">Inicio</a>
+        </nav>
+      </div>
+      <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+        <h4 class="tx-gray-800 mg-b-5">Inicio</h4>
+        <p class="mg-b-0">Dashboard</p>
+      </div>
+    <!-- Contenido del proyecto -->
+     <div class="br-pagebody mg-t-5 pd-x-30">
+        <!-- Contenedor blanco con cuadros de información -->
+        <div class="row row-sm mg-t-20">
+          <!-- Cuadro de informacion 1 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="card">
+              <div class="bg-white rounded overflow-hidden pd-25">
+                <div class="d-flex align-items-center">
+                  <i class="ion-clipboard tx-60 lh-0 tx-success op-7"></i>
+                  <div class="mg-l-20">
+                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Inicidencias</p>
+                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lbltotal">120</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Cuadro de informacion 2 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="card">
+              <div class="bg-white rounded overflow-hidden pd-25">
+                <div class="d-flex align-items-center">
+                  <i class="ion-briefcase tx-60 lh-0 tx-info op-7"></i>
+                  <div class="mg-l-20">
+                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Trabajando</p>
+                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">35</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Cuadro de informacion 3 -->
+          <div class="col-sm-6 col-xl-3">
+            <div class="card">
+              <div class="bg-white rounded overflow-hidden pd-25">
+                <div class="d-flex align-items-center">
+                  <i class="ion-android-laptop tx-60 lh-0 tx-warning op-7"></i>
+                  <div class="mg-l-20">
+                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Total de trabajadores PTD</p>
+                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblotrainfo">60</p> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       </div>
+
+    </div>
+</div>
+
+  <?php
+      }
+    ?>
     <!-- Script para cargar los datos y generar la gráfica -->
       <script>
         // Obtener datos de los últimos 10 cursos (reemplaza esto con tu código para obtener los datos)
@@ -185,41 +257,63 @@
     </script>
 
 <!-- Incluir la carga de las bibliotecas de Google Charts -->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {'packages':['gauge']});
-        google.charts.setOnLoadCallback(drawChart);
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', {'packages':['gauge']});
+    google.charts.setOnLoadCallback(drawChart);
 
-        function drawChart() {
+    function drawChart() {
 
-          var data = google.visualization.arrayToDataTable([
-          ['Label', 'Value'],
-          ['Incidencias', 20],
-          ['Asistencias', 45],
+        var data = google.visualization.arrayToDataTable([
+            ['Label', 'Value'],
+            ['', 20],
+            ['', 45],
         ]);
 
-          var options = {
-              width: 260,
-              height: 260,
-              redFrom: 90,
-              redTo: 100, // Rango rojo (90-100)
-              yellowFrom: 75,
-              yellowTo: 90, // Rango amarillo (75-90)
-              greenFrom: 0, // Rango verde (0-75)
-              greenTo: 75,
-              minorTicks: 8,
-          };
+        var options = {
+            width: 260,
+            height: 260,
+            redFrom: 90,
+            redTo: 100, // Rango rojo (90-100)
+            yellowFrom: 75,
+            yellowTo: 90, // Rango amarillo (75-90)
+            greenFrom: 0, // Rango verde (0-75)
+            greenTo: 75,
+            minorTicks: 8,
+        };
 
-            var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
+        chart.draw(data, options);
+
+        // Agregar texto personalizado abajo de cada indicador
+        var chartDiv = document.getElementById('chart_div');
+
+        var incidenciasText = document.createElement('p');
+        incidenciasText.innerHTML = 'Incidencias';
+        incidenciasText.style.position = 'absolute';
+        incidenciasText.style.bottom = '-20px'; // Ajusta según tu preferencia
+        incidenciasText.style.left = '50%';
+        incidenciasText.style.transform = 'translateX(55%)'; // Centrar horizontalmente
+        chartDiv.appendChild(incidenciasText);
+
+        var asistenciasText = document.createElement('p');
+        asistenciasText.innerHTML = 'Asistencias';
+        asistenciasText.style.position = 'absolute';
+        asistenciasText.style.bottom = '-20px'; // Ajusta según tu preferencia
+        asistenciasText.style.left = '50%';
+        asistenciasText.style.transform = 'translateX(-125%)'; // Centrar horizontalmente
+        chartDiv.appendChild(asistenciasText);
+
+        setInterval(function() {
+            data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+            data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
             chart.draw(data, options);
+        }, 13000);
+    }
+</script>
 
-            setInterval(function() {
-                data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-                chart.draw(data, options);
-            }, 13000);
-        }
-    </script>
+
 
     <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="usuhome.js"></script>
