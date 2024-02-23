@@ -208,7 +208,7 @@
         const data = {
             labels: ['Orizaba', 'Cordoba', 'Cozamaloapan', 'Coatzacoalcos'],
             datasets: [{
-                label: 'Datos por ciudad',
+                label: 'Trabajadores PTD por ciudad',
                 data: [31, 39, 17, 54],
                 backgroundColor: 'rgba(38, 102, 87, 0.5)',
                 borderColor: 'rgba(19, 50, 43, 1)',
