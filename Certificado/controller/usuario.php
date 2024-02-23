@@ -175,6 +175,7 @@
                     $sub_array[] = $row["usu_apem"];
                     $sub_array[] = $row["usu_correo"];
                     $sub_array[] = $row["usu_telf"];
+                    $sub_array[] = $row["usu_dni"];
                     if ($row["rol_id"]==1) {
                         $sub_array[] = "Usuario";
                     }else{
