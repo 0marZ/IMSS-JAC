@@ -173,8 +173,8 @@
                 <div class="d-flex align-items-center">
                   <i class="ion-clipboard tx-60 lh-0 tx-success op-7"></i>
                   <div class="mg-l-20">
-                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Inicidencias</p>
-                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lbltotal">120</p>
+                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Incidencias Reportadas</p>
+                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lbltotal">0</p>
                   </div>
                 </div>
               </div>
@@ -187,22 +187,8 @@
                 <div class="d-flex align-items-center">
                   <i class="ion-briefcase tx-60 lh-0 tx-info op-7"></i>
                   <div class="mg-l-20">
-                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Trabajando</p>
-                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">35</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Cuadro de informacion 3 -->
-          <div class="col-sm-6 col-xl-3">
-            <div class="card">
-              <div class="bg-white rounded overflow-hidden pd-25">
-                <div class="d-flex align-items-center">
-                  <i class="ion-android-laptop tx-60 lh-0 tx-warning op-7"></i>
-                  <div class="mg-l-20">
-                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Total de trabajadores PTD</p>
-                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblotrainfo">60</p> 
+                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Horas Trabajadas</p>
+                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
                   </div>
                 </div>
               </div>
@@ -253,20 +239,51 @@
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        // Define las coordenadas de las ciudades
+        // Define las coordenadas de las ciudades y sus datos
         var cities = [
-            { name: 'COATZACOALCOS', location: [18.15, -94.42] },
-            { name: 'CORDOBA', location: [18.88, -96.93] },
-            { name: 'COSAMALOAPAN', location: [18.17, -95.78] },
-            { name: 'ORIZABA', location: [18.85, -97.1] }
+             { name: 'ORIZABA', location: [18.847440, -97.087738], data: 54 },
+            { name: 'COATZACOALCOS', location: [18.133281, -94.466169], data: 31 },
+            { name: 'CORDOBA', location: [18.886151, -96.931693], data: 39 },
+            { name: 'COSAMALOAPAN', location: [18.366228, -95.782712], data: 17 }
         ];
-        
-        // Agregar marcadores al mapa para cada ciudad
-        cities.forEach(city => {
-            L.marker(city.location).addTo(map)
-                .bindPopup(city.name)
-                .openPopup();
-        });
+
+        // Inicializar el índice de la ciudad actual
+        var currentIndex = 0;
+
+        // Función para agregar un marcador al mapa y mostrar su información
+        function addMarker() {
+            // Verificar si ya se mostraron todos los marcadores
+            if (currentIndex >= cities.length) {
+                // Detener el intervalo
+                clearInterval(intervalId);
+                return; // Salir de la función
+            }
+            
+            // Obtener la ciudad actual
+            var city = cities[currentIndex];
+            
+            // Construir el contenido del popup
+            var popupContent = "<b>" + city.name + "</b><br/>" +
+                              "Datos: " + city.data;
+
+            // Crear un marcador para la ciudad actual
+            var marker = L.marker(city.location).addTo(map);
+            
+            // Asociar un popup con el contenido generado a cada marcador
+            marker.bindPopup(popupContent);
+            
+            // Incrementar el índice para pasar a la siguiente ciudad en el siguiente intervalo
+            currentIndex++;
+        }
+
+        // Definir el intervalo de tiempo entre la adición de cada marcador (en milisegundos)
+        var interval = 3000; // 3 segundos
+
+        // Agregar el primer marcador inmediatamente
+        addMarker();
+
+        // Configurar el temporizador para agregar los marcadores automáticamente
+        var intervalId = setInterval(addMarker, interval);
 
     </script>
 

@@ -23,6 +23,12 @@
               <span class="menu-item-label">Generador de documentos</span>
             </div>
           </a>
+          <a href="../../../../PERSONAL_HelpDesk/view/Home/" class="br-menu-link">
+            <div class="br-menu-item">
+              <i class="menu-item-icon ion-alert-circled tx-24"></i>
+              <span class="menu-item-label">Reportes de incidencias</span>
+            </div>
+          </a>
         <?php
       }else{
         ?>
@@ -30,6 +36,12 @@
             <div class="br-menu-item">
               <i class="menu-item-icon icon ion-android-contacts tx-24"></i>
               <span class="menu-item-label">Admin. Usuarios</span>
+            </div>
+          </a>
+          <a href="../../../../PERSONAL_HelpDesk/view/Home/" class="br-menu-link">
+            <div class="br-menu-item">
+              <i class="menu-item-icon ion-alert-circled tx-24"></i>
+              <span class="menu-item-label">Reportes de incidencias</span>
             </div>
           </a>
  <!-- Para futuras implementaciones 
