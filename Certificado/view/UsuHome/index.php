@@ -204,7 +204,7 @@
     ?>
     <!-- Script para cargar los datos y generar la gráfica -->
       <script>
-        // Obtener datos de los últimos 10 cursos (reemplaza esto con tu código para obtener los datos)
+        
         const data = {
             labels: ['Orizaba', 'Cordoba', 'Cozamaloapan', 'Coatzacoalcos'],
             datasets: [{
@@ -236,7 +236,7 @@
         // Crear el mapa con Leaflet.js
         var map = L.map('mapid').setView([18.757792, -95.977274], 7);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
 
         // Define las coordenadas de las ciudades y sus datos
@@ -263,7 +263,7 @@
             var city = cities[currentIndex];
             
             // Construir el contenido del popup
-            var popupContent = "<b>" + city.name + "</b><br/>" +
+            var popupContent = "<b>" + city.name + "</b> <br/>" +
                               "Datos: " + city.data;
 
             // Crear un marcador para la ciudad actual
@@ -271,6 +271,8 @@
             
             // Asociar un popup con el contenido generado a cada marcador
             marker.bindPopup(popupContent);
+            // Mostrar el popup del primer marcador
+            marker.openPopup();
             
             // Incrementar el índice para pasar a la siguiente ciudad en el siguiente intervalo
             currentIndex++;
@@ -284,6 +286,25 @@
 
         // Configurar el temporizador para agregar los marcadores automáticamente
         var intervalId = setInterval(addMarker, interval);
+
+        // Función para reiniciar el ciclo mostrando el primer marcador nuevamente
+          function restartMarkers() {
+              // Reiniciar el índice
+              currentIndex = 0;
+              // Limpiar el mapa de todos los marcadores actuales
+              map.eachLayer(function(layer) {
+                  if (layer instanceof L.Marker) {
+                      map.removeLayer(layer);
+                  }
+              });
+              // Reiniciar el intervalo para agregar los marcadores automáticamente
+              clearInterval(intervalId);
+              intervalId = setInterval(addMarker, interval);
+          }
+
+          // Configurar el temporizador para reiniciar el ciclo después de un cierto tiempo
+          var restartInterval = 15000; // 15 segundos
+          setInterval(restartMarkers, restartInterval);
 
     </script>
 
