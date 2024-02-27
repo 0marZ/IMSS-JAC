@@ -236,7 +236,7 @@
         // Crear el mapa con Leaflet.js
         var map = L.map('mapid').setView([18.932748, -95.620954], 7);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright"target="_blank">OpenStreetMap</a>'
         }).addTo(map);
         L.control.scale().addTo(map);
         // Define las coordenadas de las ciudades y sus datos
