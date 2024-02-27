@@ -234,11 +234,11 @@
         });
 
         // Crear el mapa con Leaflet.js
-        var map = L.map('mapid').setView([18.757792, -95.977274], 7);
+        var map = L.map('mapid').setView([18.932748, -95.620954], 7);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
         }).addTo(map);
-
+        L.control.scale().addTo(map);
         // Define las coordenadas de las ciudades y sus datos
         var cities = [
              { name: 'ORIZABA', location: [18.847440, -97.087738], data: 54 },
@@ -303,7 +303,7 @@
           }
 
           // Configurar el temporizador para reiniciar el ciclo después de un cierto tiempo
-          var restartInterval = 15000; // 15 segundos
+          var restartInterval = 25000; // 25 segundos
           setInterval(restartMarkers, restartInterval);
 
     </script>
