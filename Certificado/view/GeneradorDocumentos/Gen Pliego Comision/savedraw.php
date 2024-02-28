@@ -7,7 +7,6 @@ $fileName = uniqid().'.png';
 
 file_put_contents("./firmas/".$fileName, $fileData);
 
-
 $name = $_POST["name"];
 $Matricula = $_POST["Matricula"];
 $GrupoJ = $_POST["GrupoJ"];
@@ -32,6 +31,5 @@ $con->query($sql);
 
 //cambiar por ruta del servidor
 header("Location: http://localhost:90/IMSS%20JAC/Certificado/view/GeneradorDocumentos/Gen%20Viaticos%20y%20pasajes/newsign.php?message=success");
-
 
 ?>

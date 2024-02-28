@@ -2,7 +2,6 @@
     <a href="../UsuHome/"><img src="../../JAC_Logo3.png" class="wd-100" alt="Logotipo"></a>
 </div>
 
-
 <div class="br-sideleft overflow-y-auto">
   <label class="sidebar-label pd-x-15 mg-t-20">Menu</label>
   <div class="br-sideleft-menu">

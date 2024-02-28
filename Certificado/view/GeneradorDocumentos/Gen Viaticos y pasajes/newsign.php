@@ -139,7 +139,7 @@ if ($message == 'success') {
 </html>
 <?php
   } else {
-    // Si no ha iniciado sesión, redireccionar a la página de error 404 o a la de inicio de sesión
+    // Para matar sesion si no ha iniciado sesion. Manda a pagina no encontrada.
     header("Location:".Conectar::ruta()."404.html");
   }
 ?>

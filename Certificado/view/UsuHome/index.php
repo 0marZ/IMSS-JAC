@@ -9,17 +9,15 @@
     <?php require_once("../html/MainHead.php"); ?>
     <title>Dashboard PTD</title>
     <link rel="icon" type="image/png" href="../../JAC .png">
-    <!-- Agregar los enlaces a las bibliotecas necesarias -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Agregar enlaces para Leaflet.js -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   </head>
 
 <body>
     <?php require_once("../html/MainMenu.php"); ?>
     <?php require_once("../html/MainHeader.php"); ?>
-
 
   <?php
     if($_SESSION["rol_id"]==2){
@@ -35,12 +33,9 @@
         <h4 class="tx-gray-800 mg-b-5">Inicio</h4>
         <p class="mg-b-0">Dashboard</p>
       </div>
-      <!-- Contenido del proyecto -->
+      <!-- Indicadores de datos rapidos -->
       <div class="br-pagebody mg-t-5 pd-x-30">
-
-        <!-- Contenedor blanco con cuadros de información -->
         <div class="row row-sm mg-t-20">
-          <!-- Cuadro de informacion 1 -->
           <div class="col-sm-6 col-xl-3">
             <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
@@ -54,7 +49,7 @@
               </div>
             </div>
           </div>
-          <!-- Cuadro de informacion 2 -->
+          <!-- Datos 2 -->
           <div class="col-sm-6 col-xl-3">
             <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
@@ -68,7 +63,7 @@
               </div>
             </div>
           </div>
-          <!-- Cuadro de informacion 3 -->
+          <!-- Datos 3 -->
           <div class="col-sm-6 col-xl-3">
             <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
@@ -85,7 +80,7 @@
           <div class="col-sm-6 col-xl-3">
           <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
-                  <!-- Aquí va el código del Gauge de Google -->
+                  <!-- Reloj indicador de datos -->
                   <div id="chart_div" style="width: 100px; height: 120px;"></div>
               </div>
           </div>
@@ -126,78 +121,79 @@
                   </div>
                 </div>
         -->
-        <!-- Gráfico de barras y mapa en la misma fila -->
-        <div class="row row-sm mg-t-20">
-          <!-- Gráfico de barras -->
-          <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <canvas id="barChart" width="400" height="210"></canvas>
+          <!-- Datos graficos -->
+          <div class="row row-sm mg-t-20">
+            <!-- Gráfico de barras -->
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <canvas id="barChart" width="400" height="210"></canvas>
+                </div>
+              </div>
+            </div>
+            <!-- Mapa -->
+              <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div id="mapid" style="height: 300px;"></div>
+                </div>
               </div>
             </div>
           </div>
-                    <!-- Mapa -->
-                    <div class="col-md-6">
-            <div class="card">
-              <div class="card-body">
-                <div id="mapid" style="height: 300px;"></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
   </div>
   <?php
     }else{
-          ?>
+  ?>
 
-<div class="br-mainpanel">
-      <div class="br-pageheader pd-y-15 pd-l-20">
-        <nav class="breadcrumb pd-0 mg-0 tx-12">
-          <a class="breadcrumb-item" href="#">Inicio</a>
-        </nav>
-      </div>
-      <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-        <h4 class="tx-gray-800 mg-b-5">Inicio</h4>
-        <p class="mg-b-0">Dashboard</p>
-      </div>
-    <!-- Contenido del proyecto -->
-     <div class="br-pagebody mg-t-5 pd-x-30">
-        <!-- Contenedor blanco con cuadros de información -->
-        <div class="row row-sm mg-t-20">
-          <!-- Cuadro de informacion 1 -->
-          <div class="col-sm-6 col-xl-3">
-            <div class="card">
-              <div class="bg-white rounded overflow-hidden pd-25">
-                <div class="d-flex align-items-center">
-                  <i class="ion-clipboard tx-60 lh-0 tx-success op-7"></i>
-                  <div class="mg-l-20">
-                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Incidencias Reportadas</p>
-                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lbltotal">0</p>
+      <!-- Datos para la vista usuario (FALTA DEFINIR QUE DATOS SE NESECITAN MOSTRAR-->
+  <div class="br-mainpanel">
+        <div class="br-pageheader pd-y-15 pd-l-20">
+          <nav class="breadcrumb pd-0 mg-0 tx-12">
+            <a class="breadcrumb-item" href="#">Inicio</a>
+          </nav>
+        </div>
+        <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+          <h4 class="tx-gray-800 mg-b-5">Inicio</h4>
+          <p class="mg-b-0">Dashboard</p>
+        </div>
+      <!-- Contenido del proyecto -->
+      <div class="br-pagebody mg-t-5 pd-x-30">
+          <!-- Contenedor blanco con cuadros de información -->
+          <div class="row row-sm mg-t-20">
+            <!-- Cuadro de informacion 1 -->
+            <div class="col-sm-6 col-xl-3">
+              <div class="card">
+                <div class="bg-white rounded overflow-hidden pd-25">
+                  <div class="d-flex align-items-center">
+                    <i class="ion-clipboard tx-60 lh-0 tx-success op-7"></i>
+                    <div class="mg-l-20">
+                      <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Incidencias Reportadas</p>
+                      <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lbltotal">0</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Cuadro de informacion 2 -->
-          <div class="col-sm-6 col-xl-3">
-            <div class="card">
-              <div class="bg-white rounded overflow-hidden pd-25">
-                <div class="d-flex align-items-center">
-                  <i class="ion-briefcase tx-60 lh-0 tx-info op-7"></i>
-                  <div class="mg-l-20">
-                    <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Horas Trabajadas</p>
-                    <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
+            <!-- Cuadro de informacion 2 -->
+            <div class="col-sm-6 col-xl-3">
+              <div class="card">
+                <div class="bg-white rounded overflow-hidden pd-25">
+                  <div class="d-flex align-items-center">
+                    <i class="ion-briefcase tx-60 lh-0 tx-info op-7"></i>
+                    <div class="mg-l-20">
+                      <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Horas Trabajadas</p>
+                      <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-       </div>
+        </div>
 
-    </div>
-</div>
+      </div>
+  </div>
 
   <?php
       }
@@ -308,8 +304,6 @@
 
     </script>
 
-<!-- Incluir la carga de las bibliotecas de Google Charts -->
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
     google.charts.load('current', {'packages':['gauge']});
     google.charts.setOnLoadCallback(drawChart);
@@ -373,7 +367,7 @@
 </html>
 <?php
   }else{
-    /* Si no a iniciado sesion se redireccionada a la ventana principal */
+    // Para matar sesion si no ha iniciado sesion. Manda a pagina no encontrada.
     header("Location:".Conectar::ruta()."404.html");
   }
 ?>

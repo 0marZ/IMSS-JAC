@@ -1,6 +1,6 @@
 <?php
 setlocale(LC_CTYPE, 'es_MX');
-setlocale(LC_TIME, 'spanish'); // Español para el mes
+setlocale(LC_TIME, 'spanish'); // Librebria enEspañol para el mes.
 include "fpdf/fpdf.php";
 
 session_start();

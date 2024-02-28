@@ -7,7 +7,6 @@ $fileName = uniqid().'.png';
 
 file_put_contents("./firmas/".$fileName, $fileData);
 
-
 $name = $_POST["name"];
 $Matricula = $_POST["Matricula"];
 $GrupoJ = $_POST["GrupoJ"];
@@ -18,7 +17,6 @@ $Periodo = $_POST["Periodo"];
 $Total_dias = $_POST["Total_dias"];
 $Transporte = $_POST["Transporte"];
 $Motivo = $_POST["Motivo"];
-
 
 include "connect.db.php";
 $con = connect_db();
