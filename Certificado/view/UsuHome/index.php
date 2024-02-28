@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
   </head>
 
 <body>
@@ -147,6 +148,8 @@
     }else{
   ?>
 
+  
+
       <!-- Datos para la vista usuario (FALTA DEFINIR QUE DATOS SE NESECITAN MOSTRAR-->
   <div class="br-mainpanel">
         <div class="br-pageheader pd-y-15 pd-l-20">
@@ -158,10 +161,30 @@
           <h4 class="tx-gray-800 mg-b-5">Inicio</h4>
           <p class="mg-b-0">Dashboard</p>
         </div>
+
+
       <!-- Contenido del proyecto -->
       <div class="br-pagebody mg-t-5 pd-x-30">
           <!-- Contenedor blanco con cuadros de información -->
           <div class="row row-sm mg-t-20">
+            <!-- Reloj -->
+            <div class="col-md-6 col-xl-5">
+                <div class="card">
+                    <div class="bg-white rounded overflow-hidden pd-85">
+                    <div class="d-flex align-items-center">
+                        
+                            <!-- Contenedor para el reloj digital -->
+                            <div id="digital-clock-container" style="position: absolute; left: 25px;">
+                                <!-- Agregar la imagen del icono de reloj -->
+                                <img src="../../2784399.png" alt="Reloj" style="width: 90px; margin-right: 20px;">
+                                <!-- Agregar el reloj digital -->
+                                <div id="digital-clock" style="font-size: 50px; display: inline-block;"></div>
+                            </div>
+                    </div>
+                        
+                    </div>
+                </div>
+            </div>
             <!-- Cuadro de informacion 1 -->
             <div class="col-sm-6 col-xl-3">
               <div class="card">
@@ -198,6 +221,33 @@
   <?php
       }
     ?>
+  <script>
+        // Función para actualizar el reloj digital
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var meridiem = hours >= 12 ? 'PM' : 'AM'; // Determina si es AM o PM
+
+            // Convierte las horas al formato de 12 horas
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Las 0 horas deben ser mostradas como 12 AM
+            var timeString = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds) + " " + meridiem;
+            document.getElementById("digital-clock").innerText = timeString;
+        }
+
+        // Función para dar formato a las horas, minutos y segundos
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+
+        // Actualizar el reloj digital cada segundo
+        setInterval(updateClock, 1000);
+
+        // Llamar a la función por primera vez para evitar un retraso inicial
+        updateClock();
+    </script>
     <!-- Script para cargar los datos y generar la gráfica -->
       <script>
         
@@ -304,62 +354,60 @@
 
     </script>
 
-<script type="text/javascript">
-    google.charts.load('current', {'packages':['gauge']});
-    google.charts.setOnLoadCallback(drawChart);
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['gauge']});
+        google.charts.setOnLoadCallback(drawChart);
 
-    function drawChart() {
+        function drawChart() {
 
-        var data = google.visualization.arrayToDataTable([
-            ['Label', 'Value'],
-            ['', 20],
-            ['', 45],
-        ]);
+            var data = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['', 20],
+                ['', 45],
+            ]);
 
-        var options = {
-            width: 260,
-            height: 260,
-            redFrom: 90,
-            redTo: 100, // Rango rojo (90-100)
-            yellowFrom: 75,
-            yellowTo: 90, // Rango amarillo (75-90)
-            greenFrom: 0, // Rango verde (0-75)
-            greenTo: 75,
-            minorTicks: 8,
-        };
+            var options = {
+                width: 260,
+                height: 260,
+                redFrom: 90,
+                redTo: 100, // Rango rojo (90-100)
+                yellowFrom: 75,
+                yellowTo: 90, // Rango amarillo (75-90)
+                greenFrom: 0, // Rango verde (0-75)
+                greenTo: 75,
+                minorTicks: 8,
+            };
 
-        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+            var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
 
-        chart.draw(data, options);
-
-        // Agregar texto personalizado abajo de cada indicador
-        var chartDiv = document.getElementById('chart_div');
-
-        var incidenciasText = document.createElement('p');
-        incidenciasText.innerHTML = 'Incidencias';
-        incidenciasText.style.position = 'absolute';
-        incidenciasText.style.bottom = '-20px'; // Ajusta según tu preferencia
-        incidenciasText.style.left = '50%';
-        incidenciasText.style.transform = 'translateX(55%)'; // Centrar horizontalmente
-        chartDiv.appendChild(incidenciasText);
-
-        var asistenciasText = document.createElement('p');
-        asistenciasText.innerHTML = 'Asistencias';
-        asistenciasText.style.position = 'absolute';
-        asistenciasText.style.bottom = '-20px'; // Ajusta según tu preferencia
-        asistenciasText.style.left = '50%';
-        asistenciasText.style.transform = 'translateX(-125%)'; // Centrar horizontalmente
-        chartDiv.appendChild(asistenciasText);
-
-        setInterval(function() {
-            data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-            data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
             chart.draw(data, options);
-        }, 13000);
-    }
-</script>
 
+            // Agregar texto personalizado abajo de cada indicador
+            var chartDiv = document.getElementById('chart_div');
 
+            var incidenciasText = document.createElement('p');
+            incidenciasText.innerHTML = 'Incidencias';
+            incidenciasText.style.position = 'absolute';
+            incidenciasText.style.bottom = '-20px'; // Ajusta según tu preferencia
+            incidenciasText.style.left = '50%';
+            incidenciasText.style.transform = 'translateX(55%)'; // Centrar horizontalmente
+            chartDiv.appendChild(incidenciasText);
+
+            var asistenciasText = document.createElement('p');
+            asistenciasText.innerHTML = 'Asistencias';
+            asistenciasText.style.position = 'absolute';
+            asistenciasText.style.bottom = '-20px'; // Ajusta según tu preferencia
+            asistenciasText.style.left = '50%';
+            asistenciasText.style.transform = 'translateX(-125%)'; // Centrar horizontalmente
+            chartDiv.appendChild(asistenciasText);
+
+            setInterval(function() {
+                data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
+                data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+                chart.draw(data, options);
+            }, 13000);
+        }
+    </script>
 
     <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="usuhome.js"></script>
