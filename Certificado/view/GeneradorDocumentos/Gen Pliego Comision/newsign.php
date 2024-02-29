@@ -73,10 +73,10 @@ if ($message == 'success') {
       <!-- Medio de transporte: -->
       <div>Medio de transporte:
         <select name="Transporte" required>
-          <option value="autobus">AUTOBÚS</option>
-          <option value="vehiculo_particular">VEHICULO PARTICULAR</option>
-          <option value="vehiculo_oficial">VEHICULO OFICIAL</option>
-          <option value="avion">AVIÓN</option>
+          <option value="AUTOBÚS">AUTOBÚS</option>
+          <option value="VEHICULO PARTICULAR">VEHICULO PARTICULAR</option>
+          <option value="VEHICULO OFICIAL">VEHICULO OFICIAL</option>
+          <option value="AVIÓN">AVIÓN</option>
         </select>
       </div>
 

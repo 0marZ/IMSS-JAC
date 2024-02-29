@@ -237,7 +237,6 @@
             document.getElementById("digital-clock").innerText = timeString;
         }
 
-        // Función para dar formato a las horas, minutos y segundos
         function formatTime(time) {
             return time < 10 ? "0" + time : time;
         }
@@ -287,8 +286,8 @@
         L.control.scale().addTo(map);
         // Define las coordenadas de las ciudades y sus datos
         var cities = [
-             { name: 'ORIZABA', location: [18.847440, -97.087738], data: 54 },
-            { name: 'COATZACOALCOS', location: [18.133281, -94.466169], data: 31 },
+             { name: 'ORIZABA', location: [18.847440, -97.087738], data: 31 },
+            { name: 'COATZACOALCOS', location: [18.133281, -94.466169], data: 54 },
             { name: 'CORDOBA', location: [18.886151, -96.931693], data: 39 },
             { name: 'COSAMALOAPAN', location: [18.366228, -95.782712], data: 17 }
         ];
@@ -354,7 +353,11 @@
 
     </script>
 
+
+
     <script type="text/javascript">
+    
+    //Indicadores reloj
         google.charts.load('current', {'packages':['gauge']});
         google.charts.setOnLoadCallback(drawChart);
 
@@ -394,7 +397,7 @@
             chartDiv.appendChild(incidenciasText);
 
             var asistenciasText = document.createElement('p');
-            asistenciasText.innerHTML = 'Asistencias';
+            asistenciasText.innerHTML = ' Retardos ';
             asistenciasText.style.position = 'absolute';
             asistenciasText.style.bottom = '-20px'; // Ajusta según tu preferencia
             asistenciasText.style.left = '50%';
@@ -402,8 +405,8 @@
             chartDiv.appendChild(asistenciasText);
 
             setInterval(function() {
-                data.setValue(0, 1, 40 + Math.round(60 * Math.random()));
-                data.setValue(1, 1, 40 + Math.round(60 * Math.random()));
+                data.setValue(0, 1, 40 + Math.round(50 * Math.random()));
+                data.setValue(1, 1, 40 + Math.round(50 * Math.random()));
                 chart.draw(data, options);
             }, 13000);
         }

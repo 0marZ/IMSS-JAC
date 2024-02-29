@@ -27,17 +27,30 @@ $pdf->SetFont('Arial','B',8);    //Letra Arial, negrita (Bold), tam. 20  //Letra
 //Fecha DIA:
 $pdf->setY(21.4);
 $pdf->setX(150);
-$pdf->Cell(5, 10, date('d'));
+$pdf->Cell(5, 10, ''.substr($data->created_at, 8, 2));
 
 //Fecha MES:
 $pdf->setY(21.4);
 $pdf->setX(159);
-$pdf->Cell(5, 10, strftime('%B'));
+$pdf->SetFont('Arial','B',8); 
+
+$meses = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+$mes_numero = substr($data->created_at, 5, 2); 
+$mes = $meses[intval($mes_numero) - 1]; 
+
+$pdf->Cell(5, 10, ''.$mes);
+
 
 //Fecha AÑO:
 $pdf->setY(21.4);
 $pdf->setX(175);
-$pdf->Cell(5, 10, date('Y'));
+$pdf->SetFont('Arial', 'B', 8); 
+
+$ano = substr($data->created_at, 0, 4);
+
+$pdf->Cell(5, 10, ''.$ano);
+
+
 
 //Empleado comisionado:
 $pdf->setY(49);
