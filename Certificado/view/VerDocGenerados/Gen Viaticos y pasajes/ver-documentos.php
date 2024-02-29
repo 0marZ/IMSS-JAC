@@ -101,11 +101,32 @@
         .back-button i {
             margin-right: 4px;
         }
+        .header-bar {
+            background-color: #1E1E1E;
+            height: 100px; 
+            display: flex;
+            align-items: center;
+
+            padding: 0 100px;
+        }
+        .logo {
+            width: 60px;
+            height: auto; 
+        }
+        h2 {
+            text-align: center;
+            color: white; 
+        }
 
     </style>
 </head>
 <body>
-    <h2>VIATICOS Y PASAJES GENERADOS</h2>
+        <!-- Barra con el logo -->
+        <div class="header-bar">
+        <img src="../../../JAC .png" alt="Logo" class="logo">
+        <h2>VIATICOS Y PASAJES GENERADOS</h2>
+        </div>
+
 
     <!-- Contenedor del botón con margen superior y margen izquierdo -->
     <div class="button-container">
