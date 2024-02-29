@@ -102,30 +102,50 @@
         }
         .header-bar {
             background-color: #1E1E1E;
-            height: 100px; 
+            height: 100px;
             display: flex;
             align-items: center;
+            padding: 0 20px; /* Ajuste de espaciado en dispositivos móviles */
+        }
 
-            padding: 0 100px;
-        }
         .logo {
-            width: 60px;
-            height: auto; 
+            width: 130px; /* Tamaño del logo en dispositivos móviles */
+            height: auto;
         }
+
         h2 {
             text-align: center;
-            color: white; 
+            color: white;
+            padding-left: 20px; /* Ajuste de espaciado en dispositivos móviles */
         }
+
+        @media screen and (min-width: 768px) {
+            /* Estilos específicos para pantallas de al menos 768px de ancho (tabletas y escritorio) */
+            .header-bar {
+                padding: 0 100px; /* Ajuste de espaciado en dispositivos de escritorio */
+            }
+
+            .logo {
+                width: 165px; /* Tamaño del logo en tabletas y escritorio */
+            }
+
+            h2 {
+                padding-left: 250px; /* Ajuste de espaciado en tabletas y escritorio */
+            }
+        }
+
 
     </style>
 </head>
 <body>
         <!-- Barra con el logo -->
         <div class="header-bar">
-        <img src="../../../JAC .png" alt="Logo" class="logo">
+        <a href="">
+        <img src="../../../JAC_Logo3.png" alt="Logo" class="logo">
+        </a>
         <h2>PLIEGOS DE COMISION GENERADOS</h2>
         </div>
-    
+
     <!-- Contenedor del botón con margen superior y margen izquierdo -->
     <div class="button-container">
         <a href="../" class="back-button"><i class="fas fa-arrow-left"></i>Regresar</a>

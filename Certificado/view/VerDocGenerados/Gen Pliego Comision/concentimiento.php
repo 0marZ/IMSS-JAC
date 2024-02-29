@@ -55,7 +55,7 @@ $pdf->Cell(5, 10, ''.$ano);
 //Empleado comisionado:
 $pdf->setY(49);
 $pdf->setX(52);
-$pdf->Cell(5,10,utf8_decode(''.$data->name));
+$pdf->Cell(5,10, mb_convert_encoding($data->name, 'ISO-8859-1', 'UTF-8'));
 
 //Matricula:
 $pdf->setY(54);
@@ -70,7 +70,7 @@ $pdf->Cell(5,10,': '.$data->GrupoJ);
 //Tipo de contratacion:
 $pdf->setY(49);
 $pdf->setX(153);
-$pdf->Cell(5,10,utf8_decode(''.$data->Tipo_Contratacion));
+$pdf->Cell(5,10, mb_convert_encoding($data->Tipo_Contratacion, 'ISO-8859-1', 'UTF-8'));
 
 //TELEFONO DE OFICINA
 $pdf->setY(54);
@@ -80,7 +80,7 @@ $pdf->Cell(5,10,''.$data->phone );
 //LUGAR DE LA COMISON
 $pdf->setY(67);
 $pdf->setX(55);
-$pdf->Cell(5,10,utf8_decode(''.$data->Lugar_Comision));
+$pdf->Cell(5,10, mb_convert_encoding($data->Lugar_Comision, 'ISO-8859-1', 'UTF-8'));
 
 
 //PERIODO
@@ -96,14 +96,14 @@ $pdf->Cell(5,10,''.$data->Total_dias);
 //MEDIO DE TRANSPORTE
 $pdf->setY(77.4);
 $pdf->setX(50);
-$pdf->Cell(5,10,utf8_decode(''.$data->Transporte));
+$pdf->Cell(5,10, mb_convert_encoding($data->Transporte, 'ISO-8859-1', 'UTF-8'));
 
 //MOTIVO DE LA COMISION (Letra Arial 10)
 $pdf->SetFont('Arial','B',10);  
 
 $pdf->setY(62.5);
 $pdf->setX(52);
-$pdf->Cell(5,10,utf8_decode(''.$data->Motivo));
+$pdf->Cell(5,10, mb_convert_encoding($data->Motivo, 'ISO-8859-1', 'UTF-8'));
 
 /*
 $pdf->setY(145);
