@@ -5,7 +5,7 @@
                 <h6 id="lbltitulo" class="tx-14 mg-b-0 tx-uppercase tx-inverse tx-bold"></h6>
             </div>
             <!-- Formulario Mantenimiento -->
-            <form method="post" id="usuario_form">
+            <form method="post" id="usuario_form" enctype="multipart/form-data">
                 <div class="modal-body">
                     <input type="hidden" name="usu_id" id="usu_id"/>
 
@@ -79,6 +79,13 @@
                             <input class="form-control tx-uppercase" id="usu_dni" type="text" name="usu_dni" required/>
                         </div>
                     </div>
+
+                    <div class="col-lg-12">
+                    <div class="form-group">
+                        <label class="form-control-label">Imagen de perfil:</label>
+                        <input type="file" class="form-control-file" id="usu_imagen" name="usu_imagen">
+                    </div>
+                </div>
 
                 </div>
                 <div class="modal-footer">

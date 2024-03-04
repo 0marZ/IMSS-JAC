@@ -152,14 +152,34 @@
                 $_POST["usu_telf"]
             );
             break;
-        /*TODO: Guardar y editar cuando se tenga el ID */
-        case "guardaryeditar":
-            if(empty($_POST["usu_id"])){
-                $usuario->insert_usuario($_POST["usu_nom"],$_POST["usu_apep"],$_POST["usu_apem"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["usu_sex"],$_POST["usu_telf"],$_POST["rol_id"],$_POST["usu_dni"]);
-            }else{
-                $usuario->update_usuario($_POST["usu_id"],$_POST["usu_nom"],$_POST["usu_apep"],$_POST["usu_apem"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["usu_sex"],$_POST["usu_telf"],$_POST["rol_id"],$_POST["usu_dni"]);
-            }
+            case "guardaryeditar":
+                // Verifica si se ha cargado una imagen
+                if(isset($_FILES['usu_imagen']) && $_FILES['usu_imagen']['error'] === UPLOAD_ERR_OK) {
+                    // Ruta donde se almacenará la imagen
+                    $target_dir = "../public/UsuFotos/";
+                    $target_file = $target_dir . basename($_FILES["usu_imagen"]["name"]);
+                    
+                    // Mueve el archivo cargado a la ubicación deseada
+                    if (move_uploaded_file($_FILES["usu_imagen"]["tmp_name"], $target_file)) {
+                        echo "El archivo ". basename( $_FILES["usu_imagen"]["name"]). " ha sido cargado.";
+                        
+                        // Guarda la ruta de la imagen en la base de datos
+                        $ruta_imagen = $target_file;
+                    } else {
+                        echo "Hubo un error al cargar el archivo.";
+                    }
+                }
+                
+                // Continúa con el resto de tu lógica para guardar los datos del usuario
+                if(empty($_POST["usu_id"])){
+                    // Insertar nuevo usuario
+                    $usuario->insert_usuario($_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"], $ruta_imagen, $_POST["usu_pass"], $_POST["usu_sex"], $_POST["usu_telf"], $_POST["rol_id"], $_POST["usu_dni"]);
+                } else {
+                    // Actualizar usuario existente
+                    $usuario->update_usuario($_POST["usu_id"], $_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"], $ruta_imagen, $_POST["usu_pass"], $_POST["usu_sex"], $_POST["usu_telf"], $_POST["rol_id"], $_POST["usu_dni"]);
+                }
             break;
+            
         /*TODO: Eliminar segun ID */
         case "eliminar":
             $usuario->delete_usuario($_POST["usu_id"]);
@@ -236,11 +256,10 @@
                 "iTotalDisplayRecords"=>count($data),
                 "aaData"=>$data);
             echo json_encode($results);
-            break;
+        break;
 
         case "guardar_desde_excel":
-            $usuario->insert_usuario($_POST["usu_nom"],$_POST["usu_apep"],$_POST["usu_apem"],$_POST["usu_correo"],$_POST["usu_pass"],$_POST["usu_sex"],$_POST["usu_telf"],$_POST["rol_id"],$_POST["usu_dni"]);
+            $usuario->insert_usuario($_POST["usu_nom"], $_POST["usu_apep"], $_POST["usu_apem"], $_POST["usu_correo"], $_POST["usu_imagen"], $_POST["usu_pass"], $_POST["usu_sex"], $_POST["usu_telf"], $_POST["rol_id"], $_POST["usu_dni"]);
             break;
-
     }
 ?>

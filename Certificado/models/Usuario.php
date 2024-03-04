@@ -23,6 +23,7 @@
                         $_SESSION["usu_nom"]=$resultado["usu_nom"];
                         $_SESSION["usu_ape"]=$resultado["usu_ape"];
                         $_SESSION["usu_correo"]=$resultado["usu_correo"];
+                        $_SESSION["usu_imagen"]=$resultado["usu_imagen"];
                         $_SESSION["rol_id"]=$resultado["rol_id"];
                         /*TODO: Si todo esta correcto indexar en home */
                         header("Location:".Conectar::ruta()."view/UsuHome/");
@@ -225,56 +226,53 @@
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Funcion para insertar usuario */
-        public function insert_usuario($usu_nom,$usu_apep,$usu_apem,$usu_correo,$usu_pass,$usu_sex,$usu_telf,$rol_id,$usu_dni){
+        public function insert_usuario($usu_nom,$usu_apep,$usu_apem,$usu_correo,$ruta_imagen,$usu_pass,$usu_sex,$usu_telf,$rol_id,$usu_dni){
             $conectar= parent::conexion();
             parent::set_names();
-            $sql="INSERT INTO tm_usuario (usu_id,usu_nom,usu_apep,usu_apem,usu_correo,usu_pass,usu_sex,usu_telf,rol_id,usu_dni,fech_crea, est) VALUES (NULL,?,?,?,?,?,?,?,?,?,now(),'1');";
+            $sql="INSERT INTO tm_usuario (usu_id,usu_nom,usu_apep,usu_apem,usu_correo,usu_imagen,usu_pass,usu_sex,usu_telf,rol_id,usu_dni,fech_crea, est) VALUES (NULL,?,?,?,?,?,?,?,?,?,?,now(),'1');";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $usu_nom);
             $sql->bindValue(2, $usu_apep);
             $sql->bindValue(3, $usu_apem);
             $sql->bindValue(4, $usu_correo);
-            $sql->bindValue(5, $usu_pass);
-            $sql->bindValue(6, $usu_sex);
-            $sql->bindValue(7, $usu_telf);
-            $sql->bindValue(8, $rol_id);
-            $sql->bindValue(9, $usu_dni);
+            $sql->bindValue(5, $ruta_imagen);
+            $sql->bindValue(6, $usu_pass);
+            $sql->bindValue(7, $usu_sex);
+            $sql->bindValue(8, $usu_telf);
+            $sql->bindValue(9, $rol_id);
+            $sql->bindValue(10, $usu_dni);
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
 
-        /*TODO: Funcion para actualizar usuario */
-        public function update_usuario($usu_id,$usu_nom,$usu_apep,$usu_apem,$usu_correo,$usu_pass,$usu_sex,$usu_telf,$rol_id,$usu_dni){
-            $conectar= parent::conexion();
-            parent::set_names();
-            $sql="UPDATE tm_usuario
-                SET
-                    usu_nom = ?,
-                    usu_apep = ?,
-                    usu_apem = ?,
-                    usu_correo = ?,
-                    usu_pass = ?,
-                    usu_sex = ?,
-                    usu_telf = ?,
-                    rol_id = ?,
-                    usu_dni = ?
-                WHERE
-                    usu_id = ?";
-            $sql=$conectar->prepare($sql);
-            $sql->bindValue(1, $usu_nom);
-            $sql->bindValue(2, $usu_apep);
-            $sql->bindValue(3, $usu_apem);
-            $sql->bindValue(4, $usu_correo);
-            $sql->bindValue(5, $usu_pass);
-            $sql->bindValue(6, $usu_sex);
-            $sql->bindValue(7, $usu_telf);
-            $sql->bindValue(8, $rol_id);
-            $sql->bindValue(9, $usu_dni);
-            $sql->bindValue(10, $usu_id);
-            $sql->execute();
-            return $resultado=$sql->fetchAll();
+        
+        public function update_usuario($usu_id, $usu_nom, $usu_apep, $usu_apem, $usu_correo, $ruta_imagen, $usu_pass, $usu_sex, $usu_telf, $rol_id, $usu_dni) {
+            try {
+                $conectar = parent::conexion();
+                parent::set_names();
+                $sql = "UPDATE tm_usuario
+                        SET
+                            usu_nom = ?,
+                            usu_apep = ?,
+                            usu_apem = ?,
+                            usu_correo = ?,
+                            usu_imagen = ?,
+                            usu_pass = ?,
+                            usu_sex = ?,
+                            usu_telf = ?,
+                            rol_id = ?,
+                            usu_dni = ?
+                        WHERE
+                            usu_id = ?";
+                $sql = $conectar->prepare($sql);
+                $sql->execute([$usu_nom, $usu_apep, $usu_apem, $usu_correo, $ruta_imagen, $usu_pass, $usu_sex, $usu_telf, $rol_id, $usu_dni, $usu_id]);
+                return true;
+            } catch (PDOException $e) {
+                echo "Error: " . $e->getMessage();
+                return false;
+            }
         }
+        
 
         /*TODO: Eliminar cambiar de estado a la categoria */
         public function delete_usuario($usu_id){

@@ -168,11 +168,12 @@ var ExcelToJSON = function() {
                         usu_apep : columns[1],
                         usu_apem : columns[2],
                         usu_correo : columns[3],
-                        usu_pass : columns[4],
-                        usu_sex : columns[5],
-                        usu_telf :columns[6],
-                        rol_id : columns[7],
-                        usu_dni :columns[8]
+                        usu_imagen : columns[4],
+                        usu_pass : columns[5],
+                        usu_sex : columns[6],
+                        usu_telf :columns[7],
+                        rol_id : columns[8],
+                        usu_dni :columns[9]
                     }, function (data) {
                         console.log(data);
                     });
