@@ -83,7 +83,24 @@
                 </div>
               </div>
             </div>
-
+            <div class="col-lg-10">
+              <div class="form-group">
+                  <label style="font-size: 18px;" class="form-control-label" >Foto de Perfil:</label>
+                  <img style="margin-top: 25px;" src="../<?php echo $_SESSION['usu_imagen']; ?>" class="wd-180 rounded-circle" alt="Foto Perfil">
+                  <p style="margin-top: 30px;font-size: 16px;">Si requieres actualizar la imagen, acude a la ADMINISTRACIÓN</p>
+              </div>
+          </div>
+<!-- Implementacion de camara 
+          <div class="col-lg-10">
+              <div class="form-group">
+                  <label class="form-control-label">Foto de Perfil:</label>
+                  <video id="video" width="400" height="300" autoplay></video>
+                  <button id="capture-btn" class="btn btn-primary">Tomar Foto</button>
+                  <canvas id="canvas" width="400" height="300"></canvas>
+                  <button id="save-btn" class="btn btn-success">Guardar Foto</button>
+              </div>
+          </div>
+-->
             <div class="form-layout-footer">
               <button class="btn btn-info" id="btnactualizar">Actualizar</button>
             </div>
@@ -103,3 +120,4 @@
     header("Location:".Conectar::ruta()."view/404/");
   }
 ?>
+

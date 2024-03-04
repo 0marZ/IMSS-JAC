@@ -34,3 +34,36 @@ $(document).on("click","#btnactualizar", function(){
         confirmButtonText: 'Aceptar'
     })
 });
+
+// Para camara
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const captureBtn = document.getElementById('capture-btn');
+const saveBtn = document.getElementById('save-btn');
+const constraints = {
+    video: true
+};
+
+async function initCamera() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        handleSuccess(stream);
+    } catch (e) {
+        console.error('Error al acceder a la cámara: ', e);
+    }
+}
+
+function handleSuccess(stream) {
+    video.srcObject = stream;
+}
+
+captureBtn.addEventListener('click', function() {
+    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+});
+
+saveBtn.addEventListener('click', function() {
+    const imgData = canvas.toDataURL('image/png');
+    // Envía la imagen a través de AJAX o la guardas en un campo de formulario para enviarlo al servidor
+});
+
+initCamera();
