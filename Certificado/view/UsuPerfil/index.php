@@ -10,6 +10,7 @@
 
     <title>JAC :: Perfil</title>
     <link rel="icon" type="image/png" href="../../JAC .png">
+    <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -61,11 +62,28 @@
                 </div>
               </div>
               <div class="col-lg-6">
+
                 <div class="form-group">
-                  <label class="form-control-label">Contraseña: <span class="tx-danger">*</span></label>
-                  <input class="form-control" type="text" name="usu_pass" id="usu_pass" placeholder="Ingrese Contraseña">
+                    <label class="form-control-label">Contraseña: <span class="tx-danger">*</span></label>
+                    <div class="input-group">
+                        <input class="form-control" type="password" name="usu_pass" id="usu_pass" placeholder="Ingrese Contraseña"style="border-top-right-radius: 15px; border-bottom-right-radius: 15px;" >
+                        <div class="input-group-prepend" style="margin-left: 10px;"> <!-- Ajusta el valor del margen derecho aquí -->
+                            <span class="input-group-text input-group-text-lg align-items-center" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                    </div>
                 </div>
-              </div>
+
+                <style>
+                    /* Icono del ojo */
+                    .input-group-text-lg {
+                        font-size: 1.5rem; 
+                        margin-top: 5px; 
+                    }
+                </style>
+
+            </div>
               <div class="col-lg-6">
                 <div class="form-group mg-b-10-force">
                   <label class="form-control-label">Sexo: <span class="tx-danger">*</span></label>
@@ -112,6 +130,13 @@
 
     <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="usuperfil.js"></script>
+    <script>
+    document.getElementById("togglePassword").addEventListener("click", function() {
+        const passwordInput = document.getElementById("usu_pass");
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+    });
+</script>
   </body>
 </html>
 <?php

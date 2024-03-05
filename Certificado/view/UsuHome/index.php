@@ -37,7 +37,7 @@
       <!-- Indicadores de datos rapidos -->
       <div class="br-pagebody mg-t-5 pd-x-30">
         <div class="row row-sm mg-t-20">
-          <div class="col-sm-6 col-xl-3">
+          <div class="col-sm-6 col-xl-3 mg-t-20">
             <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
                 <div class="d-flex align-items-center">
@@ -51,7 +51,7 @@
             </div>
           </div>
           <!-- Datos 2 -->
-          <div class="col-sm-6 col-xl-3">
+          <div class="col-sm-6 col-xl-3 mg-t-20">
             <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
                 <div class="d-flex align-items-center">
@@ -65,7 +65,7 @@
             </div>
           </div>
           <!-- Datos 3 -->
-          <div class="col-sm-6 col-xl-3">
+          <div class="col-sm-6 col-xl-3 mg-t-20">
             <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
                 <div class="d-flex align-items-center">
@@ -78,7 +78,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-xl-3">
+          <div class="col-sm-6 col-xl-3 mg-t-20">
           <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
                   <!-- Reloj indicador de datos -->
@@ -128,7 +128,7 @@
             <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
-                  <canvas id="barChart" width="400" height="210"></canvas>
+                  <canvas id="barChart" width="400" height="200"></canvas>
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@
               <div class="col-md-6">
               <div class="card">
                 <div class="card-body">
-                  <div id="mapid" style="height: 300px;"></div>
+                  <div id="mapid" style="height: 280px;"></div>
                 </div>
               </div>
             </div>
@@ -149,67 +149,107 @@
   ?>
   <!-- Datos para la vista usuario (FALTA DEFINIR QUE DATOS SE NESECITAN MOSTRAR-->
   <div class="br-mainpanel">
-        <div class="br-pageheader pd-y-15 pd-l-20">
-          <nav class="breadcrumb pd-0 mg-0 tx-12">
+    <div class="br-pageheader pd-y-15 pd-l-20">
+        <nav class="breadcrumb pd-0 mg-0 tx-12">
             <a class="breadcrumb-item" href="#">Inicio</a>
-          </nav>
-        </div>
-        <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-          <h4 class="tx-gray-800 mg-b-5">Inicio</h4>
-          <p class="mg-b-0">Dashboard</p>
-        </div>
+        </nav>
+    </div>
+    <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
+        <h4 class="tx-gray-800 mg-b-5">Inicio</h4>
+        <p class="mg-b-0">Dashboard</p>
+    </div>
 
-      <!-- Contenido del proyecto -->
-      <div class="br-pagebody mg-t-5 pd-x-30">
-          <!-- Contenedor blanco con cuadros de información -->
-          <div class="row row-sm mg-t-20">
+    <!-- Contenido del proyecto -->
+    <div class="br-pagebody mg-t-5 pd-x-30">
+        <!-- Contenedor blanco con cuadros de información -->
+        <div class="row row-sm mg-t-20">
             <!-- Reloj -->
             <div class="col-md-6 col-xl-5">
                 <div class="card">
                     <div class="bg-white rounded overflow-hidden pd-85">
-                      <div class="d-flex align-items-center">
-                          <!-- Contenedor para el reloj digital -->
-                          <div id="digital-clock-container" style="position: absolute; left: 25px;">
-                              <!-- Agregar la imagen del icono de reloj -->
-                              <img src="../../2784399.png" alt="Reloj" style="width: 90px; margin-right: 20px;">
-                              <!-- Agregar el reloj digital -->
-                              <div id="digital-clock" style="font-size: 50px; display: inline-block;"></div>
-                          </div>
-                      </div>
+                        <div class="d-flex align-items-center">
+                            <!-- Contenedor para el reloj digital -->
+                            <div id="digital-clock-container" style="position: absolute; left: 25px;">
+                                <!-- Agregar la imagen del icono de reloj -->
+                                <img src="../../2784399.png" alt="Reloj" style="width: 90px; margin-right: 20px;">
+                                <!-- Agregar el reloj digital -->
+                                <div id="digital-clock" style="font-size: 50px; display: inline-block;"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- Cuadro de informacion 1 -->
-            <div class="col-sm-6 col-xl-3">
-              <div class="card">
-                <div class="bg-white rounded overflow-hidden pd-25">
-                  <div class="d-flex align-items-center">
-                    <i class="ion-clipboard tx-60 lh-0 tx-success op-7"></i>
-                    <div class="mg-l-20">
-                      <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Incidencias Reportadas</p>
-                      <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lbltotal">0</p>
+            <!-- Cuadro de información 1 -->
+            <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
+                <div class="card">
+                    <div class="bg-white rounded overflow-hidden pd-25">
+                        <div class="d-flex align-items-center">
+                            <i class="ion-clipboard tx-60 lh-0 tx-success op-7"></i>
+                            <div class="mg-l-20">
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Incidencias Reportadas</p>
+                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lbltotal">0</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-            <!-- Cuadro de informacion 2 -->
-            <div class="col-sm-6 col-xl-3">
-              <div class="card">
-                <div class="bg-white rounded overflow-hidden pd-25">
-                  <div class="d-flex align-items-center">
-                    <i class="ion-briefcase tx-60 lh-0 tx-info op-7"></i>
-                    <div class="mg-l-20">
-                      <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Horas Trabajadas</p>
-                      <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
+            <!-- Cuadro de información 2 -->
+            <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
+                <div class="card">
+                    <div class="bg-white rounded overflow-hidden pd-25">
+                        <div class="d-flex align-items-center">
+                            <i class="ion-briefcase tx-60 lh-0 tx-info op-7"></i>
+                            <div class="mg-l-20">
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Horas Trabajadas</p>
+                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
+            </div>
+            <!-- Cuadro de información 3 -->
+            <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
+                <div class="card">
+                    <div class="bg-white rounded overflow-hidden pd-25">
+                        <div class="d-flex align-items-center">
+                        <i class="ion-android-warning tx-60 lh-0 tx-warning op-7 alert-icon blink"></i>
+                        <style>
+                              @keyframes blink {
+                                  0% { opacity: 1; }
+                                  50% { opacity: 0; }
+                                  100% { opacity: 1; }
+                              }
+
+                              .blink {
+                                  animation: blink 4s infinite;
+                              }
+                          </style>
+                            <div class="mg-l-20">
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Retardos</p>
+                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cuadro de información 3 -->
+            <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
+                <div class="card">
+                    <div class="bg-white rounded overflow-hidden pd-25">
+                        <div class="d-flex align-items-center">
+                        <i class="ion-ios-flag tx-60 lh-0 tx-danger op-7k alert-icon blink"></i>
+                            <div class="mg-l-20">
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Faltas</p>
+                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-      </div>
-  </div>
+    </div>
+</div>
+
 
   <?php
       }
