@@ -12,35 +12,21 @@
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Nombre: <span class="tx-danger">*</span></label>
-                            <input class="form-control tx-uppercase" id="usu_nom" type="text" name="usu_nom" required/>
+                            <input class="form-control" id="usu_nom" type="text" name="usu_nom" required/>
                         </div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Apellido Paterno: <span class="tx-danger">*</span></label>
-                            <input class="form-control tx-uppercase" id="usu_apep" type="text" name="usu_apep" required/>
+                            <input class="form-control " id="usu_apep" type="text" name="usu_apep" required/>
                         </div>
                     </div>
 
                     <div class="col-lg-12">
                         <div class="form-group">
                             <label class="form-control-label">Apellido Materno: <span class="tx-danger">*</span></label>
-                            <input class="form-control tx-uppercase" id="usu_apem" type="text" name="usu_apem" required/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label class="form-control-label">Correo: <span class="tx-danger">*</span></label>
-                            <input class="form-control tx-uppercase" id="usu_correo" type="email" name="usu_correo" required/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="form-group">
-                            <label class="form-control-label">Password: <span class="tx-danger">*</span></label>
-                            <input class="form-control tx-uppercase" id="usu_pass" type="text" name="usu_pass" required/>
+                            <input class="form-control " id="usu_apem" type="text" name="usu_apem" required/>
                         </div>
                     </div>
 
@@ -54,16 +40,9 @@
                             </select>
                         </div>
                     </div>
-
+                    
                     <div class="col-lg-12">
-                        <div class="form-group">
-                            <label class="form-control-label">Telefono: <span class="tx-danger">*</span></label>
-                            <input class="form-control tx-uppercase" id="usu_telf" type="text" name="usu_telf" required/>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-12">
-                        <div class="form-group">
+                        <div class="form-group mg-b-10-force">
                             <label class="form-control-label">Rol: <span class="tx-danger">*</span></label>
                             <select class="form-control select2" style="width:100%" name="rol_id" id="rol_id" data-placeholder="Seleccione">
                                 <option label="Seleccione"></option>
@@ -72,20 +51,40 @@
                             </select>
                         </div>
                     </div>
-
                     <div class="col-lg-12">
                         <div class="form-group">
-                            <label class="form-control-label">NSS: <span class="tx-danger">*</span></label>
-                            <input class="form-control tx-uppercase" id="usu_dni" type="text" name="usu_dni" required/>
+                            <label class="form-control-label">Correo: <span class="tx-danger">*</span></label>
+                            <input class="form-control " id="usu_correo" type="email" name="usu_correo" required/>
                         </div>
                     </div>
 
                     <div class="col-lg-12">
-                    <div class="form-group">
-                        <label class="form-control-label">Imagen de perfil:</label>
-                        <input type="file" class="form-control-file" id="usu_imagen" name="usu_imagen">
+                        <div class="form-group">
+                            <label class="form-control-label">Password: <span class="tx-danger">*</span></label>
+                            <input class="form-control " id="usu_pass" type="text" name="usu_pass" required/>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="form-control-label">Telefono: <span class="tx-danger">*</span></label>
+                            <input class="form-control " id="usu_telf" type="text" name="usu_telf" required/>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="form-control-label">NSS: <span class="tx-danger">*</span></label>
+                            <input class="form-control " id="usu_dni" type="text" name="usu_dni" required/>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <label class="form-control-label">Imagen de perfil:<span class="tx-danger">*</span></label>
+                            <input type="file" class="form-control-file" id="usu_imagen" name="usu_imagen" required>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
