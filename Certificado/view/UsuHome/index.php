@@ -163,23 +163,57 @@
     <div class="br-pagebody mg-t-5 pd-x-30">
         <!-- Contenedor blanco con cuadros de información -->
         <div class="row row-sm mg-t-20">
-            <!-- Reloj -->
-            <div class="col-md-6 col-xl-5">
+              <!-- Cuadro de información 1 -->
+              <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
+                  <div class="card">
+                      <div class="bg-white rounded overflow-hidden pd-25">
+                          <div class="d-flex align-items-center">
+                              <i class="ion-android-warning tx-60 lh-0 tx-warning op-7 alert-icon blink icon-retardos"></i>
+                              <style>
+                                  @keyframes blink {
+                                      0% { opacity: 1; }
+                                      50% { opacity: 0.2; }
+                                      100% { opacity: 1; }
+                                  }
+
+                                  .blink {
+                                      animation: blink 0.9s infinite;
+                                  }
+
+                                  .blink2 {
+                                      animation: blink 4s infinite;
+                                  }
+
+                                  .icon-retardos {
+                                      color: green; /* Por defecto, el color del icono es verde */
+                                  }
+                                  .icon-faltas {
+                                      color: green; /* Por defecto, el color del icono es verde */
+                                  }
+                              </style>
+                              <div class="mg-l-20">
+                                  <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Retardos</p>
+                                  <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">10</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+            <!-- Cuadro de información 2 -->
+            <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
                 <div class="card">
-                    <div class="bg-white rounded overflow-hidden pd-85">
+                    <div class="bg-white rounded overflow-hidden pd-25">
                         <div class="d-flex align-items-center">
-                            <!-- Contenedor para el reloj digital -->
-                            <div id="digital-clock-container" style="position: absolute; left: 25px;">
-                                <!-- Agregar la imagen del icono de reloj -->
-                                <img src="../../2784399.png" alt="Reloj" style="width: 90px; margin-right: 20px;">
-                                <!-- Agregar el reloj digital -->
-                                <div id="digital-clock" style="font-size: 50px; display: inline-block;"></div>
+                        <i class="ion-ios-flag tx-60 lh-0 tx-danger op-7k alert-icon blink2 icon-faltas"></i>
+                            <div class="mg-l-20">
+                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Faltas</p>
+                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblfaltas">40</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Cuadro de información 1 -->
+            <!-- Cuadro de información 3 -->
             <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
                 <div class="card">
                     <div class="bg-white rounded overflow-hidden pd-25">
@@ -193,7 +227,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Cuadro de información 2 -->
+            <!-- Cuadro de información 4 -->
             <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
                 <div class="card">
                     <div class="bg-white rounded overflow-hidden pd-25">
@@ -207,40 +241,17 @@
                     </div>
                 </div>
             </div>
-            <!-- Cuadro de información 3 -->
-            <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
+            <!-- Reloj -->
+            <div class="col-md-6 col-xl-5 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
                 <div class="card">
-                    <div class="bg-white rounded overflow-hidden pd-25">
+                    <div class="bg-white rounded overflow-hidden pd-85">
                         <div class="d-flex align-items-center">
-                        <i class="ion-android-warning tx-60 lh-0 tx-warning op-7 alert-icon blink"></i>
-                        <style>
-                              @keyframes blink {
-                                  0% { opacity: 1; }
-                                  50% { opacity: 0; }
-                                  100% { opacity: 1; }
-                              }
-
-                              .blink {
-                                  animation: blink 4s infinite;
-                              }
-                          </style>
-                            <div class="mg-l-20">
-                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Retardos</p>
-                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Cuadro de información 3 -->
-            <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
-                <div class="card">
-                    <div class="bg-white rounded overflow-hidden pd-25">
-                        <div class="d-flex align-items-center">
-                        <i class="ion-ios-flag tx-60 lh-0 tx-danger op-7k alert-icon blink"></i>
-                            <div class="mg-l-20">
-                                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Faltas</p>
-                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
+                            <!-- Contenedor para el reloj digital -->
+                            <div id="digital-clock-container" style="position: absolute; left: 25px;">
+                                <!-- Agregar la imagen del icono de reloj -->
+                                <img src="../../2784399.png" alt="Reloj" style="width: 90px; margin-right: 20px;">
+                                <!-- Agregar el reloj digital -->
+                                <div id="digital-clock" style="font-size: 50px; display: inline-block;"></div>
                             </div>
                         </div>
                     </div>
@@ -424,6 +435,51 @@
             }, 13000);
         }
     </script>
+<!-- Script para cambio de color icono retardos -->
+<script>
+    // Obtener el elemento que contiene el número de retardos
+    var lblnuevainfo = document.getElementById("lblnuevainfo");
+
+    // Obtener el elemento del icono de retardos
+    var iconRetardos = document.querySelector(".icon-retardos");
+
+    // Obtener el valor actual de los retardos
+    var valorRetardos = parseInt(lblnuevainfo.textContent);
+
+    // Cambiar el icono basado en el valor de los retardos
+    if (valorRetardos === 0) {
+        iconRetardos.classList.remove('ion-android-warning'); 
+        iconRetardos.classList.add('ion-checkmark-circled'); 
+        iconRetardos.style.color = "green"; 
+    } else if (valorRetardos > 3) {
+        iconRetardos.classList.add('ion-android-warning'); 
+        iconRetardos.classList.remove('ion-checkmark-circled'); 
+        iconRetardos.style.color = "#E5be01"; 
+    }
+</script>
+
+<!-- Script para cambio de color icono faltas -->
+<script>
+    // Obtener el elemento que contiene las faltas
+    var lblfaltas = document.getElementById("lblfaltas");
+
+    // Obtener el elemento del icono de faltas
+    var iconFaltas = document.querySelector(".icon-faltas");
+
+    // Obtener el valor actual de las faltas
+    var faltas = parseInt(lblfaltas.textContent);
+
+    // Cambiar el icono basado en el valor de las faltas
+    if (faltas === 0) {
+        iconFaltas.classList.remove('ion-ios-flag'); 
+        iconFaltas.classList.add('ion-checkmark-circled'); 
+        iconFaltas.style.color = "green"; 
+    } else if (faltas > 3) {
+        iconFaltas.classList.add('ion-ios-flag'); 
+        iconFaltas.classList.remove('ion-checkmark-circled'); 
+        iconFaltas.style.color = "#b71008"; 
+    }
+</script>
 
     <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="usuhome.js"></script>

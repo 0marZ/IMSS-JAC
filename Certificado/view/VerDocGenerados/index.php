@@ -22,6 +22,10 @@
 
 <?php require_once("../html/MainHeader.php"); ?>
 
+  <?php
+    if($_SESSION["rol_id"]==2){
+    ?>
+
 <div class="br-mainpanel">
   <div class="br-pageheader pd-y-80 pd-l-20" style="margin-bottom: -70px;">
     <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14">GENERADOR DE DOCUMENTOS</h6>
@@ -40,7 +44,48 @@
     </div>
   </div>
 </div>
+  <?php
+    }else{ 
+  ?>
+    <style>
+    /* Estilos para dispositivos móviles */
+    @media (max-width: 1450px) {
+      .container {
+      padding-top: 100px;
+      padding-left: 0px;
+    }
+    }
+    @media (max-width: 950px) {
+      .container {
+      padding-top: 100px;
+      padding-left: 20px;
+    }
+    }
 
+    /* Estilos para pantallas más grandes */
+    @media  (min-width: 769px) {
+      .container {
+      padding-top: 100px;
+      padding-left: 219px;
+    }
+    }
+    /* Estilos para pantallas más grandes */
+   @media  (max-width: 980px) {
+      .container {
+      padding-top: 100px;
+      padding-left: 10px;
+    }
+    }
+  </style>
+  <div class="container mt-5">
+    <div class="alert alert-danger" role="alert">
+    <h1 class="alert-heading"><i class="fas fa-exclamation-triangle"></i> ACCESO DENEGADO</h1>
+      <p>No tienes permiso para acceder a esta ventana. Por favor, ponte en contacto con el administrador si crees que esto es un error.</p>
+    </div>
+  </div>
+  <?php
+      }
+    ?>
 <?php require_once("../html/MainJs.php"); ?>
 
 </body>

@@ -4,7 +4,7 @@
   // Incluir el archivo de conexión si es necesario
   require_once("../../../config/conexion.php");
   // Verificar si el usuario ha iniciado sesión
-  if(isset($_SESSION["usu_id"])){
+  if(isset($_SESSION["rol_id"]) && $_SESSION["rol_id"] == 2){
 ?>
 
 <!DOCTYPE html>
