@@ -78,13 +78,26 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-xl-3 mg-t-20">
-          <div class="card">
+            <!-- Indicador 1 y 2 -->
+            <div class="col-sm-6 col-xl-3">
+            <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
-                  <!-- Reloj indicador de datos -->
-                  <div id="chart_div" style="width: 100px; height: 120px;"></div>
+                <div class="d-flex align-items-center">
+                <div class="mg-l-20 text-center">
+                  <div>
+                      <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Faltas</p>
+                      <div id="chart_div1" style="width: 90px; height: 75px;"></div>
+                  </div>
               </div>
-          </div>
+              <div class="mg-l-20 text-center">
+                  <div>
+                      <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Incidencias</p>
+                      <div id="chart_div2" style="width: 90px; height: 75px;"></div>
+                  </div>
+              </div>
+                </div>
+              </div>
+            </div>
           </div>
       </div>
         <!-- Tabla de resumen de cursos 
@@ -193,7 +206,7 @@
                               </style>
                               <div class="mg-l-20">
                                   <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Retardos</p>
-                                  <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">10</p>
+                                  <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
                               </div>
                           </div>
                       </div>
@@ -207,7 +220,7 @@
                         <i class="ion-ios-flag tx-60 lh-0 tx-danger op-7k alert-icon blink2 icon-faltas"></i>
                             <div class="mg-l-20">
                                 <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Faltas</p>
-                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblfaltas">40</p>
+                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblfaltas">0</p>
                             </div>
                         </div>
                     </div>
@@ -387,54 +400,62 @@
 
     </script>
 
-    <script type="text/javascript">
-    
-    //Indicadores reloj
-        google.charts.load('current', {'packages':['gauge']});
-        google.charts.setOnLoadCallback(drawChart);
+<script type="text/javascript">
 
-        function drawChart() {
+    // Indicadores reloj
+    google.charts.load('current', {'packages':['gauge']});
+    google.charts.setOnLoadCallback(drawCharts);
 
-          var data = google.visualization.arrayToDataTable([
-              ['Label', 'Value'],
-              ['', 20],
-              ['', 45],
-          ]);
-          var options = {
-              width: 260,
-              height: 260,
-              redFrom: 90,
-              redTo: 100, // Rango rojo (90-100)
-              yellowFrom: 75,
-              yellowTo: 90, // Rango amarillo (75-90)
-              greenFrom: 0, // Rango verde (0-75)
-              greenTo: 75,
-              minorTicks: 8,
-          };
-          var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
-          chart.draw(data, options);
-          var chartDiv = document.getElementById('chart_div');
-          var incidenciasText = document.createElement('p');
-          incidenciasText.innerHTML = 'Incidencias';
-          incidenciasText.style.position = 'absolute';
-          incidenciasText.style.bottom = '-20px';
-          incidenciasText.style.left = '50%';
-          incidenciasText.style.transform = 'translateX(55%)';
-          chartDiv.appendChild(incidenciasText);
-          var asistenciasText = document.createElement('p');
-          asistenciasText.innerHTML = ' Retardos ';
-          asistenciasText.style.position = 'absolute';
-          asistenciasText.style.bottom = '-20px';
-          asistenciasText.style.left = '50%';
-          asistenciasText.style.transform = 'translateX(-125%)';
-          chartDiv.appendChild(asistenciasText);
-          setInterval(function() {
-              data.setValue(0, 1, 40 + Math.round(50 * Math.random()));
-              data.setValue(1, 1, 40 + Math.round(50 * Math.random()));
-              chart.draw(data, options);
-            }, 13000);
-        }
-    </script>
+    function drawCharts() {
+
+        var data1 = google.visualization.arrayToDataTable([
+            ['Label', 'Value'],
+            ['', 20],
+        ]);
+
+        var data2 = google.visualization.arrayToDataTable([
+            ['Label', 'Value'],
+            ['', 45],
+        ]);
+
+            var options = {
+            width: 140, // Ancho de la gráfica
+            height: 90, // Alto de la gráfica
+            redFrom: 90,
+            redTo: 100, // Rango rojo (90-100)
+            yellowFrom: 75,
+            yellowTo: 90, // Rango amarillo (75-90)
+            greenFrom: 0, // Rango verde (0-75)
+            greenTo: 75,
+            minorTicks: 8,
+        };
+
+        var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
+        var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
+
+        chart1.draw(data1, options);
+        chart2.draw(data2, options);
+
+
+
+        var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
+        var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
+
+        chart1.draw(data1, options);
+        chart2.draw(data2, options);
+
+        setInterval(function() {
+            data1.setValue(0, 1, 40 + Math.round(50 * Math.random()));
+            data2.setValue(0, 1, 40 + Math.round(50 * Math.random()));
+            chart1.draw(data1, options);
+            chart2.draw(data2, options);
+        }, 13000);
+    }
+
+</script>
+
+
+
 <!-- Script para cambio de color icono retardos -->
 <script>
     // Obtener el elemento que contiene el número de retardos
@@ -451,6 +472,7 @@
         iconRetardos.classList.remove('ion-android-warning'); 
         iconRetardos.classList.add('ion-checkmark-circled'); 
         iconRetardos.style.color = "green"; 
+        iconRetardos.style.animation = "none";
     } else if (valorRetardos > 3) {
         iconRetardos.classList.add('ion-android-warning'); 
         iconRetardos.classList.remove('ion-checkmark-circled'); 
@@ -474,12 +496,14 @@
         iconFaltas.classList.remove('ion-ios-flag'); 
         iconFaltas.classList.add('ion-checkmark-circled'); 
         iconFaltas.style.color = "green"; 
+        iconFaltas.style.animation = "none";
     } else if (faltas > 3) {
         iconFaltas.classList.add('ion-ios-flag'); 
         iconFaltas.classList.remove('ion-checkmark-circled'); 
         iconFaltas.style.color = "#b71008"; 
     }
 </script>
+
 
     <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="usuhome.js"></script>
