@@ -83,17 +83,32 @@
             <div class="card">
               <div class="bg-white rounded overflow-hidden pd-25">
                 <div class="d-flex align-items-center">
+                <style>
+              @media only screen and (max-width: 1352px) {
+                /* Estilos para pantallas de 14" o menos */
+                .mg-l-20{
+                  margin-left: 5px;
+                }
+                .tx-10 {
+                  font-size: 9px !important;
+                }
+              }
+            </style>
                 <div class="mg-l-20 text-center">
-                  <div>
-                      <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Faltas</p>
-                      <div id="chart_div1" style="width: 90px; height: 75px;"></div>
-                  </div>
+            <div>
+                <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">
+                    <i class="ion-briefcase tx-20 lh-0 tx-danger op-7"></i>&nbsp; Faltas
+                </p>
+                <div id="chart_div1" style="width: 90px; height: 75px;"></div>
+            </div>
               </div>
               <div class="mg-l-20 text-center">
-                  <div>
-                      <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Incidencias</p>
-                      <div id="chart_div2" style="width: 90px; height: 75px;"></div>
-                  </div>
+              <div>
+                  <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">
+                      <i class="ion-alert-circled tx-20 lh-0 tx-warning op-7"></i>&nbsp; Incidencias
+                  </p>
+                  <div id="chart_div2" style="width: 90px; height: 75px;"></div>
+              </div>
               </div>
                 </div>
               </div>
@@ -198,20 +213,21 @@
                                   }
 
                                   .icon-retardos {
-                                      color: green; /* Por defecto, el color del icono es verde */
+                                      color: green; 
                                   }
                                   .icon-faltas {
-                                      color: green; /* Por defecto, el color del icono es verde */
+                                      color: green; 
                                   }
                               </style>
                               <div class="mg-l-20">
                                   <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Retardos</p>
-                                  <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">0</p>
+                                  <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">5</p>
                               </div>
                           </div>
                       </div>
                   </div>
               </div>
+              
             <!-- Cuadro de información 2 -->
             <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
                 <div class="card">
@@ -220,7 +236,7 @@
                         <i class="ion-ios-flag tx-60 lh-0 tx-danger op-7k alert-icon blink2 icon-faltas"></i>
                             <div class="mg-l-20">
                                 <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Faltas</p>
-                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblfaltas">0</p>
+                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblfaltas">5</p>
                             </div>
                         </div>
                     </div>
@@ -420,7 +436,7 @@
 
             var options = {
             width: 140, // Ancho de la gráfica
-            height: 90, // Alto de la gráfica
+            height: 95, // Alto de la gráfica
             redFrom: 90,
             redTo: 100, // Rango rojo (90-100)
             yellowFrom: 75,
