@@ -186,48 +186,45 @@
         <h4 class="tx-gray-800 mg-b-5">Inicio</h4>
         <p class="mg-b-0">Dashboard</p>
     </div>
-
     <!-- Contenido del proyecto -->
     <div class="br-pagebody mg-t-5 pd-x-30">
         <!-- Contenedor blanco con cuadros de información -->
         <div class="row row-sm mg-t-20">
               <!-- Cuadro de información 1 -->
               <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
-                  <div class="card">
+                <div class="card">
                       <div class="bg-white rounded overflow-hidden pd-25">
-                          <div class="d-flex align-items-center">
-                              <i class="ion-android-warning tx-60 lh-0 tx-warning op-7 alert-icon blink icon-retardos"></i>
-                              <style>
-                                  @keyframes blink {
-                                      0% { opacity: 1; }
-                                      50% { opacity: 0.2; }
-                                      100% { opacity: 1; }
-                                  }
+                      <div class="d-flex align-items-center">
+                          <i class="ion-android-warning tx-60 lh-0 tx-warning op-7 alert-icon blink icon-retardos"></i>
+                          <style>
+                              @keyframes blink {
+                                  0% { opacity: 1; }
+                                  50% { opacity: 0.2; }
+                                  100% { opacity: 1; }
+                              }
 
-                                  .blink {
-                                      animation: blink 0.9s infinite;
-                                  }
+                              .blink {
+                                 animation: blink 0.9s infinite;
+                                     }
 
-                                  .blink2 {
-                                      animation: blink 4s infinite;
-                                  }
-
-                                  .icon-retardos {
-                                      color: green; 
-                                  }
-                                  .icon-faltas {
-                                      color: green; 
-                                  }
-                              </style>
-                              <div class="mg-l-20">
-                                  <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Retardos</p>
-                                  <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">5</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+                              .blink2 {
+                                  animation: blink 4s infinite;
+                                      }
+                              .icon-retardos {
+                                  color: green; 
+                              }
+                              .icon-faltas {
+                                  color: green; 
+                              }
+                        </style>
+                        <div class="mg-l-20">
+                            <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Retardos</p>
+                            <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">5</p>
+                        </div>
+                    </div>
+                </div>
               </div>
-              
+            </div>
             <!-- Cuadro de información 2 -->
             <div class="col-sm-6 col-xl-3 mg-t-20"> <!-- Agregar clase mg-t-20 para separación hacia abajo -->
                 <div class="card">
@@ -288,14 +285,12 @@
             </div>
         </div>
     </div>
-</div>
-
+  </div>
 
   <?php
       }
     ?>
-
-  <script>
+    <script>
         // Función para actualizar el reloj digital
         function updateClock() {
             var now = new Date();
@@ -321,6 +316,7 @@
         // Llamar a la función por primera vez para evitar un retraso inicial
         updateClock();
     </script>
+
     <!-- Script para cargar los datos y generar la gráfica -->
     <script>
         
@@ -349,185 +345,156 @@
            data: data,
            options: options
        });
-       // Crear el mapa con Leaflet.js
+       // Mapa con Leaflet.js
        var map = L.map('mapid').setView([18.932748, -95.620954], 7);
        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright"target="_blank">OpenStreetMap</a>'
        }).addTo(map);
        L.control.scale().addTo(map);
-       // Define las coordenadas de las ciudades y sus datos
        var cities = [
             { name: 'ORIZABA', location: [18.847440, -97.087738], data: 31 },
            { name: 'COATZACOALCOS', location: [18.133281, -94.466169], data: 54 },
            { name: 'CORDOBA', location: [18.886151, -96.931693], data: 39 },
            { name: 'COSAMALOAPAN', location: [18.366228, -95.782712], data: 17 }
        ];
-       // Inicializar el índice de la ciudad actual
        var currentIndex = 0;
-       // Función para agregar un marcador al mapa y mostrar su información
        function addMarker() {
-           // Verificar si ya se mostraron todos los marcadores
            if (currentIndex >= cities.length) {
-               // Detener el intervalo
                clearInterval(intervalId);
-               return; // Salir de la función
+               return;
            }
            
-           // Obtener la ciudad actual
            var city = cities[currentIndex];
-           
-           // Construir el contenido del popup
-           var popupContent = "<b>" + city.name + "</b> <br/>" +
-                             "Datos: " + city.data;
-           // Crear un marcador para la ciudad actual
+           var popupContent = "<b>" + city.name + "</b> <br/>" + "Datos: " + city.data;
            var marker = L.marker(city.location).addTo(map);
-           
-           // Asociar un popup con el contenido generado a cada marcador
            marker.bindPopup(popupContent);
-           // Mostrar el popup del primer marcador
            marker.openPopup();
-           
-           // Incrementar el índice para pasar a la siguiente ciudad en el siguiente intervalo
            currentIndex++;
        }
-           // Definir el intervalo de tiempo entre la adición de cada marcador (en milisegundos)
            var interval = 3000; // 3 segundos
-           // Agregar el primer marcador inmediatamente
            addMarker();
-           // Configurar el temporizador para agregar los marcadores automáticamente
            var intervalId = setInterval(addMarker, interval);
-           // Función para reiniciar el ciclo mostrando el primer marcador nuevamente
            function restartMarkers() {
-             // Reiniciar el índice
              currentIndex = 0;
-             // Limpiar el mapa de todos los marcadores actuales
              map.eachLayer(function(layer) {
                  if (layer instanceof L.Marker) {
                      map.removeLayer(layer);
                  }
              });
-             // Reiniciar el intervalo para agregar los marcadores automáticamente
              clearInterval(intervalId);
              intervalId = setInterval(addMarker, interval);
          }
-         // Configurar el temporizador para reiniciar el ciclo después de un cierto tiempo
          var restartInterval = 25000; // 25 segundos
          setInterval(restartMarkers, restartInterval);
-
     </script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
+        // Indicadores reloj
+        google.charts.load('current', {'packages':['gauge']});
+        google.charts.setOnLoadCallback(drawCharts);
 
-    // Indicadores reloj
-    google.charts.load('current', {'packages':['gauge']});
-    google.charts.setOnLoadCallback(drawCharts);
+        function drawCharts() {
 
-    function drawCharts() {
+            var data1 = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['', 20],
+            ]);
 
-        var data1 = google.visualization.arrayToDataTable([
-            ['Label', 'Value'],
-            ['', 20],
-        ]);
+            var data2 = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['', 45],
+            ]);
 
-        var data2 = google.visualization.arrayToDataTable([
-            ['Label', 'Value'],
-            ['', 45],
-        ]);
+                var options = {
+                width: 140, 
+                height: 95, 
+                redFrom: 90,
+                redTo: 100, 
+                yellowFrom: 75,
+                yellowTo: 90, 
+                greenFrom: 0, 
+                greenTo: 75,
+                minorTicks: 8,
+            };
 
-            var options = {
-            width: 140, // Ancho de la gráfica
-            height: 95, // Alto de la gráfica
-            redFrom: 90,
-            redTo: 100, // Rango rojo (90-100)
-            yellowFrom: 75,
-            yellowTo: 90, // Rango amarillo (75-90)
-            greenFrom: 0, // Rango verde (0-75)
-            greenTo: 75,
-            minorTicks: 8,
-        };
+            var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
+            var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
 
-        var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
-        var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
-
-        chart1.draw(data1, options);
-        chart2.draw(data2, options);
-
-
-
-        var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
-        var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
-
-        chart1.draw(data1, options);
-        chart2.draw(data2, options);
-
-        setInterval(function() {
-            data1.setValue(0, 1, 40 + Math.round(50 * Math.random()));
-            data2.setValue(0, 1, 40 + Math.round(50 * Math.random()));
             chart1.draw(data1, options);
             chart2.draw(data2, options);
-        }, 13000);
-    }
-
-</script>
 
 
 
-<!-- Script para cambio de color icono retardos -->
-<script>
-    // Obtener el elemento que contiene el número de retardos
-    var lblnuevainfo = document.getElementById("lblnuevainfo");
+            var chart1 = new google.visualization.Gauge(document.getElementById('chart_div1'));
+            var chart2 = new google.visualization.Gauge(document.getElementById('chart_div2'));
 
-    // Obtener el elemento del icono de retardos
-    var iconRetardos = document.querySelector(".icon-retardos");
+            chart1.draw(data1, options);
+            chart2.draw(data2, options);
 
-    // Obtener el valor actual de los retardos
-    var valorRetardos = parseInt(lblnuevainfo.textContent);
+            setInterval(function() {
+                data1.setValue(0, 1, 40 + Math.round(50 * Math.random()));
+                data2.setValue(0, 1, 40 + Math.round(50 * Math.random()));
+                chart1.draw(data1, options);
+                chart2.draw(data2, options);
+            }, 13000);
+        }
+    </script>
 
-    // Cambiar el icono basado en el valor de los retardos
-    if (valorRetardos === 0) {
-        iconRetardos.classList.remove('ion-android-warning'); 
-        iconRetardos.classList.add('ion-checkmark-circled'); 
-        iconRetardos.style.color = "green"; 
-        iconRetardos.style.animation = "none";
-    } else if (valorRetardos > 3) {
-        iconRetardos.classList.add('ion-android-warning'); 
-        iconRetardos.classList.remove('ion-checkmark-circled'); 
-        iconRetardos.style.color = "#E5be01"; 
-    }
-</script>
+    <!-- Script para cambio de color icono retardos -->
+    <script>
+        // Obtener el elemento que contiene el número de retardos
+        var lblnuevainfo = document.getElementById("lblnuevainfo");
 
-<!-- Script para cambio de color icono faltas -->
-<script>
-    // Obtener el elemento que contiene las faltas
-    var lblfaltas = document.getElementById("lblfaltas");
+        // Obtener el elemento del icono de retardos
+        var iconRetardos = document.querySelector(".icon-retardos");
 
-    // Obtener el elemento del icono de faltas
-    var iconFaltas = document.querySelector(".icon-faltas");
+        // Obtener el valor actual de los retardos
+        var valorRetardos = parseInt(lblnuevainfo.textContent);
 
-    // Obtener el valor actual de las faltas
-    var faltas = parseInt(lblfaltas.textContent);
+        // Cambiar el icono basado en el valor de los retardos
+        if (valorRetardos === 0) {
+            iconRetardos.classList.remove('ion-android-warning'); 
+            iconRetardos.classList.add('ion-checkmark-circled'); 
+            iconRetardos.style.color = "green"; 
+            iconRetardos.style.animation = "none";
+        } else if (valorRetardos > 3) {
+            iconRetardos.classList.add('ion-android-warning'); 
+            iconRetardos.classList.remove('ion-checkmark-circled'); 
+            iconRetardos.style.color = "#E5be01"; 
+        }
+    </script>
 
-    // Cambiar el icono basado en el valor de las faltas
-    if (faltas === 0) {
-        iconFaltas.classList.remove('ion-ios-flag'); 
-        iconFaltas.classList.add('ion-checkmark-circled'); 
-        iconFaltas.style.color = "green"; 
-        iconFaltas.style.animation = "none";
-    } else if (faltas > 3) {
-        iconFaltas.classList.add('ion-ios-flag'); 
-        iconFaltas.classList.remove('ion-checkmark-circled'); 
-        iconFaltas.style.color = "#b71008"; 
-    }
-</script>
+    <!-- Script para cambio de color icono faltas -->
+    <script>
+        // Obtener el elemento que contiene las faltas
+        var lblfaltas = document.getElementById("lblfaltas");
 
+        // Obtener el elemento del icono de faltas
+        var iconFaltas = document.querySelector(".icon-faltas");
+
+        // Obtener el valor actual de las faltas
+        var faltas = parseInt(lblfaltas.textContent);
+
+        // Cambiar el icono basado en el valor de las faltas
+        if (faltas === 0) {
+            iconFaltas.classList.remove('ion-ios-flag'); 
+            iconFaltas.classList.add('ion-checkmark-circled'); 
+            iconFaltas.style.color = "green"; 
+            iconFaltas.style.animation = "none";
+        } else if (faltas > 3) {
+            iconFaltas.classList.add('ion-ios-flag'); 
+            iconFaltas.classList.remove('ion-checkmark-circled'); 
+            iconFaltas.style.color = "#b71008"; 
+        }
+    </script>
 
     <?php require_once("../html/MainJs.php"); ?>
     <script type="text/javascript" src="usuhome.js"></script>
   </body>
 </html>
+
 <?php
   }else{
-    // Para matar sesion si no ha iniciado sesion. Manda a pagina no encontrada.
     header("Location:".Conectar::ruta()."404.html");
   }
 ?>
