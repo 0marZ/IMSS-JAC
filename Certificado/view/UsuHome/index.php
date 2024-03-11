@@ -219,7 +219,7 @@
                         </style>
                         <div class="mg-l-20">
                             <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Retardos</p>
-                            <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">5</p>
+                            <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblnuevainfo">10</p>
                         </div>
                     </div>
                 </div>
@@ -233,7 +233,7 @@
                         <i class="ion-ios-flag tx-60 lh-0 tx-danger op-7k alert-icon blink2 icon-faltas"></i>
                             <div class="mg-l-20">
                                 <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-gray-600 mg-b-10">Faltas</p>
-                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblfaltas">5</p>
+                                <p class="tx-24 tx-gray-800 tx-lato tx-bold mg-b-2 lh-1" id="lblfaltas">4</p>
                             </div>
                         </div>
                     </div>
