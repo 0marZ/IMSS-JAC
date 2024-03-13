@@ -93,7 +93,7 @@
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
-
+    <script src="//code.tidio.co/upz7cprxyjg8eadu6mqeffxhloaojbiy.js" async></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
   </body>

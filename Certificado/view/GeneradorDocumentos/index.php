@@ -15,6 +15,13 @@
   <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
   <title>Generador de Documentos</title>
   <link rel="icon" type="image/png" href="../../JAC .png">
+  <style>
+    .form-check-input {
+      position: absolute;
+      margin-top: 0.25rem;
+      margin-left: -0.25rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,14 +39,59 @@
   <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
     
     <div class="button-container bg-white p-3 rounded">
-    <h1 class="tx-gray-800 mg-b-20 tx-30">SELECCIONA EL DOCUMENTO A GENERAR</h1>
+      <h1 class="tx-gray-800 mg-b-20 tx-30">SELECCIONA EL DOCUMENTO A GENERAR</h1>
       <a href="./Gen Viaticos y pasajes/newsign.php" class="btn btn-outline-primary mr-2"> <i class="fa-solid fa-file"></i>  Nuevo VIATICOS Y PASAJES</a>
     </div>
     <div class="button-container bg-white p-3 rounded">
       <a href="./Gen Pliego Comision/newsign.php" class="btn btn-outline-primary mr-2"> <i class="fa-solid fa-file"></i>  Nueva PLIEGO DE COMISION</a>
     </div>
+    
+  <!-- Agregar apartado para subir documento -->
+  <div class="bg-white p-3 rounded">
+    <h4 class="tx-gray-800 mg-b-10 tx-20">Subir Documento</h4>
+    <form action="tu_script_de_procesamiento.php" method="post" enctype="multipart/form-data">
+      <input type="file" name="documento" id="documento" class="form-control-file">
+      <!-- Agregar checkbox para confirmar que el documento está firmado y sellado -->
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="checkbox" value="" id="confirmCheck">
+        <label class="form-check-label" for="confirmCheck">
+          Confirmo que el documento está firmado y sellado.
+        </label>
+      </div>
+      <!-- Añadir mensaje emergente personalizado al pasar el mouse sobre el botón -->
+      <button type="submit" class="btn btn-primary mt-2" id="submitBtn" disabled>
+       <i class="fas fa-cloud-upload-alt mr-1"></i> Subir
+      </button>
+    </form>
+    <div id="warningMessage" style="display: none; color: red;">Si el documento no cumple con los requisitos no sera validado.</div>
+  </div>
+    
   </div>
 </div>
+
+<!-- Incluir el script de Bootstrap para el funcionamiento del mensaje emergente -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<!-- Script para mostrar la advertencia cuando el usuario pase el mouse sobre el botón -->
+<script>
+  // Habilitar o deshabilitar el botón de envío según si el checkbox está marcado o no
+  document.getElementById('confirmCheck').addEventListener('change', function() {
+    document.getElementById('submitBtn').disabled = !this.checked;
+  });
+
+  // Mostrar la advertencia cuando el usuario pasa el mouse sobre el botón
+  document.getElementById('submitBtn').addEventListener('mouseover', function() {
+    document.getElementById('warningMessage').style.display = 'block';
+  });
+
+  // Ocultar la advertencia cuando el mouse se aleja del botón
+  document.getElementById('submitBtn').addEventListener('mouseout', function() {
+    document.getElementById('warningMessage').style.display = 'none';
+  });
+</script>
+
+
 
 <?php require_once("../html/MainJs.php"); ?>
 

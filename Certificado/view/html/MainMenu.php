@@ -22,12 +22,6 @@
               <span class="menu-item-label">Generador de documentos</span>
             </div>
           </a>
-          <a href="../../../../PERSONAL_HelpDesk/view/Home/" class="br-menu-link">
-            <div class="br-menu-item">
-              <i class="menu-item-icon ion-alert-circled tx-24"></i>
-              <span class="menu-item-label">Reportes de incidencias</span>
-            </div>
-          </a>
         <?php
       }else{
         ?>
@@ -35,12 +29,6 @@
             <div class="br-menu-item">
               <i class="menu-item-icon icon ion-android-contacts tx-24"></i>
               <span class="menu-item-label">Admin. Usuarios</span>
-            </div>
-          </a>
-          <a href="../../../../PERSONAL_HelpDesk/view/Home/" class="br-menu-link">
-            <div class="br-menu-item">
-              <i class="menu-item-icon ion-alert-circled tx-24"></i>
-              <span class="menu-item-label">Reportes de incidencias</span>
             </div>
           </a>
  <!-- Para futuras implementaciones 
@@ -103,7 +91,7 @@
       </div>
     </a>
 
-    <a href="../html/Logout.php" class="br-menu-link">
+    <a href="../html/Logout.php" onclick="confirmarAccion(event)" class="br-menu-link">
       <div class="br-menu-item">
         <i class="menu-item-icon icon ion-power tx-20"></i>
         <span class="menu-item-label">Cerrar Sesion</span>
@@ -141,6 +129,17 @@
     });
 </script>
 
+<script>
+    function confirmarAccion(event) {
+        if (confirm("¿Desea finalizar su sesión y guardar los cambios realizados hasta el momento?")) {
+            // Si el usuario hace clic en "Aceptar", se ejecuta la acción del enlace
+            window.location.href = "../VerDocGenerados/";
+        } else {
+            // Si el usuario hace clic en "Cancelar", se cancela la acción predeterminada
+            event.preventDefault();
+        }
+    }
+</script>
 
   </div>
 </div>
