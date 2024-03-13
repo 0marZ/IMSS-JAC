@@ -2,6 +2,9 @@
   /*TODO: Llamando Cadena de Conexion */
   require_once("config/conexion.php");
 
+    // Definir la versión del sistema
+    $version = "1.1.2 - Alpha"; 
+
   if(isset($_POST["enviar"]) and $_POST["enviar"]=="si"){
     require_once("models/Usuario.php");
     /*TODO: Inicializando Clase */
@@ -89,6 +92,11 @@
           <button type="submit" class="btn btn-info btn-block">Acceder</button>
           <div class="text-center mt-3">
         <a href="../index.php" class="btn btn-success"><i class="fas fa-home"></i> Regresar a Inicio</a>
+        <!-- Mostrar la versión del sistema -->
+
+          <div class="text-center mt-3">
+                V <?php echo $version; ?>
+          </div>
     </div>
         </div>
       </form>
