@@ -18,11 +18,6 @@
       rel="stylesheet"
     />
 
-    <!-- Icon Font Stylesheet -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
-      rel="stylesheet"
-    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
       rel="stylesheet"
@@ -38,6 +33,11 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v10.0" nonce="xxxxxxxxxxxxx"></script>
+   
+    <!-- Icon Font Stylesheet -->
+    <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -64,8 +64,13 @@
     <img class="img-fluid me-3" src="img/JAC .png" alt="Icon" />
   </a>
   <h1 class="d-none d-lg-block main-title">
-    <span class="large-text">Jefatura de Servicios de Afiliación Cobranza</span> <br>
-    <span class="small-text">Veracruz Sur</span>
+  <style>
+    h1, .h1 {
+        font-size: 1.5rem;
+    }
+  </style>
+    <span class="large-text">Departamento de Conservación y Servicios Generales</span> <br>
+    <span class="small-text">Jefatura de Servicios de Afiliación Cobranza <br><span style="font-size: smaller; letter-spacing: -1px;">Ver Sur</span></span>
   </h1>
       <!-- Mobile-specific content -->
       <div class="d-lg-none text-center">
@@ -87,7 +92,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="./Mod40">SEMOD 40</a></li>
-                        <li><a class="dropdown-item" href="./Cer_P_Mod40">Certificación de pagos Mod 40</a></li>
+                        <li><a class="dropdown-item" href="../../Cer_Mod_40/">Certificación de pagos Mod 40</a></li>
                         <li><a class="dropdown-item" href="./Certificado">PTD</a></li>
                         
 <!--                         <li>

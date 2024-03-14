@@ -127,5 +127,48 @@
   </div>
 </div> -->
 
+<style>
+  /* Estilo local */
+  .mt-4 {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+</style>
+
+<!-- Sección de Noticias de Facebook y Twitter -->
+<div class="container mt-4">
+  <div class="row">
+    <h2 class="mb-4 text-center">CONSULTA INFORMACIÓN OFICIAL</h2>
+    <hr class="linea-divisoria">
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center">
+      <div class="mt-4">
+        <a href="https://www.facebook.com/IMSSVeracruzSur" target="_blank" class="btn btn-primary btn-lg"><i class="fab fa-facebook-f"></i> IMSS Veracruz Sur</a>
+      </div>
+      <!-- Contenedor del plugin de Página de Facebook -->
+      <div class="mx-auto" style="max-width: 500px;">
+        <div class="fb-page" data-href="https://www.facebook.com/IMSSVeracruzSur" data-tabs="timeline" data-width="500" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/IMSSVeracruzSur" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/IMSSVeracruzSur">IMSS Delegación Veracruz Sur</a>
+          </blockquote>
+        </div>
+      </div>
+      <!-- Fin de la Sección de Noticias de Facebook -->
+    </div>
+    <div class="col-md-6 text-center">
+      <div class="mt-4">
+        <a href="https://twitter.com/Tu_IMSS" target="_blank" class="btn btn-primary btn-lg"><i class="fa-brands fa-x-twitter"></i> IMSS</a>
+      </div>
+      <!-- Sección de Noticias de Twitter -->
+      <a class='twitter-timeline' data-handle='Tu_IMSS' data-height='800' data-theme='light' ></a>
+      <script src='https://www.athabasca.dev/content/scripts/widget.js'></script>
+      <!-- Fin de la Sección de Noticias de Twitter -->
+
+    </div>
+  </div>
+</div>
+
+
 
 <?php require('./layout/footer.php')?>
