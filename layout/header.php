@@ -70,7 +70,7 @@
     }
   </style>
     <span class="large-text">Departamento de Conservación y Servicios Generales</span> <br>
-    <span class="small-text">Jefatura de Servicios de Afiliación Cobranza <br><span style="font-size: smaller; letter-spacing: -1px;">Ver Sur</span></span>
+    <span class="small-text">Jefatura de Servicios de Afiliación Cobranza <br><span style="font-size: 20px; letter-spacing: -1px;">Ver Sur</span></span>
   </h1>
       <!-- Mobile-specific content -->
       <div class="d-lg-none text-center">

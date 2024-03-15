@@ -46,26 +46,6 @@
       <a href="./Gen Pliego Comision/newsign.php" class="btn btn-outline-primary mr-2"> <i class="fa-solid fa-file"></i>  Nueva PLIEGO DE COMISION</a>
     </div>
     
-  <!-- Agregar apartado para subir documento -->
-  <div class="bg-white p-3 rounded">
-    <h4 class="tx-gray-800 mg-b-10 tx-20">Subir Documento</h4>
-    <form action="tu_script_de_procesamiento.php" method="post" enctype="multipart/form-data">
-      <input type="file" name="documento" id="documento" class="form-control-file">
-      <!-- Agregar checkbox para confirmar que el documento está firmado y sellado -->
-      <div class="form-check mt-2">
-        <input class="form-check-input" type="checkbox" value="" id="confirmCheck">
-        <label class="form-check-label" for="confirmCheck">
-          Confirmo que el documento está firmado y sellado.
-        </label>
-      </div>
-      <!-- Añadir mensaje emergente personalizado al pasar el mouse sobre el botón -->
-      <button type="submit" class="btn btn-primary mt-2" id="submitBtn" disabled>
-       <i class="fas fa-cloud-upload-alt mr-1"></i> Subir
-      </button>
-    </form>
-    <div id="warningMessage" style="display: none; color: red;">Si el documento no cumple con los requisitos no sera validado.</div>
-  </div>
-    
   </div>
 </div>
 
