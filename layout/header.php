@@ -33,7 +33,18 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v10.0" nonce="xxxxxxxxxxxxx"></script>
+    
+     <!-- SDK FACEBOOK-->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId            : 'your-app-id',
+          xfbml            : true,
+          version          : 'v19.0'
+        });
+      };
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
    
     <!-- Icon Font Stylesheet -->
     <script src="https://kit.fontawesome.com/f0f6e50c6f.js" crossorigin="anonymous"></script>
@@ -101,6 +112,12 @@
                     </ul>
                 </li>
       <a href="contact.php" class="nav-item nav-link">Contacto</a>
+      <button id="modoBtn" onclick="toggleModo()" class="btn btn-outline-primary btn-sm ms-2">
+        <i id="iconoModo" class="fas fa-sun"></i> <!-- Icono por defecto -->
+        <i id="iconoModoOscuro" class="fas fa-moon d-none"></i> <!-- Icono para modo oscuro -->
+        <span class="visually-hidden">Cambiar Modo</span> <!-- Texto oculto para accesibilidad -->
+      </button>
+
     </div>
   </div>
 </nav>

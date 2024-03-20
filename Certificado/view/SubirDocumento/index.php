@@ -37,27 +37,55 @@
     <h6 class="tx-gray-600 tx-uppercase tx-bold tx-10">DOCUMENTOS</h6>
   </div>
   <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30"> 
-      <!-- Agregar apartado para subir documento -->
-      <div class="bg-white p-3 rounded">
-        <h4 class="tx-gray-800 mg-b-10 tx-20">Subir Documento</h4>
-        <form action="tu_script_de_procesamiento.php" method="post" enctype="multipart/form-data">
-          <input type="file" name="documento" id="documento" class="form-control-file">
-          <!-- Agregar checkbox para confirmar que el documento está firmado y sellado -->
-          <div class="form-check mt-2">
-            <input class="form-check-input" type="checkbox" value="" id="confirmCheck">
-            <label class="form-check-label" for="confirmCheck">
-              Confirmo que el documento está firmado y sellado.
-            </label>
+    <!-- Agregar apartado para subir documento -->
+    <div class="bg-white p-3 rounded">
+      <div class="row">
+        <div class="col-md-8">
+          <form action="tu_script_de_procesamiento.php" method="post" enctype="multipart/form-data">
+            <h4 class="tx-gray-800 mg-b-10 tx-40">Subir documento para validación</h4>
+            <p class="tx-20">Aquí agregué el archivo que generaste, ya firmado, para poder validar sus faltas.</p>
+            <p class="tx-16">Asegúrate de seleccionar el archivo correcto antes de pulsar el botón de subir.</p>
+            <input type="file" name="documento" id="documento" class="form-control-file">
+            <!-- Agregar checkbox para confirmar que el documento está firmado y sellado -->
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="checkbox" value="" id="confirmCheck">
+              <label class="form-check-label" for="confirmCheck">
+                Confirmo que el documento está firmado y sellado.
+              </label>
+            </div>
+            <!-- Añadir mensaje emergente personalizado al pasar el mouse sobre el botón -->
+            <button type="submit" class="btn btn-primary mt-3" id="submitBtn" disabled>
+              <i class="fas fa-cloud-upload-alt mr-1"></i> Subir
+            </button>
+          </form>
+          <div id="warningMessage" style="display: none; color: red;">Si el documento no cumple con los requisitos no será validado.</div>
+        </div>
+        <div class="col-md-4">
+          <div class="bg-light p-3 rounded">
+            <h5 class="tx-gray-800 mg-b-10 tx-20">Ejemplo de archivo correcto</h5>
+            <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-secondary mt-3" onclick="openPDF()">
+                <i class="fas fa-eye mr-1"></i> Ver en grande
+              </button>
+            </div>
+            </div>
+            <div class="row mt-3">
+              <div class="col-md-12">
+                <embed src="./docs/doc.pdf" type="application/pdf" width="100%" height="550px">
+              </div>
+            </div>
           </div>
-          <!-- Añadir mensaje emergente personalizado al pasar el mouse sobre el botón -->
-          <button type="submit" class="btn btn-primary mt-2" id="submitBtn" disabled>
-          <i class="fas fa-cloud-upload-alt mr-1"></i> Subir
-          </button>
-        </form>
-        <div id="warningMessage" style="display: none; color: red;">Si el documento no cumple con los requisitos no sera validado.</div>
       </div>
+      </div>
+    </div>
+
+    <script>
+      function openPDF() {
+        window.open('./docs/doc.pdf', '_blank', 'toolbar=yes,scrollbars=yes,resizable=yes,width=800,height=600');
+      }
+    </script>
   </div>
-</div>
 
 <!-- Incluir el script de Bootstrap para el funcionamiento del mensaje emergente -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

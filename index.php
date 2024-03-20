@@ -34,7 +34,7 @@
         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
           <div class="owl-carousel header-carousel">
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/8.jpg" alt="Imagen 1" />
+              <img class="img-fluid" src="img/IMSS_01.jpg" alt="Imagen 1" />
             </div>
             <div class="owl-carousel-item">
               <img class="img-fluid" src="img/2.jpg" alt="Imagen 2" />
@@ -133,14 +133,42 @@
     padding-top: 2rem !important;
     padding-bottom: 1rem !important;
   }
+
+  /* Estilos para el modo oscuro */
+.modo-oscuro {
+  background-color: #121212;
+  color: #fff;
+  
+}
+.modo-oscuro .bg-white {
+  background-color: #121212 !important;
+}
+
+
+.modo-oscuro .large-text {
+    font-size: 30px;
+    color: #1b826a;
+}
+
+.modo-oscuro .navbar .navbar-nav .nav-link {
+    color: #1b826a;
+    font-weight: 500;
+}
+
+.modo-oscuro .consulta-info {
+    color: #1b826a; 
+}
+
+/* Estilos específicos para los elementos que necesitas cambiar en modo oscuro */
+
 </style>
 
-<!-- Sección de Noticias de Facebook y Twitter -->
-<div class="container mt-4">
+<!-- Sección de Noticias de Facebook -->
+  <div class="container mt-4">
   <div class="row">
-    <h2 class="mb-4 text-center">CONSULTA INFORMACIÓN OFICIAL</h2>
-    <hr class="linea-divisoria">
+    <img src="./img/BAN.png" alt="Imagen de información oficial" class="img-fluid imagen-formato">
   </div>
+  <hr class="linea-divisoria">
   <div class="row">
     <div class="col-md-6 text-center">
       <div class="mt-4">
@@ -154,21 +182,83 @@
           </blockquote>
         </div>
       </div>
-      <!-- Fin de la Sección de Noticias de Facebook -->
+      <!-- Fin de la Sección de Noticias 1 -->
     </div>
+
     <div class="col-md-6 text-center">
       <div class="mt-4">
-        <a href="https://twitter.com/Tu_IMSS" target="_blank" class="btn btn-primary btn-lg"><i class="fa-brands fa-x-twitter"></i> IMSS</a>
+        <a href="https://www.facebook.com/SaberIMSS" target="_blank" class="btn btn-primary btn-lg"><i class="fab fa-facebook-f"></i> Saber IMSS</a>
       </div>
-      <!-- Sección de Noticias de Twitter -->
-      <a class='twitter-timeline' data-handle='Tu_IMSS' data-height='800' data-theme='light' ></a>
-      <script src='https://www.athabasca.dev/content/scripts/widget.js'></script>
-      <!-- Fin de la Sección de Noticias de Twitter -->
-
+      <!-- Contenedor del plugin de Página de Facebook -->
+      <div class="mx-auto" style="max-width: 500px;">
+        <div class="fb-page" data-href="https://www.facebook.com/SaberIMSS" data-tabs="timeline" data-width="500" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/SaberIMSS" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/SaberIMSS">Saber IMSS</a>
+          </blockquote>
+        </div>
+      </div>
+      <!-- Fin de la Sección de Noticias de Facebook -->
     </div>
+
   </div>
 </div>
 
+<script>
+  // Script para alternar entre los modos claro y oscuro
+  function toggleModo() {
+    // Verificar el estado actual del modo
+    var cuerpo = document.body;
+    var estadoActual = cuerpo.classList.contains('modo-oscuro');
+    
+    // Cambiar el estado del modo
+    if (estadoActual) {
+      cuerpo.classList.remove('modo-oscuro');
+      localStorage.setItem('modo', 'claro'); // Guardar el estado en el almacenamiento local
+    } else {
+      cuerpo.classList.add('modo-oscuro');
+      localStorage.setItem('modo', 'oscuro'); // Guardar el estado en el almacenamiento local
+    }
+  }
+
+  // Verificar y aplicar el modo almacenado
+  window.addEventListener('DOMContentLoaded', function() {
+    var modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+      document.body.classList.add('modo-oscuro');
+    }
+  });
+
+    // Script para alternar entre los modos claro y oscuro y cambiar el icono
+  function toggleModo() {
+    var cuerpo = document.body;
+    var estadoActual = cuerpo.classList.contains('modo-oscuro');
+
+    // Cambiar el estado del modo
+    if (estadoActual) {
+      cuerpo.classList.remove('modo-oscuro');
+      localStorage.setItem('modo', 'claro');
+      document.getElementById('iconoModo').classList.remove('d-none');
+      document.getElementById('iconoModoOscuro').classList.add('d-none');
+    } else {
+      cuerpo.classList.add('modo-oscuro');
+      localStorage.setItem('modo', 'oscuro');
+      document.getElementById('iconoModo').classList.add('d-none');
+      document.getElementById('iconoModoOscuro').classList.remove('d-none');
+    }
+  }
+
+  // Verificar y aplicar el modo almacenado
+  window.addEventListener('DOMContentLoaded', function() {
+    var modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+      document.body.classList.add('modo-oscuro');
+      document.getElementById('iconoModo').classList.add('d-none');
+      document.getElementById('iconoModoOscuro').classList.remove('d-none');
+    }
+  });
+
+
+</script>
 
 
 <?php require('./layout/footer.php')?>

@@ -34,7 +34,7 @@
             <p class="mb-2">
               <span class="text-primary me-2">#</span>Dirección
             </p>
-            <h5 class="mb-0">Calle Sur 10 No. 127, 94300, Orizaba, Veracruz</h5>
+            <h5 class="mb-0 consulta-info">Calle Sur 10 No. 127, 94300, Orizaba, Veracruz</h5>
           </div>
         </div>
       </div>
@@ -47,7 +47,7 @@
             <p class="mb-2">
               <span class="text-primary me-2">#</span>Contactenos al 
             </p>
-            <h5 class="mb-0">272-725-9127</h5>
+            <h5 class="mb-0 consulta-info">272-725-9127</h5>
           </div>
         </div>
       </div>
@@ -60,7 +60,7 @@
             <p class="mb-2">
               <span class="text-primary me-2">#</span>Correo
             </p>
-            <h5 class="mb-0">jacversur@imss.com</h5>
+            <h5 class="mb-0 consulta-info">jacversur@imss.com</h5>
           </div>
         </div>
       </div>
@@ -68,7 +68,7 @@
     <div class="row g-5">
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
         <p><span class="text-primary me-2">#</span>Contactenos</p>
-        <h1 class="display-5 mb-4">¿Tiene alguna consulta? ¡Por favor contáctenos!</h1>
+        <h1 class="display-5 mb-4 consulta-info">¿Tiene alguna consulta? ¡Por favor contáctenos!</h1>
         <p class="mb-4"></p>
         <form action="https://formsubmit.co/verojig929@hdrlog.com" method="POST">
           <div class="row g-3">
@@ -112,4 +112,102 @@
 </div>
 <!-- Contact End -->
 
+<style>
+  /* Estilo local */
+  .mt-4 {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+  }
+
+  /* Estilos para el modo oscuro */
+.modo-oscuro {
+  background-color: #121212;
+  color: #fff;
+  
+}
+.modo-oscuro .bg-white {
+  background-color: #121212 !important;
+}
+
+
+.modo-oscuro .large-text {
+    font-size: 30px;
+    color: #1b826a;
+}
+
+.modo-oscuro .navbar .navbar-nav .nav-link {
+    color: #1b826a;
+    font-weight: 500;
+}
+
+.modo-oscuro .consulta-info {
+    color: #1b826a; /* Cambia el color del texto a blanco en modo oscuro */
+}
+
+.modo-oscuro .bg-light {
+    background-color: #1a1a1a !important;
+}
+/* Estilos para el mapa en modo oscuro */
+.modo-oscuro iframe {
+    filter: grayscale(100%) invert(1) contrast(1.2);
+}
+</style>
+
+
+<script>
+  // Script para alternar entre los modos claro y oscuro
+  function toggleModo() {
+    // Verificar el estado actual del modo
+    var cuerpo = document.body;
+    var estadoActual = cuerpo.classList.contains('modo-oscuro');
+    
+    // Cambiar el estado del modo
+    if (estadoActual) {
+      cuerpo.classList.remove('modo-oscuro');
+      localStorage.setItem('modo', 'claro'); // Guardar el estado en el almacenamiento local
+    } else {
+      cuerpo.classList.add('modo-oscuro');
+      localStorage.setItem('modo', 'oscuro'); // Guardar el estado en el almacenamiento local
+    }
+  }
+
+  // Verificar y aplicar el modo almacenado
+  window.addEventListener('DOMContentLoaded', function() {
+    var modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+      document.body.classList.add('modo-oscuro');
+    }
+  });
+
+    // Script para alternar entre los modos claro y oscuro y cambiar el icono
+  function toggleModo() {
+    var cuerpo = document.body;
+    var estadoActual = cuerpo.classList.contains('modo-oscuro');
+
+    // Cambiar el estado del modo
+    if (estadoActual) {
+      cuerpo.classList.remove('modo-oscuro');
+      localStorage.setItem('modo', 'claro');
+      document.getElementById('iconoModo').classList.remove('d-none');
+      document.getElementById('iconoModoOscuro').classList.add('d-none');
+    } else {
+      cuerpo.classList.add('modo-oscuro');
+      localStorage.setItem('modo', 'oscuro');
+      document.getElementById('iconoModo').classList.add('d-none');
+      document.getElementById('iconoModoOscuro').classList.remove('d-none');
+    }
+  }
+
+  // Verificar y aplicar el modo almacenado
+  window.addEventListener('DOMContentLoaded', function() {
+    var modoGuardado = localStorage.getItem('modo');
+    if (modoGuardado === 'oscuro') {
+      document.body.classList.add('modo-oscuro');
+      document.getElementById('iconoModo').classList.add('d-none');
+      document.getElementById('iconoModoOscuro').classList.remove('d-none');
+    }
+  });
+
+
+</script>
 <?php require('./layout/footer.php')?>

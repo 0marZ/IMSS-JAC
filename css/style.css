@@ -34,6 +34,7 @@
     font-weight: 500;
     transition: .5s;
     border-radius: 20px;
+    border-color: transparent;
 }
 
 .btn.btn-primary,
@@ -602,4 +603,13 @@
     color: #b69957;
   }
   
-  
+  .imagen-formato {
+    width: 100%; /* Establece el ancho al 100% del contenedor */
+    height: auto; /* Permite que la altura se ajuste automáticamente para mantener la proporción */
+    max-width: 700px; /* Establece el ancho máximo en 800 píxeles */
+    max-height: 500px; /* Establece la altura máxima en 600 píxeles */
+    border-radius: 50px; /* Borde redondeado */
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+    display: block; /* Asegura que la imagen sea tratada como un bloque */
+    margin-bottom: 20px; /* Margen inferior */
+  }
