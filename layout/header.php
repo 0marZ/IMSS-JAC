@@ -62,7 +62,7 @@
         style="width: 3rem; height: 3rem"
         role="status"
       >
-        <span class="sr-only">Cargando...</span>
+        <span class="sr-only">Cargando</span>
       </div>
     </div>
     <!-- Spinner End -->
@@ -70,7 +70,7 @@
 
 
 <!-- Navbar Start -->
-<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
+<nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn" data-wow-delay="0.5s">
   <a href="index.php" class="navbar-brand p-0">
     <img class="img-fluid me-3" src="img/JAC .png" alt="Icon" />
   </a>
@@ -88,6 +88,14 @@
     <h1 class="mobile-title">
       <span class="large-text">JAC - VER SUR</span> <br>
     </h1>
+
+    <button id="modoBtn" onclick="toggleModo()" class="btn btn-outline-primary btn-sm ms-2"
+              onmouseover="mostrarMensaje()" onmouseout="ocultarMensaje()">
+        <i id="iconoModo" class="fas fa-sun icono-grande"></i>
+        <i id="iconoModoOscuro" class="fas fa-moon d-none icono-grande"></i> 
+        <span class="visually-hidden">Cambiar Modo</span> 
+        <div id="mensaje" class="oculto">Cambiar Modo</div>
+      </button>
   </div>
   <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
     <span class="navbar-toggler-icon"></span>
@@ -112,12 +120,28 @@
                     </ul>
                 </li>
       <a href="contact.php" class="nav-item nav-link">Contacto</a>
-      <button id="modoBtn" onclick="toggleModo()" class="btn btn-outline-primary btn-sm ms-2">
-        <i id="iconoModo" class="fas fa-sun"></i> <!-- Icono por defecto -->
-        <i id="iconoModoOscuro" class="fas fa-moon d-none"></i> <!-- Icono para modo oscuro -->
-        <span class="visually-hidden">Cambiar Modo</span> <!-- Texto oculto para accesibilidad -->
+      <button id="modoBtn" onclick="toggleModo()" class="btn btn-outline-primary btn-sm ms-2"
+              onmouseover="mostrarMensaje()" onmouseout="ocultarMensaje()">
+        <i id="iconoModo" class="fas fa-sun icono-grande"></i>
+        <i id="iconoModoOscuro" class="fas fa-moon d-none icono-grande"></i> 
+        <span class="visually-hidden">Cambiar Modo</span> 
+        <div id="mensaje" class="oculto">Cambiar Modo</div>
       </button>
 
+<script>
+  function toggleModo() {
+  }
+
+  function mostrarMensaje() {
+    var mensaje = document.getElementById("mensaje");
+    mensaje.style.display = "block";
+  }
+
+  function ocultarMensaje() {
+    var mensaje = document.getElementById("mensaje");
+    mensaje.style.display = "none";
+  }
+</script>
     </div>
   </div>
 </nav>

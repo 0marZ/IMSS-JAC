@@ -1,6 +1,6 @@
 <?php require('./layout/header.php')?>
 
-<title>JAC</title>
+<title>JAC VER SUR</title>
 
     <!-- Header Start -->
     <div class="container-fluid bg-dark p-0 mb-5">
@@ -34,7 +34,7 @@
         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
           <div class="owl-carousel header-carousel">
             <div class="owl-carousel-item">
-              <img class="img-fluid" src="img/IMSS_01.jpg" alt="Imagen 1" />
+              <img class="img-fluid" src="img/8.jpg" alt="Imagen 1" />
             </div>
             <div class="owl-carousel-item">
               <img class="img-fluid" src="img/2.jpg" alt="Imagen 2" />
@@ -98,34 +98,6 @@
         </div>
       </div>
     </div>
-    <!-- Video Modal End -->
-<!-- Después de tu carrusel -->
-<!-- <div id="nuestros-servicios" class="container mt-4">
-<div class="row">
-<hr class="linea-divisoria">
-</div>
-  <div class="row">
-    <h1 class="text-center">Menú</h1>
-    <div class="col text-center">
-      <a href="./Mod40" class="btn btn-primary rounded-pill">
-        <img src="img/mod 40.jpg" alt="Servicio 1" class="img-fluid rounded-circle">
-        Modalidad 40
-      </a>
-    </div>
-    <div class="col text-center">
-      <a href="./Cer_P_Mod40" class="btn btn-primary rounded-pill">
-        <img src="img/mod 40.jpg" alt="Servicio 2" class="img-fluid rounded-circle">
-        Certificación de pagos Mod 40
-      </a>
-    </div>
-    <div class="col text-center">
-      <a href="../PERSONAL_HelpDesk/" class="btn btn-primary rounded-pill">
-        <img src="img/PTD.png" alt="Servicio 3" class="img-fluid rounded-circle">
-        REPORTE DE INCIDENCIAS PTD
-      </a>
-    </div>
-  </div>
-</div> -->
 
 <style>
   /* Estilo local */
@@ -134,37 +106,10 @@
     padding-bottom: 1rem !important;
   }
 
-  /* Estilos para el modo oscuro */
-.modo-oscuro {
-  background-color: #121212;
-  color: #fff;
-  
-}
-.modo-oscuro .bg-white {
-  background-color: #121212 !important;
-}
-
-
-.modo-oscuro .large-text {
-    font-size: 30px;
-    color: #1b826a;
-}
-
-.modo-oscuro .navbar .navbar-nav .nav-link {
-    color: #1b826a;
-    font-weight: 500;
-}
-
-.modo-oscuro .consulta-info {
-    color: #1b826a; 
-}
-
-/* Estilos específicos para los elementos que necesitas cambiar en modo oscuro */
-
 </style>
 
 <!-- Sección de Noticias de Facebook -->
-  <div class="container mt-4">
+<div class="container mt-4">
   <div class="row">
     <img src="./img/BAN.png" alt="Imagen de información oficial" class="img-fluid imagen-formato">
   </div>
@@ -175,7 +120,7 @@
         <a href="https://www.facebook.com/IMSSVeracruzSur" target="_blank" class="btn btn-primary btn-lg"><i class="fab fa-facebook-f"></i> IMSS Veracruz Sur</a>
       </div>
       <!-- Contenedor del plugin de Página de Facebook -->
-      <div class="mx-auto" style="max-width: 500px;">
+      <div class="mx-auto" style="max-width: 90%;"> <!-- Aquí se cambió el max-width al 90% -->
         <div class="fb-page" data-href="https://www.facebook.com/IMSSVeracruzSur" data-tabs="timeline" data-width="500" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
           <blockquote cite="https://www.facebook.com/IMSSVeracruzSur" class="fb-xfbml-parse-ignore">
             <a href="https://www.facebook.com/IMSSVeracruzSur">IMSS Delegación Veracruz Sur</a>
@@ -190,7 +135,7 @@
         <a href="https://www.facebook.com/SaberIMSS" target="_blank" class="btn btn-primary btn-lg"><i class="fab fa-facebook-f"></i> Saber IMSS</a>
       </div>
       <!-- Contenedor del plugin de Página de Facebook -->
-      <div class="mx-auto" style="max-width: 500px;">
+      <div class="mx-auto" style="max-width: 90%;"> <!-- Aquí se cambió el max-width al 90% -->
         <div class="fb-page" data-href="https://www.facebook.com/SaberIMSS" data-tabs="timeline" data-width="500" data-height="800" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
           <blockquote cite="https://www.facebook.com/SaberIMSS" class="fb-xfbml-parse-ignore">
             <a href="https://www.facebook.com/SaberIMSS">Saber IMSS</a>
@@ -199,9 +144,10 @@
       </div>
       <!-- Fin de la Sección de Noticias de Facebook -->
     </div>
-
   </div>
 </div>
+
+
 
 <script>
   // Script para alternar entre los modos claro y oscuro

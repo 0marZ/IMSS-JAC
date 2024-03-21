@@ -613,3 +613,66 @@
     display: block; /* Asegura que la imagen sea tratada como un bloque */
     margin-bottom: 20px; /* Margen inferior */
   }
+
+    /* Estilos para el modo oscuro */
+.modo-oscuro {
+    background-color: #121212;
+    color: #fff;
+    
+  }
+  .modo-oscuro .bg-white {
+    background-color: #121212 !important;
+  }
+  
+  
+  .modo-oscuro .large-text {
+      font-size: 30px;
+      color: #1b826a;
+  }
+  
+  .modo-oscuro .navbar .navbar-nav .nav-link {
+      color: #1b826a;
+      font-weight: 500;
+  }
+  
+  .modo-oscuro .consulta-info {
+      color: #1b826a; 
+  }
+  
+  .modo-oscuro .dropdown-item {
+    color: #1b826a; 
+  }
+  
+  .modo-oscuro .dropdown-menu {
+    background-color: #121212;
+  }
+  
+  
+  /* Estilos específicos para los elementos que necesitas cambiar en modo oscuro */
+  .oculto {
+    display: none;
+  }
+
+  .mensaje {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  .icono-grande {
+    font-size: 20px; /* Tamaño deseado para los iconos */
+  }
+  .modo-oscuro .owl-carousel-item img {
+    opacity: 0.5; 
+  }
+
+  .modo-oscuro .fb-page,
+  .modo-oscuro .btn-primary {
+    opacity: 0.5; 
+  }
+
+  .modo-oscuro .imagen-formato {
+    opacity: 0.7; /* Puedes ajustar este valor según lo opaco que desees la imagen */
+  }
